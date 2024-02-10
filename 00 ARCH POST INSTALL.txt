@@ -1,0 +1,203 @@
+### DISABLE THE LINUX KERNEL WATCHDOG ###
+sudo nano /etc/modprobe.d/nowatchdog.conf
+
+# Insert
+blacklist iTCO_wdt
+blacklist iTCO_vendor_support
+#########################################
+
+############ PACMAN SETTINGS ############
+sudo nano /etc/pacman.conf
+# Enable Color
+# Enable ParallelDownloads = 10
+#########################################
+
+############## INSTALL YAY ##############
+git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
+#########################################
+
+################ NVIDIA ################
+# Install Packages
+sudo pacman -Syu nvidia-utils lib32-nvidia-utils nvidia-settings vulkan-icd-loader lib32-vulkan-icd-loader
+sudo pacman -Syu nvidia-prime (LAPTOP ONLY)
+
+# Blacklist driver (LAPTOP ONLY)
+sudo nano /etc/modprobe.d/drivers-blacklist.conf
+# Insert
+blacklist nouveau
+blacklist nvidiafb
+blacklist rivafb
+blacklist i2c_nvidia_gpu
+
+# NVIDIA Rules (LAPTOP ONLY)
+sudo nano /etc/udev/rules.d/80-nvidia-pm.rules
+https://wiki.archlinux.org/title/PRIME#NVIDIA
+
+sudo nano /etc/modprobe.d/nvidia.conf
+# Insert
+options nvidia NVreg_DynamicPowerManagement=0x02 (LAPTOP ONLY)
+options nvidia NVreg_UsePageAttributeTable=1
+options nvidia NVreg_PreserveVideoMemoryAllocations=1
+
+# Pacman hook
+## Create hooks folder
+sudo mkdir /etc/pacman.d/hooks && sudo nano /etc/pacman.d/hooks/nvidia.hook
+https://wiki.archlinux.org/title/NVIDIA#pacman_hook
+
+# Enable nvidia services for suspension
+sudo systemctl enable nvidia-hibernate.service nvidia-suspend.service
+sudo systemctl enable nvidia-persistenced.service && sudo systemctl mask nvidia-fallback.service (LAPTOP ONLY)
+
+# (Only GDM) Enable resume service (LAPTOP ONLY)
+sudo systemctl enable nvidia-resume.service
+#########################################
+
+########## ADDITIONAL PACKAGES ##########
+sudo pacman -Syu noto-fonts noto-fonts-cjk noto-fonts-emoji
+sudo pacman -Syu xdg-desktop-portal xdg-desktop-portal-gtk flatpak flatpak-xdg-utils
+sudo pacman -Syu power-profiles-daemon papirus-icon-theme
+sudo pacman -Syu ttf-dejavu ttf-droid
+sudo pacman -Syu libva-intel-driver (LAPTOP ONLY)
+sudo pacman -Syu unrar unarchiver p7zip lzop lrzip arj
+sudo pacman -Syu gamemode lib32-gamemode
+
+### (Only XFCE4) ###
+sudo pacman -Syu blueman lightdm-gtk-greeter-settings engrampa xorg-xkill
+
+### (Only KDE) ###
+sudo pacman -Syu kdegraphics-thumbnailers ffmpegthumbs packagekit-qt5 kdialog flatpak-kcm xdg-desktop-portal-kde libportal-qt5 spectacle
+#########################################
+
+######## ADDITIONAL AUR PACKAGES (Only XFCE4) ########
+yay docklike
+yay menulibre
+yay mugshot
+#########################################
+
+########### FLATPAK PACKAGES (Only if using PAMAC-AUR) ###########
+flatpak remote-delete flathub-beta
+flatpak update
+#########################################
+
+########### ENABLE SERVICES ############
+sudo systemctl enable bluetooth
+sudo systemctl enable systemd-resolved.service (LAPTOP ONLY)
+#########################################
+
+############### STYLEPAK (Only XFCE4) ################
+## REF: https://github.com/refi64/stylepak
+# Install requested packages
+sudo pacman -Syu ostree appstream-glib
+# Apply System Wide
+./stylepak install-system
+./stylepak install-user
+#########################################
+
+########### SILENT/FAST BOOT ###########
+# Let systemd check the root filesystem, hide fsck messages during boot (replace udev)
+sudo nano /etc/mkinitcpio.conf
+# Early loading
+MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm)
+# Hooks
+HOOKS=( base systemd fsck ...)
+
+# REBUILD
+sudo mkinitcpio -p linux
+
+# Edit systemd-fsck-root.service and systemd-fsck@.service
+sudo systemctl edit --full systemd-fsck-root.service
+sudo systemctl edit --full systemd-fsck@.service
+
+# Adding
+StandardOutput=null
+StandardError=journal+console
+
+# to the [Service] block. 
+#### EXAMPLE ####
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/lib/systemd/systemd-fsck
+StandardOutput=null
+StandardError=journal+console
+TimeoutSec=0
+#### END ####
+
+# Mask lvm2-monitor service
+sudo systemctl mask lvm2-monitor
+#########################################
+
+########## SYSTEMD-BOOT FLAGS ##########
+# Edit Boot Flags
+sudo nano /boot/loader/entries/arch.conf
+# Insert
+nvidia_drm.modeset=1 quiet loglevel=3 rd.systemd.show_status=auto rd.udev.log_priority=3 vt.global_cursor_default=0
+nosgx (LAPTOP ONLY)
+########################################
+
+#####  ADD STEAM INPUT CONTROLLERS #####
+sudo nano /etc/udev/rules.d/60-steam-input.rules
+https://raw.githubusercontent.com/ValveSoftware/steam-devices/master/60-steam-input.rules
+########################################
+
+############## ASUSCTL ##############
+# Edit pacman
+## REF: https://asus-linux.org/wiki/arch-guide/
+
+# Set Color Keys
+asusctl led-mode static -c 009000
+#####################################
+
+##### SERVICES ######################
+# Enable services
+sudo systemctl enable --now power-profiles-daemon.service
+#####################################
+
+########### CUSTOM FILES (Only XFCE4) ############
+### ADD Power Profiles Switcher Tray
+sudo pacman -Syu dbus-python
+# Enter XFCE4 Folder and ./install.sh
+#####################################
+
+### USE .LOCAL/BIN FOLDER ###
+Put following in ~/.bash_profile
+export PATH="$PATH:$HOME/.local/bin/"
+##############################
+
+### AUTOMATIC FLATPAK UPDATE (Only XFCE4) ###
+# https://www.jwillikers.com/automate-flatpak-updates-with-systemd
+# Enable Timer
+systemctl --user enable flatpak-update.timer
+################################
+
+### DOTNET ENV in FLATPAK ###
+# Put following in ~/.bash_profile
+export DOTNET_ROOT=/var/lib/flatpak/runtime/org.freedesktop.Sdk.Extension.dotnet7/x86_64/22.08/active/files/lib
+export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools
+################################
+
+### Omnisharp PATH ###
+# Put following in ~/.bash_profile
+export PATH=/home/marco/.local/share/langserver/omnisharp-linux-x64-net6.0:$PATH
+################################
+
+########### CONSISTENT KDE FILE DIALOG (Only KDE) ############
+# Add ENV Var
+sudo nano /etc/environment
+# Insert
+GTK_USE_PORTAL=1
+XDG_CURRENT_DESKTOP=KDE
+
+########### FLATPAK PACKAGES ###########
+
+### ALL
+flatpak install com.discordapp.Discord com.valvesoftware.Steam org.telegram.desktop com.heroicgameslauncher.hgl org.gimp.GIMP org.kde.krita org.blender.Blender org.inkscape.Inkscape org.godotengine.Godot
+
+### KDE
+flatpak install org.kde.haruna org.qbittorrent.qBittorrent org.kde.okular org.kde.gwenview
+
+### XFCE
+flatpak install com.github.tchx84.Flatseal
+
+### GNOME
+flatpak install com.github.tchx84.Flatseal com.mattjakeman.ExtensionManager io.missioncenter.MissionCenter org.gnome.TextEditor  org.gnome.Evince org.gnome.Calendar org.pulseaudio.pavucontrol io.github.celluloid_player.Celluloid de.haeckerfelix.Fragments org.gnome.Loupe io.github.fabrialberio.pinapp

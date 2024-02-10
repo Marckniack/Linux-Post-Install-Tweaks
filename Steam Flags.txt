@@ -1,0 +1,5 @@
+Cyberpunk 2077:
+PROTON_HIDE_NVIDIA_GPU=0 PROTON_ENABLE_NVAPI=1 VKD3D_CONFIG=dxr11 gamemoderun gamescope -w 1920 -h 1080 -f -- %command% --launcher-skip --intro-skip --skipStartScreen
+
+Starfield:
+PROTON_HIDE_NVIDIA_GPU=0 PROTON_ENABLE_NVAPI=1 gamemoderun gamescope -w 1920 -h 1080 -f -- %command%

@@ -1,0 +1,8 @@
+########## Create Folder, Download necessary files and apply FLatpak override ##########
+
+mkdir -p ~/.config/spotify-adblock && wget -P ~/.config/spotify-adblock https://github.com/abba23/spotify-adblock/releases/latest/download/spotify-adblock.so && wget -P ~/.config/spotify-adblock https://github.com/abba23/spotify-adblock/blob/main/config.toml && flatpak override --user --filesystem="~/.config/spotify-adblock/spotify-adblock.so" --filesystem="~/.config/spotify-adblock/config.toml" com.spotify.Client
+
+
+########## Edit Spotify Menu Entry with: ##########
+
+run --file-forwarding --command=sh com.spotify.Client -c 'eval "$(sed s#LD_PRELOAD=#LD_PRELOAD=$HOME/.config/spotify-adblock/spotify-adblock.so:#g /app/bin/spotify)"' @@u %U @@
