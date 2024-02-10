@@ -1,0 +1,7 @@
+# copy icons folder in /.local/share/
+
+# To CHange COlors
+./papirus-folders -C adwaita -t Papirus-Dark
+
+# Adwaita Folders with Papirus (for silverblue)
+# Copy index.theme in Papirus-Dark and replace the file

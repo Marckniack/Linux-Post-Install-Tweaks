@@ -1,0 +1,16 @@
+[Desktop Entry]
+Categories=Development;
+Comment=Analytics and administration tool for UserFeedback servers.
+Exec=UserFeedbackConsole
+GenericName=UserFeedback Management Console
+Icon=search
+Name=UserFeedback Console
+NoDisplay=true
+Path=
+StartupNotify=true
+Terminal=false
+TerminalOptions=
+Type=Application
+X-KDE-StartupNotify=true
+X-KDE-SubstituteUID=false
+X-KDE-Username=

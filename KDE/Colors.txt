@@ -1,0 +1,5 @@
+https://gnome.pages.gitlab.gnome.org/libadwaita/doc/main/named-colors.html#accent-colors
+
+# Cool Orange: #b57614
+# Blue Adwaita: #3584e4
+# MacOS Ventura: #1b9df7

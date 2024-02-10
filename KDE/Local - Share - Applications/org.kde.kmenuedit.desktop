@@ -1,0 +1,19 @@
+[Desktop Entry]
+Categories=Qt;KDE;System;
+Comment=Edit how applications are presented in app launchers
+Exec=kmenuedit
+Icon=kmenuedit
+Name=Menu Editor
+NoDisplay=true
+OnlyShowIn=KDE;
+Path=
+SingleMainWindow=true
+StartupNotify=true
+Terminal=false
+TerminalOptions=
+Type=Application
+X-DBUS-ServiceName=org.kde.kmenuedit
+X-DBUS-StartupType=Unique
+X-DocPath=kmenuedit/index.html
+X-KDE-SubstituteUID=false
+X-KDE-Username=

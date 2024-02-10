@@ -1,0 +1,22 @@
+[Desktop Entry]
+Categories=Qt;KDE;Utility;TextEditor;
+Comment=KDE Text Editor
+Exec=kwrite %U
+GenericName=Text Editor
+Icon=kwrite
+InitialPreference=8
+Keywords=text;txt;editor;note;notepad;
+MimeType=text/plain;
+Name=KWrite
+NoDisplay=true
+Path=
+StartupNotify=true
+StartupWMClass=kwrite
+Terminal=false
+TerminalOptions=
+Type=Application
+X-DBUS-ServiceName=org.kde.kwrite
+X-DBUS-StartupType=Multi
+X-DocPath=kwrite/index.html
+X-KDE-SubstituteUID=false
+X-KDE-Username=

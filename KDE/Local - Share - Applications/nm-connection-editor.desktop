@@ -1,0 +1,14 @@
+[Desktop Entry]
+Categories=GNOME;GTK;Settings;X-GNOME-NetworkSettings;X-GNOME-Utilities;
+Comment=Manage and change your network connection settings
+Exec=nm-connection-editor
+Icon=preferences-system-network
+Name=Advanced Network Configuration
+NoDisplay=true
+Path=
+StartupNotify=true
+Terminal=false
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

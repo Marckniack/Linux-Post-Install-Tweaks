@@ -1,0 +1,15 @@
+[Desktop Entry]
+Categories=Settings;HardwareSettings;
+Comment=Configure NVIDIA X Server Settings
+Encoding=UTF-8
+Exec=/usr/bin/nvidia-settings
+Icon=nvidia-settings
+Name=NVIDIA Settings
+NoDisplay=false
+Path=
+StartupNotify=true
+Terminal=false
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

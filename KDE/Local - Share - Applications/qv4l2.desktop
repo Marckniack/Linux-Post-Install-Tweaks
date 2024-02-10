@@ -1,0 +1,15 @@
+[Desktop Entry]
+Categories=AudioVideo;
+Comment=Allow testing Video4Linux devices
+Exec=qv4l2
+Icon=qv4l2
+Keywords=video;grabber;V4L;
+Name=Qt V4L2 test Utility
+NoDisplay=true
+Path=
+StartupNotify=true
+Terminal=false
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

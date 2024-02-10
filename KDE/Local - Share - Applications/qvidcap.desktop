@@ -1,0 +1,15 @@
+[Desktop Entry]
+Categories=AudioVideo;
+Comment=Viewer for video capture
+Exec=qvidcap
+Icon=qvidcap
+Keywords=video;grabber;V4L;
+Name=Qt V4L2 video capture utility
+NoDisplay=true
+Path=
+StartupNotify=true
+Terminal=false
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

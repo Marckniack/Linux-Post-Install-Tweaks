@@ -1,0 +1,19 @@
+{
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "",
+                "Name": "Marco Montini"
+            }
+        ],
+        "Category": "",
+        "Description": "Breeze Dark by Marco",
+        "EnabledByDefault": false,
+        "Id": "breeze-dark-neutral",
+        "License": "LGPL",
+        "Name": "Breeze Dark Neutral",
+        "Version": "10",
+        "Website": ""
+    },
+    "X-Plasma-API": "5.0"
+}
