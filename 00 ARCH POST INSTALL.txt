@@ -36,13 +36,21 @@ https://wiki.archlinux.org/title/PRIME#NVIDIA
 sudo nano /etc/modprobe.d/nvidia.conf
 # Insert
 options nvidia NVreg_DynamicPowerManagement=0x02 (LAPTOP ONLY)
-options nvidia NVreg_UsePageAttributeTable=1
-options nvidia NVreg_PreserveVideoMemoryAllocations=1
+options nvidia NVreg_UsePageAttributeTable=1 NVreg_PreserveVideoMemoryAllocations=1
+options nvidia_drm modeset=1 fbdev=1
 
 # Pacman hook
 ## Create hooks folder
 sudo mkdir /etc/pacman.d/hooks && sudo nano /etc/pacman.d/hooks/nvidia.hook
 https://wiki.archlinux.org/title/NVIDIA#pacman_hook
+
+# Set Modules in mkinitcpio
+sudo nano /etc/mkinitcpio.conf
+# Early loading
+MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm)
+
+# REBUILD
+sudo mkinitcpio -p linux
 
 # Enable nvidia services for suspension
 sudo systemctl enable nvidia-hibernate.service nvidia-suspend.service
@@ -93,24 +101,14 @@ sudo pacman -Syu ostree appstream-glib
 ./stylepak install-user
 #########################################
 
-########### SILENT/FAST BOOT ###########
-# Let systemd check the root filesystem, hide fsck messages during boot (replace udev)
-sudo nano /etc/mkinitcpio.conf
-# Early loading
-MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm)
-
-# REBUILD
-sudo mkinitcpio -p linux
-
 # Mask lvm2-monitor service
 sudo systemctl mask lvm2-monitor
-#########################################
 
 ########## SYSTEMD-BOOT FLAGS ##########
 # Edit Boot Flags
 sudo nano /boot/loader/entries/arch.conf
 # Insert
-nvidia_drm.modeset=1 quiet loglevel=3 rd.systemd.show_status=auto rd.udev.log_priority=3 vt.global_cursor_default=0
+quiet loglevel=3 rd.systemd.show_status=auto rd.udev.log_priority=3 vt.global_cursor_default=0
 nosgx (LAPTOP ONLY)
 ########################################
 
