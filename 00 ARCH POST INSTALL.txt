@@ -73,7 +73,7 @@ sudo pacman -Syu gamemode lib32-gamemode
 sudo pacman -Syu blueman lightdm-gtk-greeter-settings engrampa xorg-xkill
 
 ### (Only KDE) ###
-sudo pacman -Syu kdegraphics-thumbnailers ffmpegthumbs packagekit-qt5 kdialog flatpak-kcm xdg-desktop-portal-kde libportal-qt5 spectacle
+sudo pacman -Syu kdegraphics-thumbnailers ffmpegthumbs packagekit-qt5 kdialog flatpak-kcm xdg-desktop-portal-kde libportal-qt5 spectacle dolphin-plugins
 #########################################
 
 ######## ADDITIONAL AUR PACKAGES (Only XFCE4) ########
