@@ -48,5 +48,4 @@ vulkan-intel
 wget
 xdg-desktop-portal-gtk
 xdg-utils
-xf86-video-intel
 xorg-xinit
