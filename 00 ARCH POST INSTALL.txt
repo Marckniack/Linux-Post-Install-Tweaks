@@ -9,7 +9,7 @@ blacklist iTCO_vendor_support
 ############ PACMAN SETTINGS ############
 sudo nano /etc/pacman.conf
 # Enable Color
-# Enable ParallelDownloads = 10
+# Enable ParallelDownloads = 5
 #########################################
 
 ############## INSTALL YAY ##############
@@ -18,10 +18,10 @@ git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
 
 ################ NVIDIA ################
 # Install Packages
-sudo pacman -Syu nvidia-utils lib32-nvidia-utils nvidia-settings vulkan-icd-loader lib32-vulkan-icd-loader lib32-opencl-nvidia libva-nvidia-driver opencl-nvidia lib32-libvdpau
+sudo pacman -Syu nvidia-utils lib32-nvidia-utils nvidia-settings vulkan-icd-loader lib32-vulkan-icd-loader opencl-nvidia lib32-opencl-nvidia libva-nvidia-driver lib32-libvdpau
 sudo pacman -Syu nvidia-prime (LAPTOP ONLY)
 
-# Blacklist driver (LAPTOP ONLY)
+# Blacklist driver
 sudo nano /etc/modprobe.d/drivers-blacklist.conf
 # Insert
 blacklist nouveau
@@ -38,11 +38,6 @@ sudo nano /etc/modprobe.d/nvidia.conf
 options nvidia NVreg_DynamicPowerManagement=0x02 (LAPTOP ONLY)
 options nvidia NVreg_UsePageAttributeTable=1 NVreg_PreserveVideoMemoryAllocations=1
 options nvidia_drm modeset=1 fbdev=1
-
-# Pacman hook
-## Create hooks folder
-sudo mkdir /etc/pacman.d/hooks && sudo nano /etc/pacman.d/hooks/nvidia.hook
-https://wiki.archlinux.org/title/NVIDIA#pacman_hook
 
 # Set Modules in mkinitcpio
 sudo nano /etc/mkinitcpio.conf
@@ -76,33 +71,10 @@ sudo pacman -Syu blueman lightdm-gtk-greeter-settings engrampa xorg-xkill
 sudo pacman -Syu kdegraphics-thumbnailers ffmpegthumbs packagekit-qt5 kdialog flatpak-kcm xdg-desktop-portal-kde libportal-qt5 spectacle dolphin-plugins
 #########################################
 
-######## ADDITIONAL AUR PACKAGES (Only XFCE4) ########
-yay docklike
-yay menulibre
-yay mugshot
-#########################################
-
-########### FLATPAK PACKAGES (Only if using PAMAC-AUR) ###########
-flatpak remote-delete flathub-beta
-flatpak update
-#########################################
-
 ########### ENABLE SERVICES ############
 sudo systemctl enable bluetooth
 sudo systemctl enable systemd-resolved.service (LAPTOP ONLY)
 #########################################
-
-############### STYLEPAK (Only XFCE4) ################
-## REF: https://github.com/refi64/stylepak
-# Install requested packages
-sudo pacman -Syu ostree appstream-glib
-# Apply System Wide
-./stylepak install-system
-./stylepak install-user
-#########################################
-
-# Mask lvm2-monitor service
-sudo systemctl mask lvm2-monitor
 
 ########## BOOT FLAGS ##########
 # Edit Boot Flags
@@ -129,20 +101,6 @@ https://raw.githubusercontent.com/ValveSoftware/steam-devices/master/60-steam-in
 ############## ASUSCTL ##############
 # Edit pacman
 ## REF: https://asus-linux.org/wiki/arch-guide/
-
-# Set Color Keys
-asusctl led-mode static -c 009000
-#####################################
-
-##### SERVICES ######################
-# Enable services
-sudo systemctl enable --now power-profiles-daemon.service
-#####################################
-
-########### CUSTOM FILES (Only XFCE4) ############
-### ADD Power Profiles Switcher Tray
-sudo pacman -Syu dbus-python
-# Enter XFCE4 Folder and ./install.sh
 #####################################
 
 ### USE .LOCAL/BIN FOLDER ###
@@ -150,7 +108,7 @@ Put following in ~/.bash_profile
 export PATH="$PATH:$HOME/.local/bin/"
 ##############################
 
-### AUTOMATIC FLATPAK UPDATE (Only XFCE4) ###
+### AUTOMATIC FLATPAK UPDATE ###
 # https://www.jwillikers.com/automate-flatpak-updates-with-systemd
 # Enable Timer
 systemctl --user enable flatpak-update.timer
@@ -177,7 +135,7 @@ XDG_CURRENT_DESKTOP=KDE
 ########### FLATPAK PACKAGES ###########
 
 ### ALL
-flatpak install com.discordapp.Discord com.valvesoftware.Steam org.telegram.desktop com.heroicgameslauncher.hgl org.gimp.GIMP org.kde.krita org.blender.Blender org.inkscape.Inkscape org.godotengine.Godot
+flatpak install com.discordapp.Discord com.valvesoftware.Steam org.telegram.desktop com.heroicgameslauncher.hgl org.gimp.GIMP org.kde.krita org.blender.Blender org.inkscape.Inkscape com.spotify.Client io.github.MakovWait.Godots io.github.f3d_app.f3d org.mozilla.firefox
 
 ### KDE
 flatpak install org.kde.haruna org.qbittorrent.qBittorrent org.kde.okular org.kde.gwenview
