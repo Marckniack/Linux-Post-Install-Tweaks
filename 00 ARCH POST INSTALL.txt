@@ -24,7 +24,6 @@ sudo pacman -Syu nvidia-prime (LAPTOP ONLY)
 # Blacklist driver
 sudo nano /etc/modprobe.d/drivers-blacklist.conf
 # Insert
-blacklist nouveau
 blacklist nvidiafb
 blacklist rivafb
 blacklist i2c_nvidia_gpu
@@ -37,7 +36,7 @@ sudo nano /etc/modprobe.d/nvidia.conf
 # Insert
 options nvidia NVreg_DynamicPowerManagement=0x02 (LAPTOP ONLY)
 options nvidia NVreg_UsePageAttributeTable=1 NVreg_PreserveVideoMemoryAllocations=1
-options nvidia_drm modeset=1 fbdev=1
+options nvidia-drm modeset=1
 
 # Set Modules in mkinitcpio
 sudo nano /etc/mkinitcpio.conf
@@ -81,10 +80,10 @@ sudo systemctl enable systemd-resolved.service (LAPTOP ONLY)
 sudo nano /boot/loader/entries/arch.conf
 
 # Insert
-nvidia_drm.modeset=1 quiet
+quiet
 
 # FOR boot with Silent
-loglevel=3 rd.systemd.show_status=auto rd.udev.log_priority=3 vt.global_cursor_default=0
+loglevel=0 systemd.show_status=false
 
 # FOR boot with MOBO Logo
 splash
