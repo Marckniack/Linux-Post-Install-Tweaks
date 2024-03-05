@@ -1,7 +1,7 @@
 # Download and extract Unreal Engine from EpicGames: https://www.unrealengine.com/en-US/linux
 
 # Place UnrealEngine folder into: /home/<USER>/.local/share/UnrealEngine
-# Create a dir with name Data into this folder
+# Create a dir with name .home into this folder
 
 # Create a Desktop launcher and place into: /home/<USER>/.local/share/applications/UnrealEngine.desktop
 # UnrealEngine.desktop file:
@@ -9,7 +9,7 @@
 [Desktop Entry]
 Categories=AudioVideo;Development;Graphics;
 Comment=The world's most open and advanced real-time 3D creation tool
-Exec=env HOME=/home/<USER>/.local/share/UnrealEngine/Data 'XDG_DATA_HOME=$HOME/.local/share' /home/<USER>/.local/share/UnrealEngine/Engine/Binaries/Linux/UnrealEditor
+Exec=env HOME=/home/<USER>/.local/share/UnrealEngine/.home 'XDG_DATA_HOME=$HOME/.local/share' /home/<USER>/.local/share/UnrealEngine/Engine/Binaries/Linux/UnrealEditor
 Icon=epic-games
 MimeType=application/x-uproject
 Name=Unreal Engine
