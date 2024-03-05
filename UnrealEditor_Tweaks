@@ -10,8 +10,8 @@
 Type=Application
 Name=Unreal Engine 5.3.2
 Comment=The world's most open and advanced real-time 3D creation tool
-Path=/home/marco/.local/share/UnrealEngine/Engine/Binaries/Linux
-Exec=env HOME=/home/marco/.local/share/UnrealEngine/.home 'PWD=$HOME' 'XDG_DATA_HOME=$HOME/.local/share' /home/marco/.local/share/UnrealEngine/Engine/Binaries/Linux/UnrealEditor %F
+Path=/home/<USER>/.local/share/UnrealEngine/Engine/Binaries/Linux
+Exec=env HOME=/home/<USER>/.local/share/UnrealEngine/.home 'PWD=$HOME' 'XDG_DATA_HOME=$HOME/.local/share' /home/<USER>/.local/share/UnrealEngine/Engine/Binaries/Linux/UnrealEditor %F
 Terminal=false
 Icon=epic-games
 MimeType=application/x-uproject
