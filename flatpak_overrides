@@ -5,7 +5,11 @@ __GLX_VENDOR_LIBRARY_NAME=nvidia
 __NV_PRIME_RENDER_OFFLOAD=1
 __VK_LAYER_NV_optimus=NVIDIA_only
 
+########## ---------------------- ##########
 # Use Wyaland in Flatpak App:
+
+[Context]
+sockets=wayland;fallback-x11;
 
 [Environment]
 ELECTRON_OZONE_PLATFORM_HINT=auto
