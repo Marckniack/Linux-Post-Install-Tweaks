@@ -10,4 +10,7 @@ run --file-forwarding --command=sh com.spotify.Client -c 'eval "$(sed s#LD_PRELO
 # ---------------------------------------------------------------------------------------------------- #
 ########## Alternative method using SpotX-bash (https://github.com/SpotX-Official/SpotX-Bash) ##########
 bash <(curl -sSL https://spotx-official.github.io/run.sh) -cho -P /var/lib/flatpak/app/com.spotify.Client/x86_64/stable/active/files/extra/share/spotify/ && flatpak pin com.spotify.Client
+
+### Prevent Spotify Flatpak to auto update
+flatpak mask com.spotify.Client
 # ---------------------------------------------------------------------------------------------------- #
