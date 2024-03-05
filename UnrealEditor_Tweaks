@@ -7,17 +7,14 @@
 # UnrealEngine.desktop file:
 
 [Desktop Entry]
-Categories=AudioVideo;Development;Graphics;
+Type=Application
+Name=Unreal Engine 5.3.2
 Comment=The world's most open and advanced real-time 3D creation tool
-Exec=env HOME=/home/<USER>/.local/share/UnrealEngine/.home 'XDG_DATA_HOME=$HOME/.local/share' /home/<USER>/.local/share/UnrealEngine/Engine/Binaries/Linux/UnrealEditor
+Path=/home/<USER>/.local/share/UnrealEngine/Engine/Binaries/Linux
+Exec=env HOME=/home/<USER>/.local/share/UnrealEngine/.home 'PWD=$HOME' 'XDG_DATA_HOME=$HOME/.local/share' /home/<USER>/.local/share/UnrealEngine/Engine/Binaries/Linux/UnrealEditor %F
+Terminal=false
 Icon=epic-games
 MimeType=application/x-uproject
-Name=Unreal Engine
-NoDisplay=false
-Path=/home/<USER>/.local/share/UnrealEngine/Engine/Binaries/Linux
-StartupNotify=true
-Terminal=false
-TerminalOptions=
-Type=Application
+Categories=AudioVideo;Development;Graphics;
 
 NB: Change <USER> with your username
