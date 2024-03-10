@@ -1,0 +1,33 @@
+[Devices][/org/freedesktop/UDisks2/block_devices/nvme0n1p1]
+EverMounted=true
+Icon=drive-harddisk
+LastNameSeen=512.0 MiB Internal Drive (nvme0n1p1)
+LastSeenMounted=true
+
+[Devices][/org/freedesktop/UDisks2/block_devices/nvme0n1p2]
+EverMounted=true
+Icon=drive-harddisk-root
+LastNameSeen=1.8 TiB Internal Drive (nvme0n1p2)
+LastSeenMounted=true
+
+[Devices][/org/freedesktop/UDisks2/block_devices/nvme1n1p1]
+Icon=drive-harddisk
+LastNameSeen=ableMonitor=0, bUseVssOK=0.
+
+[Devices][/org/freedesktop/UDisks2/block_devices/nvme1n1p2]
+Icon=drive-harddisk
+LastNameSeen=\x18
+
+[Devices][/org/freedesktop/UDisks2/block_devices/nvme1n1p3]
+Icon=drive-harddisk
+LastNameSeen=ᓫ嗮ǚ
+
+[Devices][/org/freedesktop/UDisks2/block_devices/nvme2n1p1]
+EverMounted=true
+Icon=drive-harddisk
+LastNameSeen=Data
+LastSeenMounted=true
+
+[Devices][/org/freedesktop/UDisks2/block_devices/nvme2n1p2]
+Icon=drive-harddisk
+LastNameSeen=OS Backup

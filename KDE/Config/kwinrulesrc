@@ -9,33 +9,43 @@ wmclass=\sArmCord
 wmclasscomplete=true
 wmclassmatch=1
 
+[0f8cfedf-5953-4461-b6d8-6c0211e03c63]
+Description=Application settings for Spotify
+clientmachine=localhost
+decocolor=BreezeBlackPure
+decocolorrule=2
+wmclass=spotify Spotify
+wmclasscomplete=true
+wmclassmatch=1
+
 [1]
-Description=Application settings for ArmCord
+Description=Application settings for Gimp-2.10
 clientmachine=localhost
 decocolor=BreezeDarkerNeutral
-desktopfile=xyz.armcord.ArmCord
+desktopfile=org.gimp.GIMP
 desktopfilerule=3
-wmclass=\sArmCord
+wmclass=gimp-2.10 Gimp-2.10
 wmclasscomplete=true
 wmclassmatch=1
 
 [2]
-Description=Application settings for krita
+Description=Application settings for org.telegram.desktop
 clientmachine=localhost
 decocolor=BreezeDarkerNeutral
 decocolorrule=2
 desktopfile=org.gimp.GIMP
-wmclass=krita
+wmclass=\sorg.telegram.desktop
+wmclasscomplete=true
 wmclassmatch=1
 
 [3]
-Description=Application settings for gimp-2.10
+Description=Application settings for Spotify
 clientmachine=localhost
-decocolor=BreezeDarkerNeutral
+decocolor=BreezeBlackPure
 decocolorrule=2
 desktopfile=org.gimp.GIMP
-desktopfilerule=3
-wmclass=gimp-2.10
+wmclass=spotify Spotify
+wmclasscomplete=true
 wmclassmatch=1
 
 [31c4510b-ad3f-4376-a664-13f0580a1de3]
@@ -55,31 +65,37 @@ wmclass=heroic
 wmclassmatch=1
 
 [4]
+Description=Application settings for discord
+clientmachine=localhost
+decocolor=BreezeDark
+decocolorrule=2
+wmclass=discord
+wmclassmatch=1
+
+[438956bf-eab5-437e-9e1e-51f0ee44e2ce]
+Description=Application settings for discord
+clientmachine=localhost
+decocolor=BreezeDark
+decocolorrule=2
+wmclass=discord
+wmclassmatch=1
+
+[5]
 Description=Application settings for blender
 clientmachine=localhost
 decocolor=BreezeDarkerNeutral
 decocolorrule=2
-desktopfile=org.mozilla.firefox
+desktopfile=org.gimp.GIMP
 wmclass=\sblender
 wmclasscomplete=true
 wmclassmatch=1
 
-[5]
+[6]
 Description=Application settings for heroic
 clientmachine=localhost
 decocolor=BreezeDarkerNeutral
 decocolorrule=2
-desktopfile=org.mozilla.firefox
 wmclass=heroic
-wmclassmatch=1
-
-[6]
-Description=Application settings for spotify
-clientmachine=localhost
-decocolor=BreezeBlackPure
-decocolorrule=2
-desktopfile=org.mozilla.firefox
-wmclass=spotify
 wmclassmatch=1
 
 [6fa25770-9c0b-4a6f-a3cf-12ea59bde95d]
@@ -92,6 +108,7 @@ wmclassmatch=1
 
 [7]
 Description=Application settings for firefox
+clientmachine=localhost
 desktopfile=org.mozilla.firefox
 desktopfilerule=3
 wmclass=\sfirefox
@@ -106,9 +123,35 @@ decocolorrule=2
 wmclass=krita
 wmclassmatch=1
 
+[7f0902b6-10ee-4496-82be-9297e9eaebab]
+Description=Application settings for Gimp-2.10
+clientmachine=localhost
+desktopfile=org.gimp.GIMP
+desktopfilerule=3
+wmclass=gimp-2.10 Gimp-2.10
+wmclasscomplete=true
+wmclassmatch=1
+
+[8]
+Description=Application settings for firefox
+clientmachine=localhost
+desktopfile=org.mozilla.firefox
+desktopfilerule=3
+wmclass=\sfirefox
+wmclasscomplete=true
+wmclassmatch=1
+
 [General]
 count=7
 rules=1,2,3,4,5,6,7
+
+[b2c53a9f-e0e1-447d-bd95-b49ea2274963]
+Description=Application settings for org.telegram.desktop
+decocolor=BreezeDarkerNeutral
+decocolorrule=2
+wmclass=\sorg.telegram.desktop
+wmclasscomplete=true
+wmclassmatch=1
 
 [bea82076-b61c-47b4-945f-6639ced9c8b1]
 Description=Application settings for spotify
@@ -116,6 +159,14 @@ clientmachine=localhost
 decocolor=BreezeBlackPure
 decocolorrule=2
 wmclass=spotify
+wmclassmatch=1
+
+[d3441807-2ce0-4906-86b5-d0f9d8f48c49]
+Description=Application settings for org.telegram.desktop
+decocolor=BreezeDarkNeutral
+decocolorrule=2
+wmclass=\sorg.telegram.desktop
+wmclasscomplete=true
 wmclassmatch=1
 
 [e541e5c0-33a6-4f16-9432-2e4cbf5d522a]

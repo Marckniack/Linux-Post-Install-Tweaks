@@ -1,0 +1,5 @@
+[ButtonRebinds][Mouse]
+ExtraButton3=Key,Meta+Tab
+
+[Libinput][1133][50504][Logitech USB Receiver Mouse]
+PointerAccelerationProfile=2

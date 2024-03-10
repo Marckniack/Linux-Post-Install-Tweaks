@@ -1,0 +1,6 @@
+[Daemon]
+Timeout=18
+
+[Greeter][Wallpaper][org.kde.image][General]
+Image=/home/marco/.local/share/wallpapers/Sonoma-Dark.jpg
+PreviewImage=/home/marco/.local/share/wallpapers/Sonoma-Dark.jpg

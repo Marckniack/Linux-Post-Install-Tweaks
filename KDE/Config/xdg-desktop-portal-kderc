@@ -1,0 +1,8 @@
+[FileDialogSize]
+2560x1080 screen: Height=600
+2560x1080 screen: Width=1300
+
+[KFileDialog Settings]
+Recent Files[$e]=file:$HOME/.var/app/com.heroicgameslauncher.hgl/.games/Epic Games Launcher/drive_c/Program Files (x86)/Epic Games/Launcher/Portal/Binaries/Win32/EpicGamesLauncher.exe
+Recent URLs[$e]=file:$HOME/.var/app/com.heroicgameslauncher.hgl/.games/Epic Games Launcher/,file:$HOME/,file:$HOME/.local/share/UnrealEngine/Engine/Content/Splash/,file:$HOME/Downloads/,file:$HOME/.var/app/com.heroicgameslauncher.hgl/.games/Epic Games Launcher/drive_c/Program Files (x86)/Epic Games/Launcher/Portal/Binaries/Win32/
+iconViewIconSize=64

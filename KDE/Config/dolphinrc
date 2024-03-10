@@ -1,0 +1,28 @@
+[ContextMenu]
+ShowAddToPlaces=false
+ShowMoveToOtherSplitView=false
+ShowViewMode=false
+
+[General]
+ModifiedStartupSettings=true
+RememberOpenedTabs=false
+ShowZoomSlider=false
+Version=202
+ViewPropsTimestamp=2024,3,8,9,19,7.966
+
+[KFileDialog Settings]
+Places Icons Auto-resize=false
+Places Icons Static Size=16
+
+[MainWindow]
+MenuBar=Disabled
+ToolBarsMovable=Disabled
+
+[PlacesPanel]
+IconSize=16
+
+[PreviewSettings]
+Plugins=appimagethumbnail,audiothumbnail,blenderthumbnail,comicbookthumbnail,cursorthumbnail,djvuthumbnail,ebookthumbnail,exrthumbnail,directorythumbnail,fontthumbnail,imagethumbnail,jpegthumbnail,kraorathumbnail,windowsexethumbnail,windowsimagethumbnail,mobithumbnail,opendocumentthumbnail,gsthumbnail,rawthumbnail,svgthumbnail
+
+[VersionControl]
+enabledPlugins=Git

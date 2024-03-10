@@ -1,0 +1,10 @@
+[General]
+clipboardGroup=PostScreenshotCopyImage
+launchAction=DoNotTakeScreenshot
+showCaptureInstructions=false
+
+[ImageSave]
+translatedScreenshotsFolder=Screenshots
+
+[VideoSave]
+translatedScreencastsFolder=Screencasts

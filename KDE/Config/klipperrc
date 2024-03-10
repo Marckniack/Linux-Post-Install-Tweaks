@@ -1,0 +1,5 @@
+[General]
+IgnoreImages=false
+KeepClipboardContents=false
+MaxClipItems=10
+Version=6.0.1

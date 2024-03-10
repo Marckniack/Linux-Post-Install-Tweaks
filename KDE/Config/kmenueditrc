@@ -1,0 +1,11 @@
+[General]
+ShowHidden=true
+SplitterSizes=332,1031
+
+[KFileDialog Settings]
+Recent Files[$e]=file:$HOME/.local/share/UnrealEngine/Engine/Content/Splash/IconDefault.ico
+Recent URLs[$e]=file:$HOME/.local/share/UnrealEngine/Engine/Content/Splash/,file:$HOME/
+iconViewIconSize=64
+
+[MainWindow]
+ToolBarsMovable=Disabled

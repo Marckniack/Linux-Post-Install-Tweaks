@@ -1,0 +1,11 @@
+[General]
+ConfigVersion=1
+
+[MainWindow]
+ToolBarsMovable=Disabled
+
+[TabBar]
+TabBarPosition=Bottom
+
+[UiSettings]
+ColorScheme=Breeze Darker Neutral

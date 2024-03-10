@@ -1,9 +1,0 @@
-# ONLY ARCH
-sudo pacman -Syu xdg-desktop-portal-gtk
-
-# ALL
-flatpak override --user --filesystem=xdg-config/gtk-3.0:ro --filesystem=xdg-config/gtkrc-2.0:ro --filesystem=xdg-config/gtk-4.0:ro --filesystem=xdg-config/gtkrc:ro
-
-
-# Global Menu FLatpak Apps
-flatpak override --user --talk-name=com.canonical.AppMenu.Registrar

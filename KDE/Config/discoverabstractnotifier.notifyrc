@@ -1,0 +1,7 @@
+[Event/DistUpgrade]
+Action=Popup|Sound
+Sound=file:///usr/share/sounds/ocean/stereo/power-plug.oga
+
+[Event/Update]
+Action=Popup|Sound
+Sound=file:///usr/share/sounds/ocean/stereo/power-plug.oga

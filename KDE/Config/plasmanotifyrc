@@ -1,0 +1,17 @@
+[Applications][com.spotify.Client]
+ShowInHistory=false
+
+[Applications][org.kde.discover]
+ShowInHistory=false
+
+[Applications][org.kde.konsole]
+ShowInHistory=false
+
+[Applications][org.kde.spectacle]
+ShowInHistory=false
+
+[Applications][org.telegram.desktop]
+ShowInHistory=false
+
+[Services][plasma_workspace]
+ShowInHistory=false
