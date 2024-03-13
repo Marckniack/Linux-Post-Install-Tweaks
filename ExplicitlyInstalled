@@ -55,6 +55,5 @@ vulkan-mesa-layers 1:24.0.2-2
 wget 1.21.4-1
 xdg-desktop-portal-gtk 1.15.1-1
 xdg-utils 1.2.1-1
-xf86-video-intel 1:2.99.917+923+gb74b67f0-1
 yay-bin 12.3.1-1
 zip 3.0-11
