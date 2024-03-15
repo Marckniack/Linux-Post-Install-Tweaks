@@ -1,0 +1,13 @@
+[Desktop Entry]
+Comment=
+Exec=distrobox-enter -n distroArch -- jetbrains-toolbox %u
+Icon=jetbrains-toolbox
+Name=Jetbrains Toolbox
+NoDisplay=false
+Path=/home/marco/.distroArch
+StartupNotify=true
+Terminal=false
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

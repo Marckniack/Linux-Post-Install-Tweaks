@@ -1,0 +1,13 @@
+[Desktop Entry]
+Comment=
+Exec=konsole --profile DistroArch
+Icon=org.kde.archUpdate
+Name=DistroArch
+NoDisplay=false
+Path=
+StartupNotify=true
+Terminal=false
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

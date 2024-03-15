@@ -1,0 +1,13 @@
+[Desktop Entry]
+Comment=
+Exec=distrobox-enter -n distroArch -- /home/marco/.distroArch/adbServer.sh
+Icon=distributor-logo-android
+Name=ADB Server
+NoDisplay=false
+Path=
+StartupNotify=true
+Terminal=true
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=
