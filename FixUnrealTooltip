@@ -1,4 +1,0 @@
-# Unreal Engine 5 Tooltip cause wayland to freeze in my KDE Config
-# Edit /<PATH OF UNREAL>/UnrealEngine/Engine/Config/ConsoleVariables.ini
-# Below [Startup] add 
-Slate.EnableTooltips=0
