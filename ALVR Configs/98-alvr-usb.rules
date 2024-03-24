@@ -1,2 +1,2 @@
 # Copy to /etc/udev/rules.d/98-alvr-usb.rules
-ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="2833", ATTRS{idProduct}=="0186", RUN+="/bin/sh -c 'systemctl start vr-android>
+SUBSYSTEM=="usb", ATTR{idVendor}=="2833", ATTR{idProduct}=="0186", MODE="0666", OWNER="marco"

@@ -1,8 +1,0 @@
-# Copy to  /etc/systemd/system/vr-android-device-bridge.service
-
-[Unit]
-Description=VR Android Device Bridge Service
-
-[Service]
-Type=oneshot
-ExecStart=/bin/bash -c "sleep 5;adb devices;adb forward tcp:9943 tcp:9943;adb forward tcp:9944 tcp:9944"
