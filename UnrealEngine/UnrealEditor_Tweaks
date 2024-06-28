@@ -13,7 +13,7 @@ Comment=The world's most open and advanced real-time 3D creation tool
 Path=/home/<USER>/.local/share/UnrealEngine/Engine/Binaries/Linux
 Exec=env HOME=/home/<USER>/.local/share/UnrealEngine/.home 'PWD=$HOME' 'XDG_DATA_HOME=$HOME/.local/share' /home/<USER>/.local/share/UnrealEngine/Engine/Binaries/Linux/UnrealEditor %F
 Terminal=false
-Icon=epic-games
+Icon=ubinary
 MimeType=application/x-uproject
 Categories=AudioVideo;Development;Graphics;
 
