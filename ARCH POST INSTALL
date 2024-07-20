@@ -16,25 +16,20 @@ sudo nano /etc/pacman.conf
 git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
 #########################################
 
+################ INTEL ################
+# Install Packages
+sudo pacman -Syu lib32-vulkan-intel intel-media-driver vulkan-intel
+
 ################ NVIDIA ################
 # Install Packages
 sudo pacman -Syu nvidia-utils lib32-nvidia-utils nvidia-settings vulkan-icd-loader lib32-vulkan-icd-loader opencl-nvidia lib32-opencl-nvidia libva-nvidia-driver lib32-libvdpau
-sudo pacman -Syu nvidia-prime (LAPTOP ONLY)
+sudo pacman -Syu nvidia-prime
 
-# Blacklist driver
-sudo nano /etc/modprobe.d/drivers-blacklist.conf
-# Insert
-blacklist nvidiafb
-blacklist rivafb
-blacklist i2c_nvidia_gpu
-
-# NVIDIA Rules (LAPTOP ONLY)
-sudo nano /etc/udev/rules.d/80-nvidia-pm.rules
-https://wiki.archlinux.org/title/PRIME#NVIDIA
+# NVIDIA Rules
 
 sudo nano /etc/modprobe.d/nvidia.conf
 # Insert
-options nvidia NVreg_DynamicPowerManagement=0x02 (LAPTOP ONLY)
+options nvidia NVreg_DynamicPowerManagement=0x02
 options nvidia NVreg_PreserveVideoMemoryAllocations=1
 options nvidia NVreg_TemporaryFilePath=/var/tmp
 options nvidia NVreg_EnableGpuFirmware=0
@@ -53,7 +48,7 @@ sudo mkinitcpio -p linux
 sudo systemctl enable nvidia-hibernate.service nvidia-suspend.service
 sudo systemctl enable nvidia-persistenced.service && sudo systemctl mask nvidia-fallback.service (LAPTOP ONLY)
 
-# (Only GDM) Enable resume service (LAPTOP ONLY)
+# (Only GDM) Enable resume service
 sudo systemctl enable nvidia-resume.service
 #########################################
 
@@ -66,16 +61,12 @@ sudo pacman -Syu libva-intel-driver (LAPTOP ONLY)
 sudo pacman -Syu unrar unarchiver p7zip lzop lrzip arj
 sudo pacman -Syu gamemode lib32-gamemode
 
-### (Only XFCE4) ###
-sudo pacman -Syu blueman lightdm-gtk-greeter-settings engrampa xorg-xkill
-
-### (Only KDE) ###
+### KDE ###
 sudo pacman -Syu kdegraphics-thumbnailers ffmpegthumbs packagekit-qt6 kdialog flatpak-kcm xdg-desktop-portal-kde libportal-qt5 spectacle dolphin-plugins
 #########################################
 
-########### ENABLE SERVICES ############
+########### SERVICES ############
 sudo systemctl enable bluetooth
-sudo systemctl enable systemd-resolved.service (LAPTOP ONLY)
 #########################################
 
 ########## BOOT FLAGS ##########
@@ -83,15 +74,9 @@ sudo systemctl enable systemd-resolved.service (LAPTOP ONLY)
 sudo nano /boot/loader/entries/arch.conf
 
 # Insert
-quiet
+quiet loglevel=2 systemd.show_status=no console=ttyS0,115200 console=tty0 vt.global_cursor_default=0
 
-# FOR boot with Silent
-loglevel=2 systemd.show_status=no console=ttyS0,115200 console=tty0 vt.global_cursor_default=0
-
-# FOR boot with MOBO Logo
-splash
-
-# FOR boot with ASUS LAPTOP
+# FOR boot with (ASUS LAPTOP)
 nosgx
 ########################################
 
@@ -100,7 +85,7 @@ sudo nano /etc/udev/rules.d/60-steam-input.rules
 https://raw.githubusercontent.com/ValveSoftware/steam-devices/master/60-steam-input.rules
 ########################################
 
-############## ASUSCTL ##############
+############## ASUSCTL (ASUS LAPTOP) ##############
 # Edit pacman
 ## REF: https://asus-linux.org/wiki/arch-guide/
 #####################################
@@ -122,28 +107,32 @@ export DOTNET_ROOT=/var/lib/flatpak/runtime/org.freedesktop.Sdk.Extension.dotnet
 export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools
 ################################
 
-### Omnisharp PATH ###
-# Put following in ~/.bash_profile
-export PATH=/home/marco/.local/share/langserver/omnisharp-linux-x64-net6.0:$PATH
-################################
-
-########### CONSISTENT KDE FILE DIALOG (Only KDE) ############
+########### CONSISTENT KDE FILE DIALOG (KDE) ############
 # Add ENV Var
 sudo nano /etc/environment
 # Insert
 GTK_USE_PORTAL=1
 XDG_CURRENT_DESKTOP=KDE
+################################
+
+########### ADW-GTK3 (GNOME) ############
+https://github.com/lassekongo83/adw-gtk3
+################################
 
 ########### FLATPAK PACKAGES ###########
 
 ### ALL
-flatpak install com.discordapp.Discord com.valvesoftware.Steam org.telegram.desktop com.heroicgameslauncher.hgl org.gimp.GIMP org.kde.krita org.blender.Blender org.inkscape.Inkscape com.spotify.Client io.github.MakovWait.Godots io.github.f3d_app.f3d org.mozilla.firefox
+flatpak install io.github.spacingbat3.webcord org.telegram.desktop org.gimp.GIMP org.kde.krita org.blender.Blender org.inkscape.Inkscape com.spotify.Client org.mozilla.firefox com.obsproject.Studio org.gnome.Boxes
 
 ### KDE
-flatpak install org.kde.haruna org.qbittorrent.qBittorrent org.kde.okular org.kde.gwenview
-
-### XFCE
-flatpak install com.github.tchx84.Flatseal
+flatpak install org.kde.haruna org.qbittorrent.qBittorrent org.kde.okular org.kde.gwenview io.github.f3d_app.f3d
 
 ### GNOME
-flatpak install com.github.tchx84.Flatseal com.mattjakeman.ExtensionManager io.missioncenter.MissionCenter org.gnome.TextEditor  org.gnome.Evince org.gnome.Calendar org.pulseaudio.pavucontrol io.github.celluloid_player.Celluloid de.haeckerfelix.Fragments org.gnome.Loupe io.github.fabrialberio.pinapp
+flatpak install ca.desrt.dconf-editor page.codeberg.libre_menu_editor.LibreMenuEditor com.github.tchx84.Flatseal com.mattjakeman.ExtensionManager io.missioncenter.MissionCenter org.gnome.TextEditor io.github.nokse22.Exhibit com.usebottles.bottles com.vysp3r.ProtonPlus io.github.amit9838.mousam org.gnome.Papers org.gnome.World.PikaBackup org.gnome.Calendar io.github.celluloid_player.Celluloid com.transmissionbt.Transmission org.gnome.Loupe
+
+### GAMING
+flatpak install io.github.lime3ds.Lime3DS com.valvesoftware.Steam com.heroicgameslauncher.hgl org.ryujinx.Ryujinx
+
+########### SpotX-Bash (Spotify Adblock) ###########
+# https://github.com/SpotX-Official/SpotX-Bash
+bash <(curl -sSL https://spotx-official.github.io/run.sh)
