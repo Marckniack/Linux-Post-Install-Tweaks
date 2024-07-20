@@ -85,6 +85,18 @@ sudo nano /etc/udev/rules.d/60-steam-input.rules
 https://raw.githubusercontent.com/ValveSoftware/steam-devices/master/60-steam-input.rules
 ########################################
 
+#####  XPADNEO #####
+# https://atar-axis.github.io/xpadneo/
+git clone https://github.com/atar-axis/xpadneo.git
+cd xpadneo
+sudo ./install.sh
+
+# Connect to device 
+sudo bluetoothctl
+scan on
+pair | trust | connect
+########################################
+
 ############## ASUSCTL (ASUS LAPTOP) ##############
 # Edit pacman
 ## REF: https://asus-linux.org/wiki/arch-guide/
