@@ -76,6 +76,15 @@ sudo pacman -Syu kdegraphics-thumbnailers ffmpegthumbs packagekit-qt6 kdialog fl
 sudo systemctl enable bluetooth
 #########################################
 
+########### LOGITECH USB UNIFIED PREVENT SLEEP FIX ############
+# Create Rule 
+sudo nano /etc/udev/rules.d/90-usb-wakeup.rules
+
+# Insert:
+# Disable waking up from Logitech unified receiver
+ACTION=="add", SUBSYSTEM=="usb", DRIVERS=="usb", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="c548", ATTR{power/wakeup}="disabled"
+#########################################
+
 ########## BOOT FLAGS ##########
 # Edit Boot Flags
 sudo nano /boot/loader/entries/arch.conf
