@@ -147,6 +147,10 @@ XDG_CURRENT_DESKTOP=KDE
 https://github.com/lassekongo83/adw-gtk3
 ################################
 
+########### SET EXPLICITY INSTALLED PACKAGES (Prevent from autoremove) ############
+sudo pacman -D --asexplicit kde-gtk-config sddm-kcm plasma-systemmonitor plasma-desktop oxygen-sounds kdeplasma-addons kgamma kwallet-pam kwrited plasma-browser-integration plasma-disks print-manager
+################################
+
 ########### FLATPAK PACKAGES ###########
 
 ### ALL
