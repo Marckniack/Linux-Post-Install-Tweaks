@@ -48,6 +48,8 @@ sudo nano /etc/mkinitcpio.conf
 # Early loading
 MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm)
 
+# remove kms from "HOOKS" in /etc/mkinitcpio.conf
+
 # REBUILD
 sudo mkinitcpio -p linux
 
@@ -111,6 +113,14 @@ sudo ./install.sh
 sudo bluetoothctl
 scan on
 pair | trust | connect
+########################################
+
+#####  APDATIFIER  (KDE) #####
+# https://github.com/exequtic/apdatifier
+#  Dependencies
+sudo pacman -Syu pacman-contrib curl jq tar unzip xmlstarlet fzf
+
+# Install from Add Widgets (Search APDATIFIER) 
 ########################################
 
 ############## ASUSCTL (ASUS LAPTOP) ##############
