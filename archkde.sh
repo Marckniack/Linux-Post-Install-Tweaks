@@ -24,7 +24,7 @@ pacman -Syu noto-fonts noto-fonts-cjk noto-fonts-emoji xdg-desktop-portal xdg-de
 pacman -Syu kdegraphics-thumbnailers ffmpegthumbs kdialog flatpak-kcm xdg-desktop-portal-kde spectacle
 
 ########### SERVICES ############
-systemctl enable bluetooth
+systemctl enable bluetooth paccache.service
 
 ########### LOGITECH USB UNIFIED PREVENT SLEEP FIX ############
 echo -e "ACTION==\"add\", SUBSYSTEM==\"usb\", DRIVERS==\"usb\", ATTRS{idVendor}==\"046d\", ATTRS{idProduct}==\"c548\", ATTR{power/wakeup}=\"disabled\"" >> /etc/udev/rules.d/90-usb-wakeup.rules
@@ -42,4 +42,3 @@ echo "GTK_USE_PORTAL=1\nXDG_CURRENT_DESKTOP=KDE" | tee -a /etc/environment
 pacman -R plasma-meta
 pacman -Rcns drkonqi htop vim discover krdp oxygen plasma-firewall plasma-thunderbolt plasma-vault plasma-welcome plasma-workspace-wallpapers
 pacman -Syu plasma-nm
-systemctl enable paccache.service
