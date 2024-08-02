@@ -1,6 +1,6 @@
-## AUTOINSTALL
+#################################### POST INSTALL AUTOMATED SCRIPT ####################################
 curl -sL https://raw.githubusercontent.com/Marckniack/Linux-Post-Install-Tweaks/main/archkde.sh | bash
-
+#######################################################################################################
 
 
 ### DISABLE THE LINUX KERNEL WATCHDOG ###
@@ -27,17 +27,15 @@ sudo pacman -Syu lib32-vulkan-intel intel-media-driver vulkan-intel
 
 ################ NVIDIA ################
 # Install Packages
-sudo pacman -Syu nvidia-utils lib32-nvidia-utils nvidia-settings vulkan-icd-loader lib32-vulkan-icd-loader opencl-nvidia lib32-opencl-nvidia libva-nvidia-driver lib32-libvdpau nvidia-prime
+sudo pacman -Syu nvidia-utils lib32-nvidia-utils nvidia-settings vulkan-icd-loader lib32-vulkan-icd-loader opencl-nvidia lib32-opencl-nvidia libva-nvidia-driver lib32-libvdpau nvidia-prime cuda
 
 # NVIDIA Rules
 
 sudo nano /etc/modprobe.d/nvidia.conf
-# Insert                                                                                              
+# Insert
+options nvidia options nvidia "NVreg_DynamicPowerManagement=0x03" # Check https://us.download.nvidia.com/XFree86/Linux-x86_64/530.30.02/README/dynamicpowermanagement.html
 options nvidia NVreg_PreserveVideoMemoryAllocations=1 NVreg_TemporaryFilePath=/var/tmp NVreg_EnableGpuFirmware=0 NVreg_UsePageAttributeTable=1
 options nvidia_drm modeset=1 fbdev=1
-
-# Dynamic Power Management 
-# Check https://us.download.nvidia.com/XFree86/Linux-x86_64/530.30.02/README/dynamicpowermanagement.html
 
 # Set Modules in mkinitcpio
 sudo nano /etc/mkinitcpio.conf
@@ -57,10 +55,16 @@ sudo systemctl enable nvidia-resume.service
 #########################################
 
 ########## ADDITIONAL PACKAGES ##########
-sudo pacman -Syu noto-fonts noto-fonts-cjk noto-fonts-emoji xdg-desktop-portal xdg-desktop-portal-gtk flatpak flatpak-xdg-utils power-profiles-daemon papirus-icon-theme ttf-dejavu ttf-droid unrar unarchiver p7zip lzop lrzip arj gamemode lib32-gamemode distrobox podman
+sudo pacman -Syu noto-fonts noto-fonts-cjk noto-fonts-emoji xdg-desktop-portal xdg-desktop-portal-gtk flatpak flatpak-xdg-utils power-profiles-daemon papirus-icon-theme ttf-dejavu ttf-droid distrobox podman pacman-contrib git curl wget bash-completion ntfs-3g nano
 
 ### KDE ###
-sudo pacman -Syu kdegraphics-thumbnailers ffmpegthumbs kdialog flatpak-kcm xdg-desktop-portal-kde spectacle dolphin-plugins
+sudo pacman -Syu kdegraphics-thumbnailers ffmpegthumbs kdialog flatpak-kcm xdg-desktop-portal-kde spectacle
+#########################################
+
+########### REMOVE UNUSED PACKAGES ############
+sudo pacman -R plasma-meta
+sudo pacman -Rcns drkonqi htop vim discover krdp oxygen plasma-firewall plasma-thunderbolt plasma-vault plasma-welcome plasma-workspace-wallpapers
+sudo pacman -Syu plasma-nm
 #########################################
 
 ########### SERVICES ############
@@ -144,10 +148,10 @@ sudo pacman -D --asexplicit kde-gtk-config sddm-kcm plasma-systemmonitor plasma-
 ########### FLATPAK PACKAGES ###########
 
 ### ALL
-flatpak install io.github.spacingbat3.webcord org.telegram.desktop org.gimp.GIMP org.kde.krita org.blender.Blender org.inkscape.Inkscape com.spotify.Client org.mozilla.firefox com.obsproject.Studio org.gnome.Boxes
+flatpak install io.github.spacingbat3.webcord org.telegram.desktop org.gimp.GIMP org.kde.krita org.blender.Blender org.inkscape.Inkscape com.spotify.Client org.mozilla.firefox
 
 ### KDE
-flatpak install org.kde.haruna org.qbittorrent.qBittorrent org.kde.okular org.kde.gwenview io.github.f3d_app.f3d
+flatpak install org.qbittorrent.qBittorrent org.kde.okular org.kde.gwenview io.github.f3d_app.f3d
 
 ### GNOME
 flatpak install ca.desrt.dconf-editor page.codeberg.libre_menu_editor.LibreMenuEditor com.github.tchx84.Flatseal com.mattjakeman.ExtensionManager io.missioncenter.MissionCenter org.gnome.TextEditor io.github.nokse22.Exhibit com.usebottles.bottles com.vysp3r.ProtonPlus io.github.amit9838.mousam org.gnome.Papers org.gnome.World.PikaBackup org.gnome.Calendar io.github.celluloid_player.Celluloid com.transmissionbt.Transmission org.gnome.Loupe
