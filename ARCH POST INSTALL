@@ -1,5 +1,5 @@
 ## AUTOINSTALL
-curl -sL https://raw.githubusercontent.com/Marckniack/Linux-Post-Install-Tweaks/main/ | bash
+curl -sL https://raw.githubusercontent.com/Marckniack/Linux-Post-Install-Tweaks/main/archkde.sh | bash
 
 
 
