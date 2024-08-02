@@ -27,7 +27,7 @@ pacman -Syu kdegraphics-thumbnailers ffmpegthumbs kdialog flatpak-kcm xdg-deskto
 systemctl enable bluetooth
 
 ########### LOGITECH USB UNIFIED PREVENT SLEEP FIX ############
-#echo -e 'ACTION=="add", SUBSYSTEM=="usb", DRIVERS=="usb", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="c548", ATTR{power/wakeup}="disabled"' >> /etc/udev/rules.d/90-usb-wakeup.rules
+echo -e "ACTION==\"add\", SUBSYSTEM==\"usb\", DRIVERS==\"usb\", ATTRS{idVendor}==\"046d\", ATTRS{idProduct}==\"c548\", ATTR{power/wakeup}=\"disabled\"" >> /etc/udev/rules.d/90-usb-wakeup.rules
 
 #####  APDATIFIER  (KDE) #####
 pacman -Syu pacman-contrib curl jq tar unzip xmlstarlet fzf
