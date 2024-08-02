@@ -1,3 +1,8 @@
+## AUTOINSTALL
+curl -sL https://raw.githubusercontent.com/Marckniack/Linux-Post-Install-Tweaks/main/ | bash
+
+
+
 ### DISABLE THE LINUX KERNEL WATCHDOG ###
 sudo nano /etc/modprobe.d/nowatchdog.conf
 
