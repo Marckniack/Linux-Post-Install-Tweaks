@@ -8,3 +8,6 @@ flatpak install --assumeyes --noninteractive org.qbittorrent.qBittorrent org.kde
 
 ### GAMING
 flatpak install --assumeyes --noninteractive io.github.lime3ds.Lime3DS com.valvesoftware.Steam com.heroicgameslauncher.hgl org.ryujinx.Ryujinx
+
+### UPDATE
+flatpak update --assumeyes --noninteractive
