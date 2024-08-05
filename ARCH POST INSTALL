@@ -88,17 +88,15 @@ sudo pacman -Syu plasma-nm
 #########################################
 
 ########### SERVICES ############
-sudo systemctl enable bluetooth
+sudo systemctl enable bluetooth acpid.service
 #########################################
 
 ########### LOGITECH USB UNIFIED PREVENT SLEEP FIX ############
-# Create Rule 
-sudo nano /etc/udev/rules.d/90-usb-wakeup.rules
+# Create Rule in /etc/udev/rules.d/90-usb-wakeup.rules
 
-# Insert:
-# Disable waking up from Logitech unified receiver
+echo -e '# Disable waking up from Logitech unified receiver
 ACTION=="add", SUBSYSTEM=="usb", DRIVERS=="usb", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="c548", ATTR{power/wakeup}="disabled"
-ACTION=="add", SUBSYSTEM=="usb", DRIVERS=="usb", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="0af7", ATTR{power/wakeup}="disabled"
+ACTION=="add", SUBSYSTEM=="usb", DRIVERS=="usb", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="0af7", ATTR{power/wakeup}="disabled"' | sudo tee /etc/udev/rules.d/90-usb-wakeup.rules
 #########################################
 
 ########## BOOT FLAGS ##########
