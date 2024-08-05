@@ -15,7 +15,7 @@ pacman -Syu nvidia-utils lib32-nvidia-utils nvidia-settings vulkan-icd-loader li
 echo -e "options nvidia \"NVreg_DynamicPowerManagement=0x03\" \noptions nvidia NVreg_PreserveVideoMemoryAllocations=1\noptions nvidia NVreg_TemporaryFilePath=/var/tmp\noptions nvidia NVreg_EnableGpuFirmware=0\noptions nvidia NVreg_UsePageAttributeTable=1\noptions nvidia_drm modeset=1 fbdev=1" >> /etc/modprobe.d/nvidia.conf
 
 # Enable nvidia services for suspension
-systemctl enable nvidia-hibernate.service nvidia-suspend.service nvidia-persistenced.service
+systemctl enable nvidia-hibernate.service nvidia-suspend.service nvidia-persistenced.service nvidia-resume.service
 
 ########## ADDITIONAL PACKAGES ##########
 pacman -Syu noto-fonts noto-fonts-cjk noto-fonts-emoji xdg-desktop-portal xdg-desktop-portal-gtk flatpak flatpak-xdg-utils power-profiles-daemon papirus-icon-theme ttf-dejavu ttf-droid distrobox podman pacman-contrib git curl wget bash-completion ntfs-3g nano --noconfirm || exit 1 
