@@ -108,8 +108,7 @@ quiet loglevel=2 systemd.show_status=no console=ttyS0,115200 console=tty0 vt.glo
 ########################################
 
 #####  ADD STEAM INPUT CONTROLLERS #####
-sudo nano /etc/udev/rules.d/60-steam-input.rules
-https://raw.githubusercontent.com/ValveSoftware/steam-devices/master/60-steam-input.rules
+sudo wget https://raw.githubusercontent.com/ValveSoftware/steam-devices/master/60-steam-input.rules -O /etc/udev/rules.d/60-steam-input.rules
 ########################################
 
 #####  XPADNEO #####
