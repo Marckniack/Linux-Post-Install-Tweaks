@@ -43,6 +43,9 @@ systemctl enable bluetooth.service paccache.service acpid.service
 ########### LOGITECH USB UNIFIED PREVENT SLEEP FIX ############
 echo -e "ACTION==\"add\", SUBSYSTEM==\"usb\", DRIVERS==\"usb\", ATTRS{idVendor}==\"046d\", ATTRS{idProduct}==\"c548\", ATTR{power/wakeup}=\"disabled\" \nACTION==\"add\", SUBSYSTEM==\"usb\", DRIVERS==\"usb\", ATTRS{idVendor}==\"046d\", ATTRS{idProduct}==\"0af7\", ATTR{power/wakeup}=\"disabled\"" >> /etc/udev/rules.d/90-usb-wakeup.rules
 
+#####  ADD STEAM INPUT CONTROLLERS #####
+wget https://raw.githubusercontent.com/ValveSoftware/steam-devices/master/60-steam-input.rules -O /etc/udev/rules.d/60-steam-input.rules
+
 ########### APDATIFIER  (KDE) ############
 pacman -Syu pacman-contrib curl jq tar unzip xmlstarlet fzf --noconfirm || exit 1
 
