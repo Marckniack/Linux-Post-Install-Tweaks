@@ -80,7 +80,8 @@ sudo systemctl enable nvidia-resume.service
 #########################################
 
 ########## ADDITIONAL PACKAGES ##########
-sudo pacman -Syu noto-fonts noto-fonts-cjk noto-fonts-emoji xdg-desktop-portal xdg-desktop-portal-gtk flatpak flatpak-xdg-utils power-profiles-daemon papirus-icon-theme ttf-dejavu ttf-droid distrobox podman pacman-contrib git curl wget bash-completion ntfs-3g nano acpid acpi acpi_call
+sudo pacman -Syu noto-fonts noto-fonts-cjk noto-fonts-emoji xdg-desktop-portal xdg-desktop-portal-gtk flatpak flatpak-xdg-utils power-profiles-daemon papirus-icon-theme ttf-dejavu ttf-droid distrobox 
+sudo pacman -Syu podman pacman-contrib git curl wget bash-completion ntfs-3g nano acpid acpi acpi_call android-tools android-udev
 
 ### KDE ###
 sudo pacman -Syu kdegraphics-thumbnailers ffmpegthumbs kdialog flatpak-kcm xdg-desktop-portal-kde spectacle
