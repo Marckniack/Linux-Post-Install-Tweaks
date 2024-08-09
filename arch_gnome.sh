@@ -41,7 +41,7 @@ pacman -Syu noto-fonts noto-fonts-cjk noto-fonts-emoji xdg-desktop-portal power-
 pacman -Syu ttf-droid distrobox podman pacman-contrib git curl wget bash-completion android-tools android-udev ntfs-3g nano acpid acpi acpi_call p7zip unarchiver unrar --noconfirm || exit 1 
 
 ########### GNOME ############
-# pacman -Syu  --noconfirm || exit 1
+pacman -Syu webp-pixbuf-loader gst-plugin-pipewire gst-plugins-good ffmpegthumbnailer switcheroo-control  --noconfirm || exit 1
 
 ########### SERVICES ############
 systemctl enable bluetooth.service paccache.service acpid.service
