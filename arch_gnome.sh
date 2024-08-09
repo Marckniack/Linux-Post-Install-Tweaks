@@ -44,7 +44,7 @@ pacman -Syu ttf-droid distrobox podman pacman-contrib git curl wget bash-complet
 pacman -Syu webp-pixbuf-loader gst-plugin-pipewire gst-plugins-good ffmpegthumbnailer switcheroo-control  --noconfirm || exit 1
 
 ########### SERVICES ############
-systemctl enable bluetooth.service paccache.service acpid.service
+systemctl enable bluetooth.service paccache.service acpid.service switcheroo-control.service
 
 ########### LOGITECH USB UNIFIED PREVENT SLEEP FIX ############
 echo -e "ACTION==\"add\", SUBSYSTEM==\"usb\", DRIVERS==\"usb\", ATTRS{idVendor}==\"046d\", ATTRS{idProduct}==\"c548\", ATTR{power/wakeup}=\"disabled\" \nACTION==\"add\", SUBSYSTEM==\"usb\", DRIVERS==\"usb\", ATTRS{idVendor}==\"046d\", ATTRS{idProduct}==\"0af7\", ATTR{power/wakeup}=\"disabled\"" >> /etc/udev/rules.d/90-usb-wakeup.rules
