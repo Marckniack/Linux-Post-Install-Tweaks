@@ -10,6 +10,6 @@ flatpak install --assumeyes --noninteractive io.github.lime3ds.Lime3DS com.valve
 flatpak install --assumeyes --noninteractive ca.desrt.dconf-editor page.codeberg.libre_menu_editor.LibreMenuEditor com.github.tchx84.Flatseal com.mattjakeman.ExtensionManager io.missioncenter.MissionCenter 
 flatpak install --assumeyes --noninteractive org.gnome.TextEditor io.github.nokse22.Exhibit com.usebottles.bottles io.github.amit9838.mousam org.gnome.Papers org.gnome.World.PikaBackup org.gnome.Calendar 
 flatpak install --assumeyes --noninteractive io.github.celluloid_player.Celluloid com.transmissionbt.Transmission org.gnome.Loupe
-
+flatpak install --assumeyes --noninteractive org.gtk.Gtk3theme.adw-gtk3 org.gtk.Gtk3theme.adw-gtk3-dark
 ### UPDATE
 flatpak update --assumeyes --noninteractive
