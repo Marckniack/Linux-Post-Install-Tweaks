@@ -60,6 +60,6 @@ ln -s /dev/null /etc/udev/rules.d/61-gdm.rules
 
 ########### REMOVE UNUSED PACKAGES ############
 pacman -Rcns gnome-calculator gnome-calendar gnome-characters gnome-clocks gnome-connections gnome-contacts gnome-font-viewer gnome-logs gnome-maps --noconfirm || exit 1
-pacman -Rcns gnome-software gnome-shell-extensions gnome-remote-desktop gnome-tour gnome-weather totem gnome-music gnome-text-editor vim htop yelp baobab --noconfirm || exit 1
+pacman -Rcns gnome-software gnome-shell-extensions gnome-remote-desktop gnome-tour gnome-weather totem gnome-music vim htop yelp baobab --noconfirm || exit 1
 pacman -Rcns epiphany evince gnome-system-monitor loupe tracker3-miners network-manager-applet --noconfirm || exit 1
 # pacman -Rcns  --noconfirm || exit 1
