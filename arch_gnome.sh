@@ -41,7 +41,7 @@ pacman -Syu noto-fonts noto-fonts-cjk noto-fonts-emoji xdg-desktop-portal power-
 pacman -Syu ttf-droid distrobox podman pacman-contrib git curl wget bash-completion android-tools android-udev ntfs-3g nano acpid acpi acpi_call p7zip unarchiver unrar --noconfirm || exit 1 
 
 ########### GNOME ############
-pacman -Syu webp-pixbuf-loader gst-plugin-pipewire gst-plugins-good ffmpegthumbnailer switcheroo-control  --noconfirm || exit 1
+pacman -Syu webp-pixbuf-loader gst-plugin-pipewire gst-plugins-good ffmpegthumbnailer switcheroo-control gnome-themes-extra --noconfirm || exit 1
 
 ########### SERVICES ############
 systemctl enable bluetooth.service paccache.service acpid.service switcheroo-control.service
@@ -59,5 +59,7 @@ ln -s /dev/null /etc/udev/rules.d/61-gdm.rules
 # pacman -D --asexplicit  --noconfirm || exit 1
 
 ########### REMOVE UNUSED PACKAGES ############
-# pacman -R  --noconfirm || exit 1
+pacman -Rcns gnome-calculator gnome-calendar gnome-characters gnome-clocks gnome-connections gnome-contacts gnome-font-viewer gnome-logs gnome-maps --noconfirm || exit 1
+pacman -Rcns gnome-software gnome-shell-extensions gnome-remote-desktop gnome-tour gnome-weather totem gnome-music gnome-text-editor vim htop yelp baobab --noconfirm || exit 1
+pacman -Rcns epiphany evince gnome-system-monitor loupe tracker3-miners network-manager-applet --noconfirm || exit 1
 # pacman -Rcns  --noconfirm || exit 1
