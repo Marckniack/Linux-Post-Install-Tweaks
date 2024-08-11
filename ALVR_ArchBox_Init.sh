@@ -40,4 +40,4 @@ sh "$HOME//patch_bindings_spam.sh" || exit 1
 
 # C# Development
 sudo pacman -q -Syu dotnet-sdk dotnet-host dotnet-runtime --noconfirm || exit 1
-yay -q -Sy jetbrains-toolbox --noconfirm || exit 1
+yay -q -Sy jetbrains-toolbox alvr-nvidia --noconfirm || exit 1
