@@ -123,9 +123,7 @@ sudo wget https://raw.githubusercontent.com/ValveSoftware/steam-devices/master/6
 
 #####  XPADNEO #####
 # https://atar-axis.github.io/xpadneo/
-git clone https://github.com/atar-axis/xpadneo.git
-cd xpadneo
-sudo ./install.sh
+git clone https://github.com/atar-axis/xpadneo.git && cd xpadneo && sudo ./install.sh
 
 # Connect to device 
 sudo bluetoothctl
