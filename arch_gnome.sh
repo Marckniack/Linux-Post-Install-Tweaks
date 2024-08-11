@@ -5,6 +5,13 @@
 ################ DISABLE THE LINUX KERNEL WATCHDOG ################
 echo -e "blacklist iTCO_wdt\nblacklist iTCO_vendor_support" >> /etc/modprobe.d/nowatchdog.conf
 
+########### INTEL WIFI RULES ############
+echo -e '# Enable antenna aggregation
+options iwlwifi 11n_disable=8
+
+# Disable Power Save
+options iwlwifi power_save=0' | sudo tee /etc/modprobe.d/wifi.conf
+
 ################ INTEL ################
 pacman -Syu lib32-vulkan-intel intel-media-driver vulkan-intel --noconfirm || exit 1
 
@@ -48,13 +55,6 @@ systemctl enable bluetooth.service paccache.service acpid.service switcheroo-con
 
 ########### LOGITECH USB UNIFIED PREVENT SLEEP FIX ############
 echo -e "ACTION==\"add\", SUBSYSTEM==\"usb\", DRIVERS==\"usb\", ATTRS{idVendor}==\"046d\", ATTRS{idProduct}==\"c548\", ATTR{power/wakeup}=\"disabled\" \nACTION==\"add\", SUBSYSTEM==\"usb\", DRIVERS==\"usb\", ATTRS{idVendor}==\"046d\", ATTRS{idProduct}==\"0af7\", ATTR{power/wakeup}=\"disabled\"" >> /etc/udev/rules.d/90-usb-wakeup.rules
-
-########### INTEL WIFI RULES ############
-echo -e '# Enable antenna aggregation
-options iwlwifi 11n_disable=8
-
-# Disable Power Save
-options iwlwifi power_save=0' | sudo tee /etc/modprobe.d/wifi.conf
 
 
 #####  ADD STEAM INPUT CONTROLLERS #####
