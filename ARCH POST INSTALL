@@ -105,6 +105,14 @@ ACTION=="add", SUBSYSTEM=="usb", DRIVERS=="usb", ATTRS{idVendor}=="046d", ATTRS{
 ACTION=="add", SUBSYSTEM=="usb", DRIVERS=="usb", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="0af7", ATTR{power/wakeup}="disabled"' | sudo tee /etc/udev/rules.d/90-usb-wakeup.rules
 #########################################
 
+########### INTEL WIFI RULES ############
+echo -e '# Enable antenna aggregation
+options iwlwifi 11n_disable=8
+
+# Disable Power Save
+options iwlwifi power_save=0' | sudo tee /etc/modprobe.d/wifi.conf
+#########################################
+
 ########## BOOT FLAGS ##########
 # Edit Boot Flags
 sudo nano /boot/loader/entries/arch.conf
