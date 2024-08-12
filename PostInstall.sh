@@ -13,10 +13,10 @@ function setup_common()
 	options iwlwifi power_save=0' | sudo tee /etc/modprobe.d/wifi.conf
 
 	################ INTEL ################
-	pacman -Syu lib32-vulkan-intel intel-media-driver vulkan-intel --noconfirm || exit 1
+	#pacman -Syu lib32-vulkan-intel intel-media-driver vulkan-intel --noconfirm || exit 1
 
 	################ NVIDIA ################
-	pacman -Syu nvidia-utils lib32-nvidia-utils nvidia-settings vulkan-icd-loader lib32-vulkan-icd-loader opencl-nvidia lib32-opencl-nvidia libva-nvidia-driver lib32-libvdpau nvidia-prime cuda --noconfirm || exit 1
+	#pacman -Syu nvidia-utils lib32-nvidia-utils nvidia-settings vulkan-icd-loader lib32-vulkan-icd-loader opencl-nvidia lib32-opencl-nvidia libva-nvidia-driver lib32-libvdpau nvidia-prime cuda --noconfirm || exit 1
 
 	# Nvidia Rules
 	echo -e 'options nvidia "NVreg_DynamicPowerManagement=0x03"
@@ -45,7 +45,7 @@ function setup_common()
 	ACTION=="unbind", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x030200", TEST=="power/control", ATTR{power/control}="on"' | sudo tee /etc/udev/rules.d/80-nvidia-pm.rules
 
 	# Enable nvidia services for suspension
-	systemctl enable nvidia-hibernate.service nvidia-suspend.service nvidia-persistenced.service nvidia-resume.service
+	#systemctl enable nvidia-hibernate.service nvidia-suspend.service nvidia-persistenced.service nvidia-resume.service
 	
 	########## ADDITIONAL PACKAGES ##########
 	pacman -Syu noto-fonts noto-fonts-cjk noto-fonts-emoji flatpak flatpak-xdg-utils power-profiles-daemon papirus-icon-theme ttf-dejavu --noconfirm || exit 1
