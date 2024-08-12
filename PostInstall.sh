@@ -67,8 +67,10 @@ function setup_common()
 
 }
 
-function setup_kde()
+function kde()
 {
+	setup_common
+
 	echo "Setup KDE";
 	
 	########### KDE ############
@@ -89,8 +91,10 @@ function setup_kde()
 	pacman -Syu plasma-nm --noconfirm || exit 1
 }
 
-function setup_gnome()
+function gnome()
 {
+	setup_common
+
 	echo "Setup GNOME";
 	
 	########### GNOME ############
@@ -109,38 +113,15 @@ function setup_gnome()
 # Setup common packages and settings
 #setup_common
 
-# Run Menu
-HEIGHT=15
-WIDTH=40
-CHOICE_HEIGHT=4
-BACKTITLE="Backtitle here"
-TITLE="Title here"
-MENU="Choose one of the following options:"
-
-OPTIONS=(1 "KDE"
-         2 "GNOME"
-         #3 "Option 3"
-	 )
-
-CHOICE=$(dialog --clear \
-                --backtitle "$BACKTITLE" \
-                --title "$TITLE" \
-                --menu "$MENU" \
-                $HEIGHT $WIDTH $CHOICE_HEIGHT \
-                "${OPTIONS[@]}" \
-                2>&1 >/dev/tty)
-
-clear
-case $CHOICE in
-        1)
-            echo "You chose Option 1"
-            ;;
-        2)
-            echo "You chose Option 2"
-            ;;
-        3)
-            echo "You chose Option 3"
-            ;;
-esac
+# Check if the function exists (bash specific)
+if declare -f "$1" > /dev/null
+then
+  # call arguments verbatim
+  "$@"
+else
+  # Show a helpful error
+  echo "'$1' is not a known function name" >&2
+  exit 1
+fi
 
 
