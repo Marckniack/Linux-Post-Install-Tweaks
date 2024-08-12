@@ -1,6 +1,6 @@
 #!/bin/bash
 
-setup_common()
+function setup_common()
 {
 	################ DISABLE THE LINUX KERNEL WATCHDOG ################
 	echo -e "blacklist iTCO_wdt\nblacklist iTCO_vendor_support" >> /etc/modprobe.d/nowatchdog.conf
@@ -67,7 +67,7 @@ setup_common()
 
 }
 
-kde()
+function kde()
 {
 	setup_common
 
@@ -91,7 +91,7 @@ kde()
 	pacman -Syu plasma-nm --noconfirm || exit 1
 }
 
-gnome()
+function gnome()
 {
 	setup_common
 
