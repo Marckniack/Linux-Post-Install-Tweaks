@@ -1,5 +1,10 @@
 #!/bin/bash
 
+############# HOW TO USE #############
+# curl -sL https://raw.githubusercontent.com/Marckniack/Linux-Post-Install-Tweaks/main/PostInstall.sh | bash -s kde
+# curl -sL https://raw.githubusercontent.com/Marckniack/Linux-Post-Install-Tweaks/main/PostInstall.sh | bash -s gnome
+######################################
+
 setup_common()
 {
 	################ DISABLE THE LINUX KERNEL WATCHDOG ################
