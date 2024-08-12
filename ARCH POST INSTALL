@@ -1,5 +1,6 @@
 #################################### POST INSTALL AUTOMATED SCRIPT ####################################
-curl -sL https://raw.githubusercontent.com/Marckniack/Linux-Post-Install-Tweaks/main/arch_kde.sh | bash
+# curl -sL https://raw.githubusercontent.com/Marckniack/Linux-Post-Install-Tweaks/main/PostInstall.sh | bash -s kde
+# curl -sL https://raw.githubusercontent.com/Marckniack/Linux-Post-Install-Tweaks/main/PostInstall.sh | bash -s gnome
 #######################################################################################################
 
 
