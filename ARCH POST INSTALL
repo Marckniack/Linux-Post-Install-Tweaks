@@ -104,7 +104,7 @@ sudo systemctl enable bluetooth acpid.service
 ########### LOGITECH USB UNIFIED PREVENT SLEEP FIX ############
 # Create Rule in /etc/udev/rules.d/90-usb-wakeup.rules
 
-echo -e '# Disable waking up from Logitech unified receiver
+echo -e '# Prevent USB Devices from waking up pc
 ACTION=="add", SUBSYSTEM=="usb", DRIVERS=="usb", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="c548", ATTR{power/wakeup}="disabled", ATTR{driver/1-10/power/wakeup}="disabled"
 ACTION=="add", SUBSYSTEM=="usb", DRIVERS=="usb", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="0af7", ATTR{power/wakeup}="disabled", ATTR{driver/1-9/power/wakeup}="disabled"' | sudo tee /etc/udev/rules.d/50-usb-wakeup.rules
 #########################################
