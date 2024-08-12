@@ -113,10 +113,12 @@ function menu()
 	do
 		  case $opt in
 		      "Setup KDE")
+			  setup_common
 		          setup_kde
 		          break
 		          ;;
 		      "Setup GNOME")
+			  setup_common
 		          setup_gnome
 		          break
 		          ;;
@@ -129,7 +131,7 @@ function menu()
 }
 
 # Setup common packages and settings
-setup_common
+#setup_common
 
 # Run Menu
 menu
