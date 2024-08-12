@@ -59,11 +59,9 @@ pacman -Syu kdegraphics-thumbnailers ffmpegthumbs kdialog flatpak-kcm xdg-deskto
 systemctl enable bluetooth.service paccache.service acpid.service switcheroo-control.service
 
 ########### LOGITECH USB UNIFIED PREVENT SLEEP FIX ############
-echo -e "ACTION==\"add\", SUBSYSTEM==\"usb\", DRIVERS==\"usb\", ATTRS{idVendor}==\"046d\", ATTRS{idProduct}==\"c548\", ATTR{power/wakeup}=\"disabled\" \nACTION==\"add\", SUBSYSTEM==\"usb\", DRIVERS==\"usb\", ATTRS{idVendor}==\"046d\", ATTRS{idProduct}==\"0af7\", ATTR{power/wakeup}=\"disabled\"" >> /etc/udev/rules.d/90-usb-wakeup.rules
-
-########### USB PREVENT SYSTEM SLEEP ############
-echo -e '#    Path                  Mode UID  GID  Age Argument
-w    /proc/acpi/wakeup     -    -    -    -   XHCI' | sudo tee /etc/tmpfiles.d/disable-usb-wake.conf
+echo -e '# Prevent USB Devices from waking up pc
+ACTION=="add", SUBSYSTEM=="usb", DRIVERS=="usb", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="c548", ATTR{power/wakeup}="disabled", ATTR{driver/1-10/power/wakeup}="disabled"
+ACTION=="add", SUBSYSTEM=="usb", DRIVERS=="usb", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="0af7", ATTR{power/wakeup}="disabled", ATTR{driver/1-9/power/wakeup}="disabled"' | sudo tee /etc/udev/rules.d/50-usb-wakeup.rules
 
 #####  ADD STEAM INPUT CONTROLLERS #####
 wget https://raw.githubusercontent.com/ValveSoftware/steam-devices/master/60-steam-input.rules -O /etc/udev/rules.d/60-steam-input.rules
