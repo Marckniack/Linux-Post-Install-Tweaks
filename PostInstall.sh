@@ -105,35 +105,31 @@ function setup_gnome()
 	pacman -Rcns epiphany evince gnome-system-monitor loupe tracker3-miners network-manager-applet --noconfirm || exit 1
 }
 
-function menu()
-{
-	PS3='Select Options: '
-	options=("Setup KDE" "Setup GNOME" "Quit")
-	select opt in "${options[@]}"
-	do
-		  case $opt in
-		      "Setup KDE")
-			  setup_common
-		          setup_kde
-		          break
-		          ;;
-		      "Setup GNOME")
-			  setup_common
-		          setup_gnome
-		          break
-		          ;;
-		      "Quit")
-		          break
-		          ;;
-		      *) echo "invalid option $REPLY";;
-		  esac
-	done
-}
 
 # Setup common packages and settings
 #setup_common
 
 # Run Menu
-menu
+PS3='Select Options: '
+options=("Setup KDE" "Setup GNOME" "Quit")
+select opt in "${options[@]}"
+do
+  case $opt in
+      "Setup KDE")
+	  setup_common
+	  setup_kde
+	  break
+	  ;;
+      "Setup GNOME")
+	  setup_common
+	  setup_gnome
+	  break
+	  ;;
+      "Quit")
+	  break
+	  ;;
+      *) echo "invalid option $REPLY";;
+  esac
+done
 
 
