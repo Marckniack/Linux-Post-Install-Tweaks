@@ -107,10 +107,13 @@ gnome()
 	echo "Setup GNOME";
 	
 	########### GNOME ############
-	pacman -Syu webp-pixbuf-loader gst-plugin-pipewire gst-plugins-good ffmpegthumbnailer switcheroo-control gnome-themes-extra --noconfirm || exit 1
+	pacman -Syu webp-pixbuf-loader gst-plugin-pipewire gst-plugins-good ffmpegthumbnailer switcheroo-control gnome-themes-extra adw-gtk-theme --noconfirm || exit 1
 	
 	#### FORCE ENABLE WAYLAND ####
 	ln -s /dev/null /etc/udev/rules.d/61-gdm.rules
+
+	#### USE ADW-GTK3 DARK THEME ####
+ 	gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3-dark' && gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 	
 	########### REMOVE UNUSED PACKAGES ############
 	pacman -Rcns gnome-calculator gnome-calendar gnome-characters gnome-clocks gnome-connections gnome-contacts gnome-font-viewer gnome-logs gnome-maps --noconfirm || exit 1
