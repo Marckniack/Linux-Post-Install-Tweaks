@@ -53,7 +53,7 @@ setup_common()
 	systemctl enable nvidia-hibernate.service nvidia-suspend.service nvidia-persistenced.service nvidia-resume.service
 	
 	########## ADDITIONAL PACKAGES ##########
-	pacman -Syu noto-fonts noto-fonts-cjk noto-fonts-emoji flatpak flatpak-xdg-utils power-profiles-daemon papirus-icon-theme ttf-dejavu --noconfirm || exit 1
+	pacman -Syu noto-fonts noto-fonts-cjk noto-fonts-emoji flatpak flatpak-xdg-utils power-profiles-daemon papirus-icon-theme ttf-dejavu fwupd --noconfirm || exit 1
 	pacman -Syu ttf-droid distrobox podman pacman-contrib git curl wget bash-completion android-tools android-udev ntfs-3g nano acpid acpi acpi_call p7zip unarchiver unrar --noconfirm || exit 1 
 
 	########### SERVICES ############
@@ -110,7 +110,7 @@ gnome()
 	
 	########### REMOVE UNUSED PACKAGES ############
 	pacman -Rcns gnome-calculator gnome-calendar gnome-characters gnome-clocks gnome-connections gnome-contacts gnome-font-viewer gnome-logs gnome-maps --noconfirm || exit 1
-	pacman -Rcns gnome-software gnome-shell-extensions gnome-remote-desktop gnome-tour gnome-weather totem gnome-music vim htop yelp baobab --noconfirm || exit 1
+	pacman -Rcns gnome-shell-extensions gnome-remote-desktop gnome-tour gnome-weather totem gnome-music vim htop yelp baobab --noconfirm || exit 1
 	pacman -Rcns epiphany evince gnome-system-monitor loupe tracker3-miners network-manager-applet --noconfirm || exit 1
 }
 
