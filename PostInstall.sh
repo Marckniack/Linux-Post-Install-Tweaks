@@ -3,9 +3,11 @@
 ############# HOW TO USE #############
 # curl -sL https://raw.githubusercontent.com/Marckniack/Linux-Post-Install-Tweaks/main/PostInstall.sh | bash -s kde
 # curl -sL https://raw.githubusercontent.com/Marckniack/Linux-Post-Install-Tweaks/main/PostInstall.sh | bash -s gnome
+# curl -sL https://raw.githubusercontent.com/Marckniack/Linux-Post-Install-Tweaks/main/PostInstall.sh | bash -s kde_flatpak
+# curl -sL https://raw.githubusercontent.com/Marckniack/Linux-Post-Install-Tweaks/main/PostInstall.sh | bash -s gnome_flatpak
 ######################################
 
-setup_common()
+base_common()
 {
 	################ DISABLE THE LINUX KERNEL WATCHDOG ################
 	echo -e "blacklist iTCO_wdt\nblacklist iTCO_vendor_support" >> /etc/modprobe.d/nowatchdog.conf
@@ -74,7 +76,8 @@ setup_common()
 
 kde()
 {
-	setup_common
+	# Setup common packages and settings
+	base_common
 
 	echo "Setup KDE";
 	
@@ -98,7 +101,8 @@ kde()
 
 gnome()
 {
-	setup_common
+	# Setup common packages and settings
+	base_common
 
 	echo "Setup GNOME";
 	
@@ -114,10 +118,16 @@ gnome()
 	pacman -Rcns epiphany evince gnome-system-monitor loupe tracker3-miners network-manager-applet --noconfirm || exit 1
 }
 
-kde_flatpak()
+base_flatpak()
 {
 	### ALL
 	flatpak install --assumeyes --noninteractive io.github.spacingbat3.webcord org.telegram.desktop org.gimp.GIMP org.kde.krita org.blender.Blender org.inkscape.Inkscape com.spotify.Client org.mozilla.firefox
+}
+
+kde_flatpak()
+{
+	### ALL
+	base_flatpak
 	
 	### KDE
 	flatpak install --assumeyes --noninteractive org.qbittorrent.qBittorrent org.kde.okular org.kde.gwenview io.github.f3d_app.f3d
@@ -132,7 +142,7 @@ kde_flatpak()
 gnome_flatpak()
 {
 	### ALL
-	flatpak install --assumeyes --noninteractive io.github.spacingbat3.webcord org.telegram.desktop org.gimp.GIMP org.kde.krita org.blender.Blender org.inkscape.Inkscape com.spotify.Client org.mozilla.firefox
+	base_flatpak
 	
 	### GAMING
 	flatpak install --assumeyes --noninteractive io.github.lime3ds.Lime3DS com.valvesoftware.Steam com.heroicgameslauncher.hgl org.ryujinx.Ryujinx com.vysp3r.ProtonPlus
@@ -147,10 +157,6 @@ gnome_flatpak()
 	flatpak update --assumeyes --noninteractive
 }
 
-
-
-# Setup common packages and settings
-#setup_common
 
 # Check if the function exists (bash specific)
 if declare -f "$1" > /dev/null
