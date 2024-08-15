@@ -55,7 +55,7 @@ ACTION=="unbind", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x0302
 	systemctl enable nvidia-hibernate.service nvidia-suspend.service nvidia-persistenced.service nvidia-resume.service
 	
 	########## ADDITIONAL PACKAGES ##########
-	pacman -Syu noto-fonts noto-fonts-cjk noto-fonts-emoji flatpak flatpak-xdg-utils power-profiles-daemon papirus-icon-theme ttf-dejavu fwupd --noconfirm || exit 1
+	pacman -Syu noto-fonts noto-fonts-cjk noto-fonts-emoji flatpak flatpak-xdg-utils power-profiles-daemon papirus-icon-theme ttf-dejavu fwupd gamemode lib32-gamemode --noconfirm || exit 1
 	pacman -Syu ttf-droid distrobox podman pacman-contrib git curl wget bash-completion android-tools android-udev ntfs-3g nano acpid acpi acpi_call p7zip unarchiver unrar --noconfirm || exit 1 
 
 	########### SERVICES ############
@@ -68,6 +68,9 @@ ACTION=="add", SUBSYSTEM=="usb", DRIVERS=="usb", ATTRS{idVendor}=="046d", ATTRS{
 	
 	########### USB PREVENT SLEEP FIX ############
 echo -e 'w+ /proc/acpi/wakeup - - - - XHCI' | sudo tee /etc/tmpfiles.d/disable-usb-wake.conf
+
+	########### GAMEMODE ENV ############
+echo -e 'GAMEMODERUNEXEC="env __NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia __VK_LAYER_NV_optimus=NVIDIA_only"' | tee -a /etc/environment
 	
 	#####  ADD STEAM INPUT CONTROLLERS #####
 	wget https://raw.githubusercontent.com/ValveSoftware/steam-devices/master/60-steam-input.rules -O /etc/udev/rules.d/60-steam-input.rules
@@ -91,7 +94,7 @@ kde()
 	pacman -D --asexplicit kde-gtk-config sddm-kcm plasma-systemmonitor plasma-desktop oxygen-sounds kdeplasma-addons kgamma kwallet-pam kwrited plasma-browser-integration plasma-disks print-manager --noconfirm || exit 1
 
 	########### CONSISTENT KDE FILE DIALOG (KDE) ############
-	echo -e "GTK_USE_PORTAL=1\nXDG_CURRENT_DESKTOP=KDE" | tee -a /etc/environment
+echo -e "GTK_USE_PORTAL=1\nXDG_CURRENT_DESKTOP=KDE" | tee -a /etc/environment
 	
 	########### REMOVE UNUSED PACKAGES ############
 	pacman -R plasma-meta --noconfirm || exit 1
