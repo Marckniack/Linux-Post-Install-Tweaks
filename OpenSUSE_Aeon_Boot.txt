@@ -1,7 +1,0 @@
-# OpenSUSE Aeon SystemD-Boot Args
-# Edit: /etc/kernel/cmdline
-sudo vim /etc/kernel/cmdline
-
-# add at the end:
-fbdev=1 nvidia_drm.modeset=1 modprobe.blacklist=nouveau
-
