@@ -123,20 +123,35 @@ gnome()
 
 base_flatpak()
 {
-	### ALL
-	flatpak install --assumeyes --noninteractive io.github.spacingbat3.webcord org.telegram.desktop org.gimp.GIMP org.kde.krita org.blender.Blender org.inkscape.Inkscape com.spotify.Client org.mozilla.firefox
+	### BASE
+	flatpak install --assumeyes --noninteractive org.mozilla.firefox
+	
+ 	### GAMING
+ 	flatpak install --assumeyes --noninteractive io.github.lime3ds.Lime3DS org.ryujinx.Ryujinx com.valvesoftware.Steam
+  
+  	### GRAPHICS
+ 	flatpak install --assumeyes --noninteractive org.blender.Blender org.gimp.GIMP org.inkscape.Inkscape org.kde.krita
+  
+  	### SOUND & VIDEO
+ 	flatpak install --assumeyes --noninteractive com.spotify.Client
+  
+  	### COMMUNICATION
+ 	flatpak install --assumeyes --noninteractive org.telegram.desktop io.github.spacingbat3.webcord 
+  
+  	### OTHERS
+ 	flatpak install --assumeyes --noninteractive org.localsend.localsend_app
 }
 
 kde_flatpak()
 {
-	### ALL
+	### BASE
 	base_flatpak
 	
 	### KDE
 	flatpak install --assumeyes --noninteractive org.qbittorrent.qBittorrent org.kde.okular org.kde.gwenview io.github.f3d_app.f3d
 	
 	### GAMING
-	flatpak install --assumeyes --noninteractive io.github.lime3ds.Lime3DS com.valvesoftware.Steam com.heroicgameslauncher.hgl org.ryujinx.Ryujinx
+	flatpak install --assumeyes --noninteractive com.heroicgameslauncher.hgl
 	
 	### UPDATE
 	flatpak update --assumeyes --noninteractive
@@ -144,17 +159,17 @@ kde_flatpak()
 
 gnome_flatpak()
 {
-	### ALL
+	### BASE
 	base_flatpak
 	
-	### GAMING
-	flatpak install --assumeyes --noninteractive io.github.lime3ds.Lime3DS com.valvesoftware.Steam com.heroicgameslauncher.hgl org.ryujinx.Ryujinx com.vysp3r.ProtonPlus
-	
-	### GNOME
-	flatpak install --assumeyes --noninteractive ca.desrt.dconf-editor page.codeberg.libre_menu_editor.LibreMenuEditor com.github.tchx84.Flatseal com.mattjakeman.ExtensionManager io.missioncenter.MissionCenter 
-	flatpak install --assumeyes --noninteractive org.gnome.TextEditor io.github.nokse22.Exhibit com.usebottles.bottles io.github.amit9838.mousam org.gnome.Papers org.gnome.World.PikaBackup org.gnome.Calendar 
-	flatpak install --assumeyes --noninteractive io.github.celluloid_player.Celluloid com.transmissionbt.Transmission org.gnome.Loupe
-	flatpak install --assumeyes --noninteractive org.gtk.Gtk3theme.adw-gtk3 org.gtk.Gtk3theme.adw-gtk3-dark
+	### OTHER
+	flatpak install --assumeyes --noninteractive org.gnome.Boxes org.gnome.Builder org.gnome.Calendar io.github.celluloid_player.Celluloid org.gnome.World.PikaBackup com.vysp3r.ProtonPlus
+	flatpak install --assumeyes --noninteractive ca.desrt.dconf-editor io.github.nokse22.Exhibit com.mattjakeman.ExtensionManager com.github.tchx84.Flatseal org.gnome.NetworkDisplays
+	flatpak install --assumeyes --noninteractive org.gnome.Loupe page.codeberg.libre_menu_editor.LibreMenuEditor io.missioncenter.MissionCenter io.github.amit9838.mousam org.gnome.Papers 
+	flatpak install --assumeyes --noninteractive com.vysp3r.ProtonPlus com.usebottles.bottles com.transmissionbt.Transmission
+ 
+ 	### THEMES
+ 	flatpak install --assumeyes --noninteractive org.gtk.Gtk3theme.adw-gtk3 org.gtk.Gtk3theme.adw-gtk3-dark
  
 	### UPDATE
 	flatpak update --assumeyes --noninteractive
