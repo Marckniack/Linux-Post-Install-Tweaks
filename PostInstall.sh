@@ -5,6 +5,8 @@
 # curl -sL https://raw.githubusercontent.com/Marckniack/Linux-Post-Install-Tweaks/main/PostInstall.sh | bash -s gnome
 # curl -sL https://raw.githubusercontent.com/Marckniack/Linux-Post-Install-Tweaks/main/PostInstall.sh | bash -s kde_flatpak
 # curl -sL https://raw.githubusercontent.com/Marckniack/Linux-Post-Install-Tweaks/main/PostInstall.sh | bash -s gnome_flatpak
+# curl -sL https://raw.githubusercontent.com/Marckniack/Linux-Post-Install-Tweaks/main/PostInstall.sh | bash -s kde_post
+# curl -sL https://raw.githubusercontent.com/Marckniack/Linux-Post-Install-Tweaks/main/PostInstall.sh | bash -s gnome_post
 ######################################
 
 base_common()
@@ -201,6 +203,18 @@ base_post()
 
   	########### SpotX-Bash (Spotify Adblock) ###########
 	bash <(curl -sSL https://spotx-official.github.io/run.sh)
+}
+
+kde_post()
+{
+	### BASE
+	base_post
+}
+
+gnome_post()
+{
+	### BASE
+	base_post
 }
 
 
