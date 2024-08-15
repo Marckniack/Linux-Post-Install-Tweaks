@@ -10,14 +10,14 @@
 base_common()
 {
 	################ DISABLE THE LINUX KERNEL WATCHDOG ################
-	echo -e "blacklist iTCO_wdt\nblacklist iTCO_vendor_support" >> /etc/modprobe.d/nowatchdog.conf
+echo -e "blacklist iTCO_wdt\nblacklist iTCO_vendor_support" >> /etc/modprobe.d/nowatchdog.conf
 
 	########### INTEL WIFI RULES ############
-	echo -e '# Enable antenna aggregation
-	options iwlwifi 11n_disable=8
+echo -e '# Enable antenna aggregation
+options iwlwifi 11n_disable=8
 
-	# Disable Power Save
-	options iwlwifi power_save=0' | sudo tee /etc/modprobe.d/wifi.conf
+# Disable Power Save
+options iwlwifi power_save=0' | sudo tee /etc/modprobe.d/wifi.conf
 
 	################ INTEL ################
 	pacman -Syu lib32-vulkan-intel intel-media-driver vulkan-intel --noconfirm || exit 1
@@ -26,30 +26,30 @@ base_common()
 	pacman -Syu nvidia-utils lib32-nvidia-utils nvidia-settings vulkan-icd-loader lib32-vulkan-icd-loader opencl-nvidia lib32-opencl-nvidia libva-nvidia-driver lib32-libvdpau nvidia-prime cuda --noconfirm || exit 1
 
 	# Nvidia Rules
-	echo -e 'options nvidia "NVreg_DynamicPowerManagement=0x03"
-	options nvidia NVreg_PreserveVideoMemoryAllocations=1
-	options nvidia NVreg_TemporaryFilePath=/var/tmp
-	options nvidia NVreg_EnableGpuFirmware=0
-	options nvidia NVreg_UsePageAttributeTable=1
-	options nvidia_drm modeset=1 fbdev=1' | sudo tee /etc/modprobe.d/nvidia.conf
+echo -e 'options nvidia "NVreg_DynamicPowerManagement=0x03"
+options nvidia NVreg_PreserveVideoMemoryAllocations=1
+options nvidia NVreg_TemporaryFilePath=/var/tmp
+options nvidia NVreg_EnableGpuFirmware=0
+options nvidia NVreg_UsePageAttributeTable=1
+options nvidia_drm modeset=1 fbdev=1' | sudo tee /etc/modprobe.d/nvidia.conf
 
 	# Nvidia PM Rules
-	echo -e '# Remove NVIDIA USB xHCI Host Controller devices, if present
-	ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x0c0330", ATTR{remove}="1"
+echo -e '# Remove NVIDIA USB xHCI Host Controller devices, if present
+ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x0c0330", ATTR{remove}="1"
 
-	# Remove NVIDIA USB Type-C UCSI devices, if present
-	ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x0c8000", ATTR{remove}="1"
+# Remove NVIDIA USB Type-C UCSI devices, if present
+ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x0c8000", ATTR{remove}="1"
 
-	# Remove NVIDIA Audio devices, if present
-	ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x040300", ATTR{remove}="1"
+# Remove NVIDIA Audio devices, if present
+ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x040300", ATTR{remove}="1"
 
-	# Enable runtime PM for NVIDIA VGA/3D controller devices on driver bind
-	ACTION=="bind", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x030000", TEST=="power/control", ATTR{power/control}="auto"
-	ACTION=="bind", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x030200", TEST=="power/control", ATTR{power/control}="auto"
+# Enable runtime PM for NVIDIA VGA/3D controller devices on driver bind
+ACTION=="bind", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x030000", TEST=="power/control", ATTR{power/control}="auto"
+ACTION=="bind", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x030200", TEST=="power/control", ATTR{power/control}="auto"
 
-	# Disable runtime PM for NVIDIA VGA/3D controller devices on driver unbind
-	ACTION=="unbind", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x030000", TEST=="power/control", ATTR{power/control}="on"
-	ACTION=="unbind", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x030200", TEST=="power/control", ATTR{power/control}="on"' | sudo tee /etc/udev/rules.d/80-nvidia-pm.rules
+# Disable runtime PM for NVIDIA VGA/3D controller devices on driver unbind
+ACTION=="unbind", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x030000", TEST=="power/control", ATTR{power/control}="on"
+ACTION=="unbind", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x030200", TEST=="power/control", ATTR{power/control}="on"' | sudo tee /etc/udev/rules.d/80-nvidia-pm.rules
 
 	# Enable nvidia services for suspension
 	systemctl enable nvidia-hibernate.service nvidia-suspend.service nvidia-persistenced.service nvidia-resume.service
@@ -62,12 +62,12 @@ base_common()
 	systemctl enable bluetooth.service paccache.service acpid.service switcheroo-control.service
 	
 	########### USB PREVENT SLEEP FIX ############
-	echo -e '# Prevent USB Devices from waking up pc
-	ACTION=="add", SUBSYSTEM=="usb", DRIVERS=="usb", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="c548", ATTR{power/wakeup}="disabled", ATTR{driver/1-10/power/wakeup}="disabled"
-	ACTION=="add", SUBSYSTEM=="usb", DRIVERS=="usb", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="0af7", ATTR{power/wakeup}="disabled", ATTR{driver/1-9/power/wakeup}="disabled"' | sudo tee /etc/udev/rules.d/50-usb-wakeup.rules
+echo -e '# Prevent USB Devices from waking up pc
+ACTION=="add", SUBSYSTEM=="usb", DRIVERS=="usb", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="c548", ATTR{power/wakeup}="disabled", ATTR{driver/1-10/power/wakeup}="disabled"
+ACTION=="add", SUBSYSTEM=="usb", DRIVERS=="usb", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="0af7", ATTR{power/wakeup}="disabled", ATTR{driver/1-9/power/wakeup}="disabled"' | sudo tee /etc/udev/rules.d/50-usb-wakeup.rules
 	
 	########### USB PREVENT SLEEP FIX ############
-	echo -e 'w+ /proc/acpi/wakeup - - - - XHCI' | sudo tee /etc/tmpfiles.d/disable-usb-wake.conf
+echo -e 'w+ /proc/acpi/wakeup - - - - XHCI' | sudo tee /etc/tmpfiles.d/disable-usb-wake.conf
 	
 	#####  ADD STEAM INPUT CONTROLLERS #####
 	wget https://raw.githubusercontent.com/ValveSoftware/steam-devices/master/60-steam-input.rules -O /etc/udev/rules.d/60-steam-input.rules
