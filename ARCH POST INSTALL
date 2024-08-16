@@ -156,6 +156,11 @@ export DOTNET_ROOT=/var/lib/flatpak/runtime/org.freedesktop.Sdk.Extension.dotnet
 export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools
 ################################
 
+### Omnisharp PATH ###
+# Put following in ~/.bash_profile
+export PATH=/home/marco/.local/share/langserver/omnisharp-linux-x64-net6.0:$PATH
+################################
+
 ########### CONSISTENT KDE FILE DIALOG (KDE) ############
 # Add ENV Var
 sudo nano /etc/environment
