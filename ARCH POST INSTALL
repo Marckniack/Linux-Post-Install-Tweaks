@@ -157,6 +157,7 @@ export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools
 ################################
 
 ### Omnisharp PATH ###
+# https://github.com/OmniSharp/omnisharp-roslyn/issues/2481#issue-1487592299
 # Put following in ~/.bash_profile
 export PATH=/home/marco/.local/share/langserver/omnisharp-linux-x64-net6.0:$PATH
 ################################
