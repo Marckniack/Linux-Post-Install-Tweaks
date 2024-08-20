@@ -24,12 +24,12 @@ options iwlwifi power_save=0' | sudo tee /etc/modprobe.d/wifi.conf
 	################ INTEL ################
 	pacman -Syu lib32-vulkan-intel intel-media-driver vulkan-intel --noconfirm || exit 1
 
-	################ NVIDIA ################
-	pacman -Syu nvidia-utils lib32-nvidia-utils nvidia-settings vulkan-icd-loader lib32-vulkan-icd-loader opencl-nvidia lib32-opencl-nvidia libva-nvidia-driver lib32-libvdpau nvidia-prime cuda --noconfirm || exit 1
-
 	################ NVIDIA MKINITCPIO ################
  	sed -i "/etc/mkinitcpio.conf" -e "s|MODULES=(|MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm |"
   	sed -i "/etc/mkinitcpio.conf" -e "s/\ kms//g"
+
+	################ NVIDIA ################
+	pacman -Syu nvidia-utils lib32-nvidia-utils nvidia-settings vulkan-icd-loader lib32-vulkan-icd-loader opencl-nvidia lib32-opencl-nvidia libva-nvidia-driver lib32-libvdpau nvidia-prime cuda --noconfirm || exit 1
 
 	# Nvidia Rules
 echo -e 'options nvidia "NVreg_DynamicPowerManagement=0x03"
