@@ -29,6 +29,7 @@ options iwlwifi power_save=0' | sudo tee /etc/modprobe.d/wifi.conf
 
 	################ NVIDIA MKINITCPIO ################
  	sed -i "/etc/mkinitcpio.conf" -e "s|MODULES=(|MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm |"
+  	sed -i "/etc/mkinitcpio.conf" -e "s/\ kms//g"
 
 	# Nvidia Rules
 echo -e 'options nvidia "NVreg_DynamicPowerManagement=0x03"
