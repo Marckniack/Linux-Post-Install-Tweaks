@@ -192,12 +192,6 @@ base_post()
 	########### INSTALL YAY ###########
 	git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
 
- 	########### SET NVIDIA ###########
-	# sudo nano /etc/mkinitcpio.conf
-	# MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm)
-	# remove kms from "HOOKS" in /etc/mkinitcpio.conf
-	# sudo mkinitcpio -p linux
-
  	########### BOOT FLAGS ###########
 	# sudo nano /boot/loader/entries/arch.conf
 	# quiet loglevel=2 systemd.show_status=no console=ttyS0,115200 console=tty0 vt.global_cursor_default=0
