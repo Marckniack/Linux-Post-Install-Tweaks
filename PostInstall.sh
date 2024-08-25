@@ -41,6 +41,12 @@ options nvidia NVreg_EnableResizableBar=1
 #options nvidia_drm fbdev=1
 options nvidia_drm modeset=1' | sudo tee /etc/modprobe.d/nvidia.conf
 
+
+	# Drivers Blacklist
+echo -e 'blacklist nvidiafb
+blacklist rivafb
+blacklist i2c_nvidia_gpu' | sudo tee /etc/modprobe.d/drivers-blacklist.conf
+
 	# Nvidia PM Rules
 echo -e '# Remove NVIDIA USB xHCI Host Controller devices, if present
 ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x0c0330", ATTR{remove}="1"
