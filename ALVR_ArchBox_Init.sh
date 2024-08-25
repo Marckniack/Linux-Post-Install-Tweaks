@@ -23,9 +23,7 @@ sudo pacman -q -Sy lib32-pipewire pipewire pipewire-pulse pipewire-alsa wireplum
 sudo pacman -q -Sy steam --noconfirm --assume-installed vulkan-driver --assume-installed lib32-vulkan-driver || exit 1
 
 cd || exit 1
-git clone https://aur.archlinux.org/yay.git || exit 1
-cd yay || exit 1
-makepkg -si --noconfirm || exit 1
+sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si --noconfirm || exit 1
 cd || exit 1
 
 sudo rm -rf yay 2>/dev/null
