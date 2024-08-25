@@ -45,7 +45,8 @@ options nvidia_drm modeset=1' | sudo tee /etc/modprobe.d/nvidia.conf
 	# Drivers Blacklist
 echo -e 'blacklist nvidiafb
 blacklist rivafb
-blacklist i2c_nvidia_gpu' | sudo tee /etc/modprobe.d/drivers-blacklist.conf
+blacklist i2c_nvidia_gpu
+blacklist nouveau' | sudo tee /etc/modprobe.d/drivers-blacklist.conf
 
 	# Nvidia PM Rules
 echo -e '# Remove NVIDIA USB xHCI Host Controller devices, if present
