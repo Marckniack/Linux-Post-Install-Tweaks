@@ -104,7 +104,7 @@ kde()
 	
 	########### KDE ############
 	pacman -Syu kdegraphics-thumbnailers ffmpegthumbs kdialog flatpak-kcm xdg-desktop-portal-kde spectacle switcheroo-control xdg-desktop-portal-gtk partitionmanager --noconfirm || exit 1
-	pacman -Syu kup bup --noconfirm || exit 1
+	pacman -Syu kup bup dolphin-plugins --noconfirm || exit 1
 
 
 	########### APDATIFIER  (KDE) ############
