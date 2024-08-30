@@ -103,7 +103,7 @@ kde()
 	echo "Setup KDE";
 	
 	########### KDE ############
-	pacman -Syu kdegraphics-thumbnailers ffmpegthumbs kdialog flatpak-kcm xdg-desktop-portal-kde spectacle switcheroo-control xdg-desktop-portal-gtk partitionmanager --noconfirm || exit 1
+	pacman -Syu kdegraphics-thumbnailers ffmpegthumbs kdialog flatpak-kcm xdg-desktop-portal-kde spectacle switcheroo-control xdg-desktop-portal-gtk partitionmanager kup bup --noconfirm || exit 1
 
 	########### APDATIFIER  (KDE) ############
 	pacman -Syu pacman-contrib curl jq tar unzip xmlstarlet fzf --noconfirm || exit 1
