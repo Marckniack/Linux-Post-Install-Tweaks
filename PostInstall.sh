@@ -70,7 +70,7 @@ ACTION=="unbind", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x0302
 	systemctl enable nvidia-hibernate.service nvidia-suspend.service nvidia-persistenced.service nvidia-resume.service nvidia-powerd.service
 	
 	########## ADDITIONAL PACKAGES ##########
-	pacman -Syu noto-fonts noto-fonts-cjk noto-fonts-emoji flatpak flatpak-xdg-utils power-profiles-daemon papirus-icon-theme ttf-dejavu fwupd gamemode lib32-gamemode system-config-printer --noconfirm || exit 1
+	pacman -Syu noto-fonts noto-fonts-cjk noto-fonts-emoji flatpak flatpak-xdg-utils power-profiles-daemon papirus-icon-theme ttf-dejavu fwupd gamemode lib32-gamemode system-config-printer bluez-obex --noconfirm || exit 1
 	pacman -Syu ttf-droid distrobox podman pacman-contrib git curl wget bash-completion android-tools android-udev ntfs-3g nano acpid acpi acpi_call p7zip unarchiver unrar --noconfirm || exit 1 
 
  	# Webcam DKMS
@@ -103,7 +103,9 @@ kde()
 	echo "Setup KDE";
 	
 	########### KDE ############
-	pacman -Syu kdegraphics-thumbnailers ffmpegthumbs kdialog flatpak-kcm xdg-desktop-portal-kde spectacle switcheroo-control xdg-desktop-portal-gtk partitionmanager kup bup --noconfirm || exit 1
+	pacman -Syu kdegraphics-thumbnailers ffmpegthumbs kdialog flatpak-kcm xdg-desktop-portal-kde spectacle switcheroo-control xdg-desktop-portal-gtk partitionmanager --noconfirm || exit 1
+	pacman -Syu kup bup --noconfirm || exit 1
+
 
 	########### APDATIFIER  (KDE) ############
 	pacman -Syu pacman-contrib curl jq tar unzip xmlstarlet fzf --noconfirm || exit 1
