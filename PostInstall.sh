@@ -150,7 +150,7 @@ base_flatpak()
 	flatpak install --assumeyes --noninteractive org.mozilla.firefox
 	
  	### GAMING
- 	flatpak install --assumeyes --noninteractive io.github.lime3ds.Lime3DS org.ryujinx.Ryujinx com.valvesoftware.Steam
+ 	flatpak install --assumeyes --noninteractive io.github.lime3ds.Lime3DS org.ryujinx.Ryujinx com.valvesoftware.Steam com.github.Matoking.protontricks
   
   	### GRAPHICS
  	flatpak install --assumeyes --noninteractive org.blender.Blender org.gimp.GIMP org.inkscape.Inkscape org.kde.krita
@@ -162,7 +162,7 @@ base_flatpak()
  	flatpak install --assumeyes --noninteractive org.telegram.desktop io.github.spacingbat3.webcord 
   
   	### OTHERS
- 	flatpak install --assumeyes --noninteractive org.localsend.localsend_app
+ 	flatpak install --assumeyes --noninteractive org.localsend.localsend_app org.bleachbit.BleachBit
 }
 
 kde_flatpak()
@@ -174,8 +174,11 @@ kde_flatpak()
 	flatpak install --assumeyes --noninteractive org.qbittorrent.qBittorrent org.kde.okular org.kde.gwenview io.github.f3d_app.f3d
 	
 	### GAMING
-	flatpak install --assumeyes --noninteractive com.heroicgameslauncher.hgl
-	
+	flatpak install --assumeyes --noninteractive com.heroicgameslauncher.hgl io.github.glaumar.QRookie net.davidotek.pupgui2
+
+  	### SOUND & VIDEO
+ 	flatpak install --assumeyes --noninteractive org.kde.kdenlive
+
 	### UPDATE
 	flatpak update --assumeyes --noninteractive
 }
