@@ -1,7 +1,10 @@
 #!/bin/bash
 
 ### Create Box
-# distrobox create --pull --image quay.io/toolbx/arch-toolbox:latest --name arch --home /home/marco/.local/share/containers/boxes/arch/ --nvidia --pre-init-hooks "pacman -Syy reflector --noconfirm && reflector --country 'Canada,United States,France,Germany,Australia' --latest 5 --sort rate --save /etc/pacman.d/mirrorlist"
+# distrobox create --pull --image quay.io/toolbx/arch-toolbox:latest --name arch --home /home/marco/.local/share/containers/boxes/arch/ --nvidia  --pre-init-hooks "pacman -Syy reflector --noconfirm && reflector --country 'Canada,United States,France,Germany,Australia' --latest 5 --sort rate --save /etc/pacman.d/mirrorlist"
+
+### TO READ USB (For ADB)
+### Add flags on creation: --volume /dev/bus/usb/:/dev/bus/usb --volume /etc/udev/rules.d/:/etc/udev/rules.d
 
 # Renaming xdg-open from container because it will run host applications (like steam) instead of internal ones
 # sudo mv /usr/local/bin/xdg-open /usr/local/bin/xdg-open2
