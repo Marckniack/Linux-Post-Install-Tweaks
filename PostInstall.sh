@@ -217,7 +217,7 @@ base_post()
  	echo -e 'export PATH="$PATH:$HOME/.local/bin/"' | tee -a ~/.bash_profile
 
   	########### SpotX-Bash (Spotify Adblock) ###########
-	bash <(curl -sSL https://spotx-official.github.io/run.sh)
+	bash <(curl -sSL https://spotx-official.github.io/run.sh) -hflc
 }
 
 kde_post()
