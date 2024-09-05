@@ -1,0 +1,35 @@
+[Added Associations]
+application/pdf=org.kde.okular.desktop;
+application/x-shellscript=org.kde.kate.desktop;org.kde.kwrite.desktop;
+application/x-zerosize=org.kde.kwrite.desktop;org.kde.kate.desktop;
+image/png=org.kde.gwenview.desktop;org.gimp.GIMP.desktop;org.kde.okular.desktop;
+image/svg+xml=org.inkscape.Inkscape.desktop;
+text/markdown=org.kde.kate.desktop;org.kde.okular.desktop;
+text/plain=org.kde.kate.desktop;org.kde.okular.desktop;
+text/x-cmake=org.kde.kate.desktop;org.kde.okular.desktop;
+text/x-kaitai-struct=org.kde.kate.desktop;org.kde.okular.desktop;
+x-scheme-handler/geo=qwant-maps-geo-handler.desktop;
+x-scheme-handler/http=org.mozilla.firefox.desktop;
+x-scheme-handler/https=org.mozilla.firefox.desktop;
+x-scheme-handler/steam=steam.desktop
+
+[Default Applications]
+application/pdf=org.kde.okular.desktop;
+application/x-shellscript=org.kde.kate.desktop;
+application/x-zerosize=org.kde.kwrite.desktop;
+image/png=org.kde.gwenview.desktop;
+image/svg+xml=org.inkscape.Inkscape.desktop;
+text/markdown=org.kde.kate.desktop;
+text/plain=org.kde.kate.desktop;
+text/x-cmake=org.kde.kate.desktop;
+text/x-kaitai-struct=org.kde.kate.desktop;
+x-scheme-handler/geo=qwant-maps-geo-handler.desktop;
+x-scheme-handler/http=org.mozilla.firefox.desktop;
+x-scheme-handler/https=org.mozilla.firefox.desktop;
+x-scheme-handler/steam=steam.desktop
+
+[Removed Associations]
+text/markdown=org.kde.kwrite.desktop;
+text/plain=org.kde.kwrite.desktop;
+text/x-cmake=org.kde.kwrite.desktop;
+text/x-kaitai-struct=org.kde.kwrite.desktop;

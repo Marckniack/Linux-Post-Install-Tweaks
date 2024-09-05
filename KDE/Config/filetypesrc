@@ -1,3 +1,9 @@
 [EmbedSettings]
 embed-application/pdf=false
+embed-application/x-shellscript=false
 embed-application/x-zerosize=false
+embed-image/svg+xml=false
+embed-text/plain=false
+embed-x-scheme-handler/geo=false
+embed-x-scheme-handler/http=false
+embed-x-scheme-handler/https=false

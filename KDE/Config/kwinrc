@@ -1,51 +1,90 @@
 [Desktops]
-Id_1=99fd5af9-e7ac-402b-aa8f-5b61c6f76184
-Number=1
+Id_1=a4846626-7329-4a2a-8573-fbc073ecc697
+Id_2=21539c8f-d309-4fdd-85a4-157acd3db3a1
+Number=2
 Rows=1
 
 [Effect-blur]
-BlurStrength=7
-NoiseStrength=6
+NoiseStrength=8
+
+[Effect-overview]
+FilterWindows=false
+
+[Effect-shakecursor]
+Magnification=4
 
 [Input]
 TabletMode=off
 
 [MouseBindings]
 CommandAll1=Activate, raise and move
+CommandAllWheel=Change Opacity
 
 [NightColor]
 Active=true
-LatitudeAuto=45.7
-LongitudeAuto=9.67
-NightTemperature=5000
+EveningBeginFixed=2230
+Mode=Times
+NightTemperature=4700
 
 [Plugins]
+blurEnabled=true
+contrastEnabled=true
 dimscreenEnabled=true
-slideEnabled=false
+fadingpopupsEnabled=false
+kinetic_maximizeEnabled=false
+morphingpopupsEnabled=false
+scaleEnabled=false
+squashEnabled=false
 windowviewEnabled=false
 zoomEnabled=false
 
+[Script-desktopchangeosd]
+PopupHideDelay=400
+TextOnly=true
+
+[SubSession: 5c9383c6-d36c-4c44-9fb4-89963fe6ab6e]
+active=-1
+count=0
+
 [TabBox]
+DesktopMode=0
 HighlightWindows=false
-ShowDesktopMode=1
+MultiScreenMode=1
 
 [Tiling]
-padding=10
+padding=15
 
-[Tiling][20d5c232-c599-5328-9e10-afb009c6cb3c]
-tiles={"layoutDirection":"floating","tiles":[{"height":0.933333333333334,"width":0.8871093749999999,"x":0.05273437499999999,"y":0.008333333333333342}]}
+[Tiling][2127bc0c-875a-57ba-8e8b-3c4d5c60f995]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
-[Tiling][498a86db-506a-54e1-8444-6afba6506239]
-tiles={"layoutDirection":"vertical","tiles":[{"height":0.3239583333333334},{"height":0.3364583333333329},{"height":0.3395833333333337}]}
+[Tiling][23d84027-6b81-5a63-91b8-8e7e614d6fad]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
-[Tiling][4c4e135e-02b4-5afb-8456-2295a63692b7]
-tiles={"layoutDirection":"floating","tiles":[{"height":0.9259259259259253,"width":0.8398437499999988,"x":0.07617187500000015,"y":0.010185185185185186}]}
+[Tiling][3c6a360b-af2f-535a-9961-b1304a594240]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
-[Tiling][e6da1d46-bebd-5f57-8e97-3e5ae8089e33]
-tiles={"layoutDirection":"vertical","tiles":[{"height":0.3229166666666669},{"height":0.33593750000000006},{"height":0.34114583333333304}]}
+[Tiling][5f75d73a-5ff8-5779-9c2e-3d71fe8ff5a8]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.36666666666666664},{"width":0.6333333333333333}]}
+
+[Tiling][abea4456-be29-581e-a658-21431e32c0cc]
+tiles={"layoutDirection":"floating","tiles":[{"height":0.9342592592592595,"width":0.9937499999999998,"x":0.0023437500000000255,"y":0.006481481481481486}]}
+
+[Tiling][c8481364-6fcf-56ae-a034-409234d253d6]
+tiles={"layoutDirection":"floating","tiles":[{"height":0.9333333333333335,"width":0.9898437499999978,"x":0.004687500000000012,"y":0.009259259259259205}]}
+
+[Tiling][dc8a429a-3ed8-59c7-afe5-afa88380c5fc]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
+[Tiling][e25d3504-737d-528e-a745-cc29baa7a5f8]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
+[Tiling][f0e5f0ea-6154-53e2-b0ab-7a760314b136]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
 [Windows]
-ActivationDesktopPolicy=2
+BorderSnapZone=5
+ElectricBorders=1
+WindowSnapZone=5
 
 [Xwayland]
 Scale=1

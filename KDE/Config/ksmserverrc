@@ -1,5 +1,11 @@
+[General]
+loginMode=emptySession
+
 [LegacySession: saved at previous logout]
 count=0
 
 [Session: saved at previous logout]
+count=0
+
+[SubSession: 5c9383c6-d36c-4c44-9fb4-89963fe6ab6e]
 count=0

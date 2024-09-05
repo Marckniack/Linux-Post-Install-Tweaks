@@ -1,9 +1,17 @@
+[Annotations]
+annotationToolType=4
+lineShadow=false
+lineStrokeWidth=2
+
 [General]
 clipboardGroup=PostScreenshotCopyImage
 launchAction=DoNotTakeScreenshot
-showCaptureInstructions=false
+
+[GuiConfig]
+captureMode=4
 
 [ImageSave]
+lastImageSaveLocation=file:///home/marco/Pictures/Screenshots/Screenshot_20240904_182930.png
 translatedScreenshotsFolder=Screenshots
 
 [VideoSave]

@@ -1,5 +1,10 @@
 [activities]
-368a32e3-b177-43ab-b162-0ee90131fdd3=Default
+54f54ea5-63a1-4f3c-9e83-e5fc56e679f3=Default
+
+[activities-icons]
+54f54ea5-63a1-4f3c-9e83-e5fc56e679f3=kfm_home
 
 [main]
-currentActivity=368a32e3-b177-43ab-b162-0ee90131fdd3
+currentActivity=54f54ea5-63a1-4f3c-9e83-e5fc56e679f3
+runningActivities=54f54ea5-63a1-4f3c-9e83-e5fc56e679f3
+stoppedActivities=

@@ -19,27 +19,18 @@ wmclasscomplete=true
 wmclassmatch=1
 
 [1]
-Description=Application settings for Gimp-2.10
+Description=Gimp
 clientmachine=localhost
-decocolor=BreezeDarkerNeutral
+decocolor=BreezeDarkNeutral
+decocolorrule=2
 desktopfile=org.gimp.GIMP
 desktopfilerule=3
 wmclass=gimp-2.10 Gimp-2.10
 wmclasscomplete=true
 wmclassmatch=1
 
-[2]
-Description=Application settings for org.telegram.desktop
-clientmachine=localhost
-decocolor=BreezeDarkerNeutral
-decocolorrule=2
-desktopfile=org.gimp.GIMP
-wmclass=\sorg.telegram.desktop
-wmclasscomplete=true
-wmclassmatch=1
-
 [3]
-Description=Application settings for Spotify
+Description=Spotify
 clientmachine=localhost
 decocolor=BreezeBlackPure
 decocolorrule=2
@@ -64,12 +55,13 @@ decocolorrule=2
 wmclass=heroic
 wmclassmatch=1
 
-[4]
-Description=Application settings for discord
+[3ffb2d3f-ce39-48f4-953c-d96dcce02e88]
+Description=jetbrains-toolbox
 clientmachine=localhost
 decocolor=BreezeDark
 decocolorrule=2
-wmclass=discord
+wmclass=JetBrains Toolbox jetbrains-toolbox
+wmclasscomplete=true
 wmclassmatch=1
 
 [438956bf-eab5-437e-9e1e-51f0ee44e2ce]
@@ -81,7 +73,7 @@ wmclass=discord
 wmclassmatch=1
 
 [5]
-Description=Application settings for blender
+Description=Blender
 clientmachine=localhost
 decocolor=BreezeDarkerNeutral
 decocolorrule=2
@@ -91,7 +83,7 @@ wmclasscomplete=true
 wmclassmatch=1
 
 [6]
-Description=Application settings for heroic
+Description=Heroic
 clientmachine=localhost
 decocolor=BreezeDarkerNeutral
 decocolorrule=2
@@ -100,15 +92,6 @@ wmclassmatch=1
 
 [6fa25770-9c0b-4a6f-a3cf-12ea59bde95d]
 Description=Application settings for firefox
-desktopfile=org.mozilla.firefox
-desktopfilerule=3
-wmclass=\sfirefox
-wmclasscomplete=true
-wmclassmatch=1
-
-[7]
-Description=Application settings for firefox
-clientmachine=localhost
 desktopfile=org.mozilla.firefox
 desktopfilerule=3
 wmclass=\sfirefox
@@ -141,9 +124,27 @@ wmclass=\sfirefox
 wmclasscomplete=true
 wmclassmatch=1
 
+[8410de77-8662-46af-bbe9-018243280604]
+screen=1
+screenrule=5
+wmclassmatch=2
+
+[99872551-e203-4542-8d0c-3c05085c038b]
+Description=Vorta
+desktopfile=com.borgbase.Vorta
+desktopfilerule=3
+title=Vorta
+titlematch=2
+wmclass=python3
+wmclasscomplete=true
+wmclassmatch=2
+
 [General]
-count=7
-rules=1,2,3,4,5,6,7
+count=6
+rules=3ffb2d3f-ce39-48f4-953c-d96dcce02e88,e9955336-565e-441e-80d0-5c47ef7d4102,1,3,5,6
+
+[b023febd-1926-4d06-b24e-cb2bcf47670d]
+screenrule=4
 
 [b2c53a9f-e0e1-447d-bd95-b49ea2274963]
 Description=Application settings for org.telegram.desktop
@@ -152,6 +153,16 @@ decocolorrule=2
 wmclass=\sorg.telegram.desktop
 wmclasscomplete=true
 wmclassmatch=1
+
+[bc9fa937-a7fb-4210-8153-251c5dedc517]
+blockcompositingrule=2
+wmclassmatch=2
+
+[bea7c140-eb93-49c6-b21e-cfbe96ec0dd5]
+screen=1
+screenrule=3
+wmclass=webcord
+wmclassmatch=2
 
 [bea82076-b61c-47b4-945f-6639ced9c8b1]
 Description=Application settings for spotify
@@ -174,5 +185,12 @@ Description=Application settings for blender
 decocolor=BreezeDarkerNeutral
 decocolorrule=2
 wmclass=\sblender
+wmclasscomplete=true
+wmclassmatch=1
+
+[e9955336-565e-441e-80d0-5c47ef7d4102]
+Description=Firefox
+screenrule=3
+wmclass=\sorg.mozilla.firefox
 wmclasscomplete=true
 wmclassmatch=1

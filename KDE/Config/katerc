@@ -1,9 +1,15 @@
+[ColorPicker]
+HexLengths=3,6,9,12
+NamedColors=false
+PreviewAfterColor=true
+
 [General]
 Allow Tab Scrolling=true
 Auto Hide Tabs=true
 Close After Last=false
 Close documents with window=true
 Days Meta Infos=30
+Diagnostics Limit=12000
 Diff Show Style=0
 Elide Tab Text=false
 Expand Tabs=false
@@ -13,12 +19,11 @@ Mouse back button action=0
 Mouse forward button action=0
 Open New Tab To The Right Of Current=false
 Output History Limit=100
+Output With Date=false
 Recent File List Entry Count=10
 Restore Window Configuration=true
 SDI Mode=false
-Save Meta Infos=true
-Session Manager Sort Column=0
-Session Manager Sort Order=0
+Save Meta Infos=false
 Show Full Path in Title=false
 Show Menu Bar=true
 Show Status Bar=true
@@ -29,79 +34,34 @@ Show Url Nav Bar=true
 Show output view for message type=1
 Show text for left and right sidebar=false
 Show welcome view for new window=true
-Startup Session=manual
-Stash new unsaved files=true
+Startup Session=new
+Stash new unsaved files=false
 Stash unsaved file changes=false
 Sync section size with tab positions=false
 Tab Double Click New Document=true
 Tab Middle Click Close Document=true
 Tabbar Tab Limit=0
 
-[KFileDialog Settings]
-iconViewIconSize=64
-
 [KTextEditor Renderer]
 Animate Bracket Matching=false
-Auto Color Theme Selection=true
-Color Theme=Breeze Dark
+Auto Color Theme Selection=false
+Color Theme=VSCodium Dark
 Line Height Multiplier=1
 Show Indentation Lines=false
 Show Whole Bracket Expression=false
 Text Font=Hack,10,-1,7,400,0,0,0,0,0,0,0,0,0,0,1
 Word Wrap Marker=false
 
-[KTextEditor::Search]
-Search History=register
-
-[Konsole]
-AutoSyncronize=true
-KonsoleEscKeyBehaviour=true
-KonsoleEscKeyExceptions=vi,vim,nvim,git
-RemoveExtension=false
-RunPrefix=
-SetEditor=false
-
 [MainWindow]
-2 screens: Height=634
-2 screens: Width=1037
-2560x1080 screen: Height=848
-2560x1080 screen: Width=1021
+2 screens: Height=765
+2 screens: Width=1305
 
-[filetree]
-editShade=183,220,246
-listMode=false
-shadingEnabled=true
-showCloseButton=false
-showFullPathOnRoots=false
-showToolbar=true
-sortRole=0
-viewShade=211,190,222
-
-[lspclient]
-AllowedServerCommandLines=/usr/bin/clangd -log=error --background-index --limit-results=500 --completion-style=bundled
-AutoHover=true
-AutoImport=true
-BlockedServerCommandLines=
-CompletionDocumentation=true
-CompletionParens=true
-Diagnostics=true
-FormatOnSave=false
-HighlightGoto=true
-IncrementalSync=false
-InlayHints=false
-Messages=true
-ReferencesDeclaration=true
-SemanticHighlighting=true
-ServerConfiguration=
-SignatureHelp=true
-SymbolDetails=false
-SymbolExpand=true
-SymbolSort=false
-SymbolTree=true
-TypeFormatting=false
+[kategit]
+lastExecutedGitCmds=git push origin main
 
 [project]
-autorepository=git,subversion
+autoCMake=false
+autorepository=git
 gitStatusDoubleClick=3
 gitStatusSingleClick=0
 index=false

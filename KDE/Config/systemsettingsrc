@@ -1,17 +1,3 @@
 [FileDialogSize]
-2 screens: Height=692
-2 screens: Width=1280
-2560x1080 screen: Height=687
-2560x1080 screen: Width=1284
-
-[KFileDialog Settings]
-Places Icons Auto-resize=false
-Places Icons Static Size=16
-Recent Files[$e]=file:///usr/share/sounds/ocean/stereo/power-plug.oga,file:///usr/share/sounds/ocean/stereo/alarm-clock-elapsed.oga
-Recent URLs[$e]=file:$HOME/.local/share/wallpapers/,file:///usr/share/sounds/ocean/stereo/
-detailViewIconSize=16
-iconViewIconSize=64
-
-[MainWindow]
-MenuBar=Disabled
-ToolBarsMovable=Disabled
+2 screens: Height=697
+2 screens: Width=1023

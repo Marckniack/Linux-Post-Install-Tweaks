@@ -1,0 +1,14 @@
+[Kup settings]
+Backups enabled=true
+Number of backups=1
+
+[Plan/1]
+Description=Backup
+Destination type=0
+Filesystem destination path=file:///run/media/marco/Data/Linux/Backups/Arch_KDEPlasma
+Last available space=1140719165440
+Last backup size=467533105977
+Last complete backup=2024,9,4,4,57,30.942
+Paths excluded=/home/marco/.cache,/home/marco/.config/dconf,/home/marco/.config/fontconfig,/home/marco/.config/libaccounts-glib,/home/marco/.config/plasma-workspace,/home/marco/.config/pulse,/home/marco/.config/session,/home/marco/.config/systemd/user/default.target.wants,/home/marco/.config/systemd/user/sockets.target.wants,/home/marco/.config/yay,/home/marco/.local/share/Trash,/home/marco/.local/share/baloo,/home/marco/.local/share/containers/boxes/arch/.cache,/home/marco/.local/share/containers/boxes/arch/.mozilla,/home/marco/.local/share/containers/boxes/arch/.nv,/home/marco/.local/share/containers/boxes/arch/.var,/home/marco/.local/share/containers/boxes/arch/.zen,/home/marco/.local/share/containers/cache,/home/marco/.local/share/containers/storage,/home/marco/.local/share/flatpak/db,/home/marco/.local/share/flatpak/repo,/home/marco/.local/share/kactivitymanagerd,/home/marco/.local/share/klipper,/home/marco/.local/share/kscreen,/home/marco/.local/share/kwalletd,/home/marco/.nv,/home/marco/Desktop,/home/marco/Downloads,/home/marco/Music,/home/marco/Pictures,/home/marco/Public,/home/marco/Templates,/home/marco/Videos
+Schedule type=0
+Show hidden folders=true

@@ -1,12 +1,13 @@
 [Show]
 compressfileitemaction=true
 extractfileitemaction=true
-forgetfileitemaction=true
+forgetfileitemaction=false
 installFont=true
 kactivitymanagerd_fileitem_linking_plugin=false
 makefileactions=true
 mountisoaction=true
+movetonewfolderitemaction=true
 runInKonsole=true
-sharefileitemaction=false
+sharefileitemaction=true
 tagsfileitemaction=false
-wallpaperfileitemaction=true
+wallpaperfileitemaction=false

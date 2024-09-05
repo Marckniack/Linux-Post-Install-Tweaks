@@ -1,14 +1,25 @@
+MenuBar=Disabled
+
 [ContextMenu]
 ShowAddToPlaces=false
 ShowMoveToOtherSplitView=false
+ShowSortBy=false
 ShowViewMode=false
 
+[ExtractDialog]
+2 screens: Height=549
+2 screens: Width=1032
+DirHistory[$e]=$HOME/.local/share/containers/boxes/arch/.local/share/Unreal/Engines/
+
+[FileDialogSize]
+2 screens: Height=540
+2 screens: Width=821
+
 [General]
-ModifiedStartupSettings=true
 RememberOpenedTabs=false
 ShowZoomSlider=false
 Version=202
-ViewPropsTimestamp=2024,3,8,9,19,7.966
+ViewPropsTimestamp=2024,8,4,21,52,37.014
 
 [KFileDialog Settings]
 Places Icons Auto-resize=false
@@ -22,7 +33,10 @@ ToolBarsMovable=Disabled
 IconSize=16
 
 [PreviewSettings]
-Plugins=appimagethumbnail,audiothumbnail,blenderthumbnail,comicbookthumbnail,cursorthumbnail,djvuthumbnail,ebookthumbnail,exrthumbnail,directorythumbnail,fontthumbnail,imagethumbnail,jpegthumbnail,kraorathumbnail,windowsexethumbnail,windowsimagethumbnail,mobithumbnail,opendocumentthumbnail,gsthumbnail,rawthumbnail,svgthumbnail
+Plugins=appimagethumbnail,audiothumbnail,blenderthumbnail,comicbookthumbnail,cursorthumbnail,djvuthumbnail,ebookthumbnail,exrthumbnail,directorythumbnail,fontthumbnail,imagethumbnail,jpegthumbnail,kraorathumbnail,windowsexethumbnail,windowsimagethumbnail,mobithumbnail,opendocumentthumbnail,gsthumbnail,rawthumbnail,svgthumbnail,ffmpegthumbs
+
+[Search]
+Location=Everywhere
 
 [VersionControl]
 enabledPlugins=Git

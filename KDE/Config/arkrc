@@ -3,5 +3,11 @@ LockSidebar=true
 ShowSidebar=true
 
 [MainWindow]
+MenuBar=Enabled
+StatusBar=Disabled
+ToolBarsMovable=Disabled
+splitterSizes=995,129
+
+[Viewer]
 StatusBar=Disabled
 ToolBarsMovable=Disabled

@@ -1,7 +1,10 @@
+[Applications][com.borgbase.Vorta]
+Seen=true
+
 [Applications][com.spotify.Client]
 ShowInHistory=false
 
-[Applications][org.kde.discover]
+[Applications][org.bleachbit.BleachBit]
 ShowInHistory=false
 
 [Applications][org.kde.konsole]
@@ -10,8 +13,30 @@ ShowInHistory=false
 [Applications][org.kde.spectacle]
 ShowInHistory=false
 
+[Applications][org.qbittorrent.qBittorrent]
+Seen=true
+ShowInHistory=false
+
 [Applications][org.telegram.desktop]
 ShowInHistory=false
 
-[Services][plasma_workspace]
+[Applications][ru.linux_gaming.PortProton]
+Seen=true
+
+[Services][apdatifier]
+ShowInHistory=false
+
+[Services][bluedevil]
+ShowInHistory=false
+
+[Services][kupdaemon]
+ShowInHistory=false
+
+[Services][kwin]
+ShowInHistory=false
+
+[Services][powerdevil]
+ShowInHistory=false
+
+[Services][xdg-desktop-portal-kde]
 ShowInHistory=false

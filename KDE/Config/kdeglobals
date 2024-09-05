@@ -27,7 +27,7 @@ DecorationFocus=0,120,215
 DecorationHover=0,120,215
 ForegroundActive=0,120,215
 ForegroundInactive=105,105,105
-ForegroundLink=0,120,215
+ForegroundLink=176,202,255
 ForegroundNegative=218,68,83
 ForegroundNeutral=255,109,0
 ForegroundNormal=255,255,255
@@ -41,7 +41,7 @@ DecorationFocus=0,120,215
 DecorationHover=0,120,215
 ForegroundActive=0,120,215
 ForegroundInactive=175,176,179
-ForegroundLink=0,120,215
+ForegroundLink=176,202,255
 ForegroundNegative=237,21,21
 ForegroundNeutral=201,206,59
 ForegroundNormal=239,240,241
@@ -55,7 +55,7 @@ DecorationFocus=0,120,215
 DecorationHover=0,120,215
 ForegroundActive=0,120,215
 ForegroundInactive=105,105,105
-ForegroundLink=0,120,215
+ForegroundLink=176,202,255
 ForegroundNegative=218,68,83
 ForegroundNeutral=255,109,0
 ForegroundNormal=255,255,255
@@ -83,7 +83,7 @@ DecorationFocus=0,120,215
 DecorationHover=0,120,215
 ForegroundActive=0,120,215
 ForegroundInactive=255,255,255
-ForegroundLink=0,120,215
+ForegroundLink=0,88,157
 ForegroundNegative=218,68,83
 ForegroundNeutral=255,109,0
 ForegroundNormal=255,255,255
@@ -97,7 +97,7 @@ DecorationFocus=0,120,215
 DecorationHover=0,120,215
 ForegroundActive=0,120,215
 ForegroundInactive=105,105,105
-ForegroundLink=0,120,215
+ForegroundLink=176,202,255
 ForegroundNegative=218,68,83
 ForegroundNeutral=255,109,0
 ForegroundNormal=223,223,223
@@ -111,7 +111,7 @@ DecorationFocus=0,120,215
 DecorationHover=0,120,215
 ForegroundActive=0,120,215
 ForegroundInactive=105,105,105
-ForegroundLink=0,120,215
+ForegroundLink=176,202,255
 ForegroundNegative=218,68,83
 ForegroundNeutral=255,109,0
 ForegroundNormal=223,223,223
@@ -125,7 +125,7 @@ DecorationFocus=0,120,215
 DecorationHover=0,120,215
 ForegroundActive=0,120,215
 ForegroundInactive=105,105,105
-ForegroundLink=0,120,215
+ForegroundLink=176,202,255
 ForegroundNegative=218,68,83
 ForegroundNeutral=255,109,0
 ForegroundNormal=223,223,223
@@ -133,14 +133,15 @@ ForegroundPositive=1,162,153
 ForegroundVisited=0,188,212
 
 [DirSelect Dialog]
-DirSelectDialog Size=891,584
-History Items[$e]=file:$HOME/.distroArch,file:$HOME/.distroArch/Unreal Projects/MyProject/Source/MyProject,file:$HOME/Documents/Projects/WarehouseWreckage,file:$HOME/Documents/Projects,file:$HOME/Documents/Projects,file:$HOME/Documents/Projects/WarehouseWreckage/Source,file:$HOME/Documents/Projects/WarehouseWreckage/Source,file:$HOME/Documents/Projects/WarehouseWreckage/Source/WarehouseWreckage
+DirSelectDialog Size=821,540
+History Items[$e]=file:///usr/share/icons/breeze_cursors,file:$HOME/Videos,file:$HOME/Music,file:$HOME/Pictures,file:$HOME/Documents,file:$HOME/Desktop,file:$HOME/Videos,file:$HOME/Music,file:$HOME/Pictures,file:$HOME/Documents,file:$HOME/Desktop,file:$HOME/Documents/Godot,file:///run/media/marco/Data/Linux/Github/Linux-Post-Install-Tweaks,file:$HOME/Downloads,file:///run/media/marco/Data/Linux/Backups/Arch_KDEPlasma,file:$HOME/Downloads,file:$HOME/Downloads,file:///run/media/marco/Data/Linux/Github,file:$HOME/.var/app/com.heroicgameslauncher.hgl/Games/Age of Mythology Retold,file:$HOME/.var/app/com.heroicgameslauncher.hgl/Games/Age of Mythology Retold/drive_c/AgeOfMythologyRetold,file:$HOME/Documents/Godot/Plugins/godotopenxrvendors,file:$HOME/Documents/Godot/Plugins/godot-jolt,file:///home,file:$HOME/.local/share/containers/boxes/arch,file:$HOME/.local/share/containers/boxes/arch/.local/share/SteamCustomStorage,file:$HOME/Documents,file:$HOME/Pictures,file:$HOME/Music,file:$HOME/Music,file:$HOME/Music,file:$HOME/Music,file:$HOME/Music,file:$HOME/.local,file:$HOME/.config,file:$HOME/.var,file:$HOME/Documents,file:$HOME/Music,file:$HOME/Desktop,file:$HOME/.var/app/com.heroicgameslauncher.hgl/Games/Nobody Wants to Die,file:$HOME/Documents,file:$HOME/Documents,file:$HOME/Documents,file:$HOME/Documents,file:///run/media/marco/Data/Linux/Backups/Arch_GNOME,file:///run/media/marco/Data/Linux/Backups/Arch_KDE
 
 [General]
 AccentColor=0,120,215
 ColorScheme=FluentDark
 ColorSchemeHash=2823fd85d4dc3e2f05a21c28d68753f841ff70ed
 LastUsedCustomAccentColor=0,120,215
+UseSystemBell=true
 
 [Icons]
 Theme=Papirus-Dark
@@ -159,24 +160,24 @@ Breadcrumb Navigation=false
 Decoration position=2
 LocationCombo Completionmode=5
 PathCombo Completionmode=5
-Preview Width=319
 Show Bookmarks=false
 Show Full Path=false
 Show Inline Previews=true
-Show Preview=true
+Show Preview=false
 Show Speedbar=true
 Show hidden files=true
 Sort by=Name
 Sort directories first=true
-Sort hidden files last=true
+Sort hidden files last=false
 Sort reversed=false
-Speedbar Width=144
-View Style=Detail
+Speedbar Width=140
+View Style=Simple
 
-[KScreen]
-ScreenScaleFactors=HDMI-A-2=1;
+[KShortcutsDialog Settings]
+Dialog Size=784,698
 
 [PreviewSettings]
+EnableRemoteFolderThumbnail=false
 MaximumRemoteSize=0
 
 [WM]

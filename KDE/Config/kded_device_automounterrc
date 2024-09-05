@@ -1,33 +1,57 @@
 [Devices][/org/freedesktop/UDisks2/block_devices/nvme0n1p1]
 EverMounted=true
 Icon=drive-harddisk
-LastNameSeen=512.0 MiB Internal Drive (nvme0n1p1)
+LastNameSeen=Data
 LastSeenMounted=true
 
-[Devices][/org/freedesktop/UDisks2/block_devices/nvme0n1p2]
-EverMounted=true
-Icon=drive-harddisk-root
-LastNameSeen=1.8 TiB Internal Drive (nvme0n1p2)
-LastSeenMounted=true
+[Devices][/org/freedesktop/UDisks2/block_devices/nvme0n1p3]
+Icon=drive-harddisk
+LastNameSeen=Basic data partition
+
+[Devices][/org/freedesktop/UDisks2/block_devices/nvme0n1p4]
+Icon=drive-harddisk
+LastNameSeen=773.0 MiB Internal Drive (nvme0n1p4)
 
 [Devices][/org/freedesktop/UDisks2/block_devices/nvme1n1p1]
+EverMounted=true
 Icon=drive-harddisk
-LastNameSeen=ableMonitor=0, bUseVssOK=0.
+LastNameSeen=1.0 GiB Internal Drive (nvme1n1p1)
+LastSeenMounted=true
 
 [Devices][/org/freedesktop/UDisks2/block_devices/nvme1n1p2]
-Icon=drive-harddisk
-LastNameSeen=\x18
+EverMounted=true
+Icon=drive-harddisk-root
+LastNameSeen=1.8 TiB Internal Drive (nvme1n1p2)
+LastSeenMounted=true
 
 [Devices][/org/freedesktop/UDisks2/block_devices/nvme1n1p3]
+EverMounted=true
 Icon=drive-harddisk
-LastNameSeen=ᓫ嗮ǚ
+LastNameSeen=Basic data partition
+
+[Devices][/org/freedesktop/UDisks2/block_devices/nvme1n1p4]
+Icon=drive-harddisk
+LastNameSeen=773.0 MiB Internal Drive (nvme1n1p4)
 
 [Devices][/org/freedesktop/UDisks2/block_devices/nvme2n1p1]
 EverMounted=true
 Icon=drive-harddisk
-LastNameSeen=Data
-LastSeenMounted=true
+LastNameSeen=EFI system partition
 
 [Devices][/org/freedesktop/UDisks2/block_devices/nvme2n1p2]
+EverMounted=true
+Icon=drive-harddisk-root
+LastNameSeen=1.8 TiB Internal Drive (nvme2n1p2)
+LastSeenMounted=true
+
+[Devices][/org/freedesktop/UDisks2/block_devices/nvme2n1p3]
 Icon=drive-harddisk
-LastNameSeen=OS Backup
+LastNameSeen=Basic data partition
+
+[Devices][/org/freedesktop/UDisks2/block_devices/nvme2n1p4]
+Icon=drive-harddisk
+LastNameSeen=773.0 MiB Internal Drive (nvme2n1p4)
+
+[General]
+AutomountEnabled=true
+AutomountOnPlugin=true

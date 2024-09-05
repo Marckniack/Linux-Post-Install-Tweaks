@@ -1,11 +1,10 @@
+[FileDialogSize]
+2 screens: Height=605
+2 screens: Width=900
+
 [General]
 ShowHidden=true
-SplitterSizes=332,1031
-
-[KFileDialog Settings]
-Recent Files[$e]=file:$HOME/.local/share/UnrealEngine/Engine/Content/Splash/IconDefault.ico
-Recent URLs[$e]=file:$HOME/.local/share/UnrealEngine/Engine/Content/Splash/,file:$HOME/
-iconViewIconSize=64
+SplitterSizes=401,547
 
 [MainWindow]
 ToolBarsMovable=Disabled
