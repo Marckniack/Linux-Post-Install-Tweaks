@@ -1,6 +1,0 @@
-[Daemon]
-Timeout=20
-
-[Greeter][Wallpaper][org.kde.image][General]
-Image=/home/marco/.local/share/wallpapers/Materia.png
-PreviewImage=/home/marco/.local/share/wallpapers/Materia.png

@@ -1,7 +1,0 @@
-[Event/newScreenshotSaved]
-Action=Popup|Sound
-Sound=file:///usr/share/sounds/ocean/stereo/power-plug.oga
-
-[Event/recordingSaved]
-Action=Popup|Sound
-Sound=file:///usr/share/sounds/ocean/stereo/power-plug.oga
