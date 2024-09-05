@@ -1,21 +1,19 @@
 [Desktop Entry]
 Categories=Development;
-Comment[en_US]=The world's most open and advanced real-time 3D creation tool
 Comment=The world's most open and advanced real-time 3D creation tool
-Exec=distrobox-enter -n distroArch -a '--env __NV_PRIME_RENDER_OFFLOAD=1 --env __VK_LAYER_NV_optimus=NVIDIA_only --env __GLX_VENDOR_LIBRARY_NAME=nvidia' -- /home/marco/.distroArch/UnrealEngine_5.3.2/Engine/Binaries/Linux/UnrealEditor -windowed %F
-GenericName[en_US]=
+Exec=distrobox-enter -n arch -a '--env __NV_PRIME_RENDER_OFFLOAD=1 --env __VK_LAYER_NV_optimus=NVIDIA_only --env __GLX_VENDOR_LIBRARY_NAME=nvidia' -- /home/marco/.local/share/containers/boxes/arch/.local/share/Unreal/Engines/Linux_Unreal_Engine_5.4.3/Engine/Binaries/Linux/UnrealEditor -windowed %F
 GenericName=
-Icon=/home/marco/.distroArch/.icons/ue5editor.svg
-MimeType=
-Name[en_US]=Unreal Engine 5.3.2
-Name=Unreal Engine 5.3.2
-NoDisplay=false
+Hidden=false
+Icon=ubinary
+MimeType=application/x-uproject
+Name=Unreal Engine 5.4.3
+NoDisplay=true
 Path=
 PrefersNonDefaultGPU=true
 StartupNotify=true
+StartupWMClass=UnrealEditor
 Terminal=false
 TerminalOptions=
 Type=Application
-X-KDE-RunOnDiscreteGpu=true
 X-KDE-SubstituteUID=false
 X-KDE-Username=

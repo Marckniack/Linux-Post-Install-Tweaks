@@ -1,23 +1,19 @@
 [Desktop Entry]
-Categories=Game;
-Comment[en_US]=ALVR is an open source remote VR display which allows playing SteamVR games on a standalone headset such as Gear VR or Oculus Go/Quest.
-Comment=ALVR is an open source remote VR display which allows playing SteamVR games on a standalone headset such as Gear VR or Oculus Go/Quest.
-Exec=distrobox-enter -n distroArch -a '--env XDG_CURRENT_DESKTOP=X-Generic --env LANG=en_US.UTF-8 --env LC_ALL=en_US.UTF-8' -- alvr_dashboard
-GenericName[en_US]=
-GenericName=
+Comment[en_US]=
+Comment=
+Exec=distrobox-enter -n arch -- /home/marco/.local/share/containers/boxes/arch/.local/share/ALVR-Launcher/ALVR_Launcher
+GenericName[en_US]=Launch ALVR Dashboard
+GenericName=Launch ALVR Dashboard
 Icon=steamvr
 MimeType=
 Name[en_US]=ALVR
 Name=ALVR
 NoDisplay=false
 Path=
-PrefersNonDefaultGPU=true
+PrefersNonDefaultGPU=false
 StartupNotify=true
-StartupWMClass=ALVR
 Terminal=false
 TerminalOptions=
 Type=Application
-Version=1.0
-X-KDE-RunOnDiscreteGpu=true
 X-KDE-SubstituteUID=false
 X-KDE-Username=

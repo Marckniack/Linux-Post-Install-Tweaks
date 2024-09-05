@@ -1,11 +1,11 @@
 [Desktop Entry]
 Categories=AudioVideo;
-Comment=Allow testing Video4Linux devices
+Comment=Show connected webcam output.
 Exec=qv4l2
-Icon=qv4l2
+Icon=webcamoid
 Keywords=video;grabber;V4L;
-Name=Qt V4L2 test Utility
-NoDisplay=true
+Name=Webcam
+NoDisplay=false
 Path=
 StartupNotify=true
 Terminal=false

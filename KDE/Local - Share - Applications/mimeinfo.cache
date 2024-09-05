@@ -1,0 +1,10 @@
+[MIME Cache]
+application/x-godot-project=Godot.desktop;
+application/x-uproject=UnrealEngine.desktop;
+text/css=org.kde.kate.desktop;
+text/html=org.kde.kate.desktop;
+text/javascript=org.kde.kate.desktop;
+text/plain=org.kde.kate.desktop;org.kde.kwrite.desktop;
+text/x-python=org.kde.kate.desktop;
+text/x-python3=org.kde.kate.desktop;
+text/x-readme=org.kde.kate.desktop;

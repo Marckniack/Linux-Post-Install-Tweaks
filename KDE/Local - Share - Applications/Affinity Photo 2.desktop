@@ -1,0 +1,20 @@
+[Desktop Entry]
+Categories=Graphics
+Comment[en_US]=
+Comment=
+Exec=flatpak run --command=/app/bin/q4wine-cli ua.org.brezblock.q4wine -p Affinity -i 'Affinity Photo 2' %f
+GenericName[en_US]=Affinity Photo 2
+GenericName=Affinity Photo 2
+Icon=/home/marco/.var/app/ua.org.brezblock.q4wine/data/wineprefixes/Affinity/drive_c/Program Files/Affinity/Photo 2/photo.svg
+Keywords=Graphics;2DGraphics;RasterGraphics;VectorGraphics;image;editor;vector;drawing;
+MimeType=
+Name[en_US]=Affinity Photo 2
+Name=Affinity Photo 2
+Path=/home/marco/.var/app/ua.org.brezblock.q4wine/data/wineprefixes/Affinity/drive_c/Program Files/Affinity/Photo 2/
+StartupNotify=true
+StartupWMClass=Photo.exe
+Terminal=false
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

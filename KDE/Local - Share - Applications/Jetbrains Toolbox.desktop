@@ -1,10 +1,10 @@
 [Desktop Entry]
+Categories=Development;
 Comment=
-Exec=distrobox-enter -n distroArch -- jetbrains-toolbox %u
+Exec=distrobox-enter -n arch -- jetbrains-toolbox %u
 Icon=jetbrains-toolbox
 Name=Jetbrains Toolbox
 NoDisplay=false
-Path=/home/marco/.distroArch
 StartupNotify=true
 Terminal=false
 TerminalOptions=

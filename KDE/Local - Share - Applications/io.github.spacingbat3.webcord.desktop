@@ -1,0 +1,18 @@
+[Desktop Entry]
+Categories=Network;InstantMessaging;
+Comment=A Discord and Fosscord electron based client implemented without Discord API.
+Exec=/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=run.sh io.github.spacingbat3.webcord
+Hidden=false
+Icon=discord-bin
+Keywords=Discord;Fosscord;
+Name=Discord
+NoDisplay=false
+Path=
+StartupNotify=false
+StartupWMClass=WebCord
+Terminal=false
+TerminalOptions=
+Type=Application
+X-Flatpak=io.github.spacingbat3.webcord
+X-KDE-SubstituteUID=false
+X-KDE-Username=

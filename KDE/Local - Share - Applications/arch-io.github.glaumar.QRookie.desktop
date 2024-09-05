@@ -1,0 +1,18 @@
+[Desktop Entry]
+Categories=Game;
+Comment=Download and install Quest games from ROOKIE Public Mirror
+Comment[zh_CN]=从 ROOKIE 公共镜像下载和安装 Quest 游戏
+Exec=/usr/bin/distrobox-enter -n arch -- QRookie
+Icon=io.github.glaumar.QRookie
+Name=QRookie
+Name[zh_CN]=QRookie (on arch)
+NoDisplay=false
+Path=
+StartupNotify=true
+Terminal=false
+TerminalOptions=
+Type=Application
+Version=1.0
+X-KDE-SubstituteUID=false
+X-KDE-Username=
+StartupWMClass=QRookie

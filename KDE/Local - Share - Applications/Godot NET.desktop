@@ -1,0 +1,14 @@
+[Desktop Entry]
+Categories=Development;IDE;
+Comment=Multi-platform 2D and 3D game engine with a feature-rich editor
+Exec=distrobox-enter -n arch -a '--env __NV_PRIME_RENDER_OFFLOAD=1 --env __VK_LAYER_NV_optimus=NVIDIA_only --env __GLX_VENDOR_LIBRARY_NAME=nvidia' -- /home/marco/.local/share/containers/boxes/arch/.local/share/godot/bin/Godot_v4.3-stable_mono_linux.x86_64 %f
+GenericName=Libre game engine
+Icon=godot
+Name=Godot Engine (NET)
+NoDisplay=false
+Path=
+PrefersNonDefaultGPU=true
+StartupNotify=true
+Terminal=false
+TerminalOptions=
+Type=Application
