@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Service
+MimeType=inode/directory;
+Actions=gittyup
+ServiceTypes=KonqPopupMenu/Plugin,inode/directory,inode/directory-locked
+#X-KDE-Submenu=Git
+
+[Desktop Action gittyup]
+Name=Open in GittyUp
+Icon=vcs-branch
+TryExec=com.github.Murmele.Gittyup
+Exec=com.github.Murmele.Gittyup %U
