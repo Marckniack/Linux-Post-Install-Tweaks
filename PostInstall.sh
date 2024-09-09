@@ -118,7 +118,7 @@ echo -e "GTK_USE_PORTAL=1\nXDG_CURRENT_DESKTOP=KDE" | tee -a /etc/environment
 	
 	########### REMOVE UNUSED PACKAGES ############
 	pacman -R plasma-meta --noconfirm || exit 1
-	pacman -Rcns drkonqi htop vim discover krdp oxygen plasma-firewall plasma-thunderbolt plasma-vault plasma-welcome plasma-workspace-wallpapers --noconfirm || exit 1
+	pacman -Rcns drkonqi htop vim discover krdp oxygen plasma-firewall plasma-thunderbolt plasma-vault plasma-welcome plasma-workspace-wallpapers krfb --noconfirm || exit 1
 	pacman -Syu plasma-nm --noconfirm || exit 1
 }
 
