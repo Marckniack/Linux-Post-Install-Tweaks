@@ -3,7 +3,3 @@
 ############ FLATPAK DONT ASK CONFIRM ############
 # Find: "const flatpak" in "function defineCommands()"
 # Replace with: const flatpak = cfg.flatpak ? "flatpak update --assumeyes;" : ""
-
-############ AUTO CLOSE TERMINAL ############
-# Find: "cmd.upgrade" in "function defineCommands()"
-# Replace with: cmd.upgrade = `${cmd.terminal} bash -c "${trap}; ${print(init)}; ${executed}; ${commands}"`
