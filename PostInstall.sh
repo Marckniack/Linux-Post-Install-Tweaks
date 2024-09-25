@@ -140,7 +140,8 @@ gnome()
 	
 	########### REMOVE UNUSED PACKAGES ############
 	pacman -Rcns gnome-calculator gnome-calendar gnome-characters gnome-clocks gnome-connections gnome-contacts gnome-font-viewer gnome-logs gnome-maps --noconfirm || exit 1
-	pacman -Rcns gnome-software gnome-shell-extensions gnome-remote-desktop gnome-tour gnome-weather totem gnome-music vim htop yelp baobab --noconfirm || exit 1
+	pacman -Rcns gnome-shell-extensions gnome-remote-desktop gnome-tour gnome-weather totem gnome-music vim htop yelp baobab --noconfirm || exit 1
+	#pacman -Rcns gnome-software gnome-shell-extensions gnome-remote-desktop gnome-tour gnome-weather totem gnome-music vim htop yelp baobab --noconfirm || exit 1
 	pacman -Rcns epiphany evince gnome-system-monitor loupe tracker3-miners network-manager-applet --noconfirm || exit 1
 }
 
@@ -170,8 +171,8 @@ kde_flatpak()
 	### BASE
 	base_flatpak
 	
-	### KDE
-	flatpak install --assumeyes --noninteractive org.qbittorrent.qBittorrent org.kde.okular org.kde.gwenview io.github.f3d_app.f3d
+	### MISC
+	flatpak install --assumeyes --noninteractive org.kde.skanlite org.qbittorrent.qBittorrent org.kde.okular io.github.f3d_app.f3d com.github.Murmele.Gittyup org.kde.gwenview org.kde.marknote ua.org.brezblock.q4wine
 	
 	### GAMING
 	flatpak install --assumeyes --noninteractive com.heroicgameslauncher.hgl io.github.glaumar.QRookie net.davidotek.pupgui2
@@ -188,11 +189,26 @@ gnome_flatpak()
 	### BASE
 	base_flatpak
 	
-	### OTHER
-	flatpak install --assumeyes --noninteractive org.gnome.Boxes org.gnome.Builder org.gnome.Calendar io.github.celluloid_player.Celluloid org.gnome.World.PikaBackup com.vysp3r.ProtonPlus
-	flatpak install --assumeyes --noninteractive ca.desrt.dconf-editor io.github.nokse22.Exhibit com.mattjakeman.ExtensionManager com.github.tchx84.Flatseal org.gnome.NetworkDisplays
-	flatpak install --assumeyes --noninteractive org.gnome.Loupe page.codeberg.libre_menu_editor.LibreMenuEditor io.missioncenter.MissionCenter io.github.amit9838.mousam org.gnome.Papers 
-	flatpak install --assumeyes --noninteractive com.vysp3r.ProtonPlus com.usebottles.bottles com.transmissionbt.Transmission
+	### GNOME
+	flatpak install --assumeyes --noninteractive org.gnome.Calendar org.gnome.Loupe org.gnome.Papers org.gnome.Cheese
+
+	### INTERNET
+	flatpak install --assumeyes --noninteractive de.haeckerfelix.Fragments
+
+	### SYSTEM
+	flatpak install --assumeyes --noninteractive page.codeberg.libre_menu_editor.LibreMenuEditor org.gnome.World.PikaBackup io.missioncenter.MissionCenter com.github.tchx84.Flatseal ca.desrt.dconf-editor com.mattjakeman.ExtensionManager
+
+	### UTILITY
+	flatpak install --assumeyes --noninteractive com.github.flxzt.rnote
+
+	### DEV
+	flatpak install --assumeyes --noninteractive com.jeffser.Alpaca de.philippun1.turtle
+
+	### GRAPHICS
+	flatpak install --assumeyes --noninteractive io.github.celluloid_player.Celluloid io.github.nokse22.Exhibit
+
+	### GAMES & WINDOWS
+	flatpak install --assumeyes --noninteractive com.vysp3r.ProtonPlus org.gnome.Boxes com.usebottles.bottles
  
  	### THEMES
  	flatpak install --assumeyes --noninteractive org.gtk.Gtk3theme.adw-gtk3 org.gtk.Gtk3theme.adw-gtk3-dark
@@ -210,8 +226,8 @@ base_post()
 	# sudo nano /boot/loader/entries/arch.conf
 	# quiet loglevel=2 systemd.show_status=no console=ttyS0,115200 console=tty0 vt.global_cursor_default=0
 
-	###########  XPADNEO ###########
-	git clone https://github.com/atar-axis/xpadneo.git && cd xpadneo && sudo ./install.sh
+	########### XPADNEO ###########
+	# git clone https://github.com/atar-axis/xpadneo.git && cd xpadneo && sudo ./install.sh
 	
  	### USE .LOCAL/BIN FOLDER ###
  	echo -e 'export PATH="$PATH:$HOME/.local/bin/"' | tee -a ~/.bash_profile
@@ -224,6 +240,9 @@ kde_post()
 {
 	### BASE
 	base_post
+
+  	########### APDATIFIER ###########
+	curl -fsSL https://raw.githubusercontent.com/exequtic/apdatifier/main/package/contents/tools/tools.sh | sh -s install
 }
 
 gnome_post()
