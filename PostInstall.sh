@@ -258,7 +258,7 @@ then
   "$@"
 else
   # Show a helpful error
-  echo "'$1' is not a known function name" >&2
+  echo "'$1' is not a known function name." >&2
   exit 1
 fi
 
