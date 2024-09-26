@@ -71,7 +71,7 @@ ACTION=="unbind", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x0302
 	
 	########## ADDITIONAL PACKAGES ##########
 	pacman -Syu noto-fonts noto-fonts-cjk noto-fonts-emoji flatpak flatpak-xdg-utils power-profiles-daemon papirus-icon-theme ttf-dejavu fwupd gamemode lib32-gamemode system-config-printer bluez-obex --noconfirm || exit 1
-	pacman -Syu ttf-droid distrobox podman pacman-contrib git curl wget bash-completion android-tools android-udev ntfs-3g nano acpid acpi acpi_call p7zip unarchiver unrar --noconfirm || exit 1 
+	pacman -Syu ttf-droid distrobox podman pacman-contrib git curl wget bash-completion android-tools android-udev ntfs-3g nano acpid acpi acpi_call p7zip zip unarchiver unrar --noconfirm || exit 1
 
  	# Webcam DKMS
  	pacman -Syu v4l2loopback-dkms
@@ -141,8 +141,7 @@ gnome()
 	########### REMOVE UNUSED PACKAGES ############
 	pacman -Rcns gnome-calculator gnome-calendar gnome-characters gnome-clocks gnome-connections gnome-contacts gnome-font-viewer gnome-logs gnome-maps --noconfirm || exit 1
 	pacman -Rcns gnome-shell-extensions gnome-remote-desktop gnome-tour gnome-weather totem gnome-music vim htop yelp baobab --noconfirm || exit 1
-	#pacman -Rcns gnome-software gnome-shell-extensions gnome-remote-desktop gnome-tour gnome-weather totem gnome-music vim htop yelp baobab --noconfirm || exit 1
-	pacman -Rcns epiphany evince gnome-system-monitor loupe tracker3-miners network-manager-applet --noconfirm || exit 1
+	pacman -Rcns gnome-software gnome-shell-extensions gnome-remote-desktop gnome-tour gnome-weather totem gnome-music vim htop yelp baobab --noconfirm || exit 1
 }
 
 base_flatpak()
@@ -175,7 +174,7 @@ kde_flatpak()
 	flatpak install --assumeyes --noninteractive org.kde.skanlite org.qbittorrent.qBittorrent org.kde.okular io.github.f3d_app.f3d com.github.Murmele.Gittyup org.kde.gwenview org.kde.marknote ua.org.brezblock.q4wine
 	
 	### GAMING
-	flatpak install --assumeyes --noninteractive com.heroicgameslauncher.hgl io.github.glaumar.QRookie net.davidotek.pupgui2
+	flatpak install --assumeyes --noninteractive com.heroicgameslauncher.hgl net.davidotek.pupgui2
 
   	### SOUND & VIDEO
  	flatpak install --assumeyes --noninteractive org.kde.kdenlive
