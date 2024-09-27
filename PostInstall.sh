@@ -67,7 +67,8 @@ ACTION=="unbind", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x0300
 ACTION=="unbind", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x030200", TEST=="power/control", ATTR{power/control}="on"' | sudo tee /etc/udev/rules.d/80-nvidia-pm.rules
 
 	# Enable nvidia services for suspension
-	systemctl enable nvidia-hibernate.service nvidia-suspend.service nvidia-persistenced.service nvidia-resume.service nvidia-powerd.service
+	# nvidia-powerd.service work only with Mobile GPUs
+	systemctl enable nvidia-hibernate.service nvidia-suspend.service nvidia-persistenced.service nvidia-resume.service
 	
 	########## ADDITIONAL PACKAGES ##########
 	pacman -Syu noto-fonts noto-fonts-cjk noto-fonts-emoji flatpak flatpak-xdg-utils power-profiles-daemon papirus-icon-theme ttf-dejavu fwupd gamemode lib32-gamemode system-config-printer bluez-obex --noconfirm || exit 1
