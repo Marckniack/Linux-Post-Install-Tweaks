@@ -76,9 +76,6 @@ ACTION=="unbind", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x0302
 
  	# Webcam DKMS
  	pacman -Syu v4l2loopback-dkms
-
-	########### SERVICES ############
-	systemctl enable bluetooth.service paccache.service acpid.service switcheroo-control.service
 	
 	########### USB PREVENT SLEEP FIX ############
 echo -e '# Prevent USB Devices from waking up pc
@@ -93,6 +90,9 @@ echo -e 'GAMEMODERUNEXEC="env __NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_N
 	
 	#####  ADD STEAM INPUT CONTROLLERS #####
 	wget https://raw.githubusercontent.com/ValveSoftware/steam-devices/master/60-steam-input.rules -O /etc/udev/rules.d/60-steam-input.rules
+
+	########### SERVICES ############
+	systemctl enable bluetooth.service paccache.service acpid.service switcheroo-control.service
 
 }
 
