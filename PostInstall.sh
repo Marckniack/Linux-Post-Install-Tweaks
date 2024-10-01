@@ -91,9 +91,6 @@ echo -e 'GAMEMODERUNEXEC="env __NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_N
 	#####  ADD STEAM INPUT CONTROLLERS #####
 	wget https://raw.githubusercontent.com/ValveSoftware/steam-devices/master/60-steam-input.rules -O /etc/udev/rules.d/60-steam-input.rules
 
-	########### SERVICES ############
-	systemctl enable bluetooth.service paccache.service acpid.service switcheroo-control.service
-
 }
 
 kde()
@@ -219,6 +216,10 @@ gnome_flatpak()
 
 base_post()
 {
+
+	########### SERVICES ############
+	systemctl enable bluetooth.service paccache.service acpid.service switcheroo-control.service
+
 	########### INSTALL YAY ###########
 	git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
 
@@ -233,7 +234,7 @@ base_post()
  	echo -e 'export PATH="$PATH:$HOME/.local/bin/"' | tee -a ~/.bash_profile
 
   	########### SpotX-Bash (Spotify Adblock) ###########
-	bash <(curl -sSL https://spotx-official.github.io/run.sh) -hflc
+	# bash <(curl -sSL https://spotx-official.github.io/run.sh) -hflc
 }
 
 kde_post()
