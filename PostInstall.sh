@@ -19,7 +19,10 @@ echo -e '# Enable antenna aggregation
 options iwlwifi 11n_disable=8
 
 # Disable Power Save
-options iwlwifi power_save=0' | sudo tee /etc/modprobe.d/wifi.conf
+options iwlwifi power_save=0
+
+# Fix Wifi Disconnect on suspend, (1=Always Active,2=Balanced,3=Low-power)
+options iwlmvm power_scheme=1' | sudo tee /etc/modprobe.d/wifi.conf
 
 	################ INTEL ################
 	pacman -Syu lib32-vulkan-intel intel-media-driver vulkan-intel --noconfirm || exit 1
