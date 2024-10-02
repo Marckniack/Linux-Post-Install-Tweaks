@@ -35,10 +35,10 @@ options iwlwifi power_save=0' | sudo tee /etc/modprobe.d/wifi.conf
 echo -e 'options nvidia "NVreg_DynamicPowerManagement=0x03"
 options nvidia NVreg_PreserveVideoMemoryAllocations=1
 options nvidia NVreg_TemporaryFilePath=/var/tmp
-#options nvidia NVreg_EnableGpuFirmware=0
+options nvidia NVreg_EnableGpuFirmware=0
 options nvidia NVreg_UsePageAttributeTable=1
 options nvidia NVreg_EnableResizableBar=1
-#options nvidia_drm fbdev=1
+options nvidia_drm fbdev=1
 options nvidia_drm modeset=1' | sudo tee /etc/modprobe.d/nvidia.conf
 
 
