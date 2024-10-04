@@ -75,7 +75,7 @@ ACTION=="unbind", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x0302
 	
 	########## ADDITIONAL PACKAGES ##########
 	pacman -Syu noto-fonts noto-fonts-cjk noto-fonts-emoji flatpak flatpak-xdg-utils power-profiles-daemon papirus-icon-theme ttf-dejavu fwupd gamemode lib32-gamemode system-config-printer bluez-obex --noconfirm || exit 1
-	pacman -Syu ttf-droid distrobox podman pacman-contrib git curl wget bash-completion android-tools android-udev ntfs-3g nano acpid acpi acpi_call p7zip zip unarchiver unrar --noconfirm || exit 1
+	pacman -Syu ttf-droid distrobox podman pacman-contrib git curl wget bash-completion android-tools android-udev ntfs-3g nano acpid acpi acpi_call p7zip zip unarchiver unrar switcheroo-control --noconfirm || exit 1
 
  	# Webcam DKMS
  	pacman -Syu v4l2loopback-dkms
@@ -104,7 +104,7 @@ kde()
 	echo "Setup KDE";
 	
 	########### KDE ############
-	pacman -Syu kdegraphics-thumbnailers ffmpegthumbs kdialog flatpak-kcm xdg-desktop-portal-kde spectacle switcheroo-control xdg-desktop-portal-gtk partitionmanager --noconfirm || exit 1
+	pacman -Syu kdegraphics-thumbnailers ffmpegthumbs kdialog flatpak-kcm xdg-desktop-portal-kde spectacle xdg-desktop-portal-gtk partitionmanager --noconfirm || exit 1
 	pacman -Syu kup bup dolphin-plugins --noconfirm || exit 1
 
 
@@ -131,7 +131,7 @@ gnome()
 	echo "Setup GNOME";
 	
 	########### GNOME ############
-	pacman -Syu webp-pixbuf-loader gst-plugin-pipewire gst-plugins-good ffmpegthumbnailer switcheroo-control gnome-themes-extra adw-gtk-theme --noconfirm || exit 1
+	pacman -Syu webp-pixbuf-loader gst-plugin-pipewire gst-plugins-good ffmpegthumbnailer gnome-themes-extra adw-gtk-theme --noconfirm || exit 1
 	
 	#### FORCE ENABLE WAYLAND ####
 	ln -s /dev/null /etc/udev/rules.d/61-gdm.rules
@@ -235,9 +235,6 @@ base_post()
 	
  	### USE .LOCAL/BIN FOLDER ###
  	echo -e 'export PATH="$PATH:$HOME/.local/bin/"' | tee -a ~/.bash_profile
-
-  	########### SpotX-Bash (Spotify Adblock) ###########
-	# bash <(curl -sSL https://spotx-official.github.io/run.sh) -hflc
 }
 
 kde_post()
@@ -253,6 +250,20 @@ gnome_post()
 {
 	### BASE
 	base_post
+}
+
+spotify_adblock()
+{
+
+	### INSTALL
+ 	flatpak install --assumeyes --noninteractive com.spotify.Client
+
+ 	### MASK
+ 	flatpak mask com.spotify.Client
+
+  	########### SpotX-Bash (Spotify Adblock) ###########
+	bash <(curl -sSL https://spotx-official.github.io/run.sh) -hflc
+
 }
 
 
