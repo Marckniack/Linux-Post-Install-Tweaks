@@ -120,7 +120,7 @@ echo -e "GTK_USE_PORTAL=1\nXDG_CURRENT_DESKTOP=KDE" | tee -a /etc/environment
 	########### REMOVE UNUSED PACKAGES ############
 	pacman -R plasma-meta --noconfirm || exit 1
 	pacman -Rcns drkonqi htop vim discover krdp oxygen plasma-firewall plasma-thunderbolt plasma-vault plasma-welcome plasma-workspace-wallpapers --noconfirm || exit 1
-	pacman -Syu plasma-nm kdeconnect sshfs --noconfirm || exit 1
+	pacman -Syu plasma-nm --noconfirm || exit 1
 }
 
 gnome()
@@ -141,7 +141,7 @@ gnome()
 	
 	########### REMOVE UNUSED PACKAGES ############
 	pacman -Rcns gnome-calculator gnome-calendar gnome-characters gnome-clocks gnome-connections gnome-contacts gnome-font-viewer gnome-logs gnome-maps --noconfirm || exit 1
-	pacman -Rcns gnome-shell-extensions gnome-remote-desktop gnome-tour gnome-weather totem gnome-music vim htop yelp baobab --noconfirm || exit 1
+	#pacman -Rcns gnome-shell-extensions gnome-remote-desktop gnome-tour gnome-weather totem gnome-music vim htop yelp baobab --noconfirm || exit 1
 	pacman -Rcns gnome-software gnome-shell-extensions gnome-remote-desktop gnome-tour gnome-weather totem gnome-music vim htop yelp baobab --noconfirm || exit 1
 }
 
@@ -151,7 +151,7 @@ base_flatpak()
 	flatpak install --assumeyes --noninteractive org.mozilla.firefox
 	
  	### GAMING
- 	flatpak install --assumeyes --noninteractive io.github.lime3ds.Lime3DS org.ryujinx.Ryujinx com.valvesoftware.Steam com.github.Matoking.protontricks
+ 	flatpak install --assumeyes --noninteractive org.ryujinx.Ryujinx com.valvesoftware.Steam
   
   	### GRAPHICS
  	flatpak install --assumeyes --noninteractive org.blender.Blender org.gimp.GIMP org.inkscape.Inkscape org.kde.krita
@@ -172,13 +172,13 @@ kde_flatpak()
 	base_flatpak
 	
 	### MISC
-	flatpak install --assumeyes --noninteractive org.kde.skanlite org.qbittorrent.qBittorrent org.kde.okular io.github.f3d_app.f3d com.github.Murmele.Gittyup org.kde.gwenview org.kde.marknote ua.org.brezblock.q4wine
+	flatpak install --assumeyes --noninteractive org.kde.skanlite org.qbittorrent.qBittorrent org.kde.okular io.github.f3d_app.f3d com.github.Murmele.Gittyup org.kde.gwenview org.kde.marknote org.kde.francis io.gpt4all.gpt4all io.github.fastrizwaan.WineZGUI
 	
 	### GAMING
-	flatpak install --assumeyes --noninteractive com.heroicgameslauncher.hgl net.davidotek.pupgui2
+	flatpak install --assumeyes --noninteractive com.heroicgameslauncher.hgl net.davidotek.pupgui2 io.github.glaumar.QRookie
 
   	### SOUND & VIDEO
- 	flatpak install --assumeyes --noninteractive org.kde.kdenlive
+ 	flatpak install --assumeyes --noninteractive org.kde.kdenlive com.obsproject.Studio
 
 	### UPDATE
 	flatpak update --assumeyes --noninteractive
@@ -190,7 +190,7 @@ gnome_flatpak()
 	base_flatpak
 	
 	### GNOME
-	flatpak install --assumeyes --noninteractive org.gnome.Calendar org.gnome.Loupe org.gnome.Papers org.gnome.Cheese
+	flatpak install --assumeyes --noninteractive org.gnome.Calendar org.gnome.Loupe org.gnome.Papers
 
 	### INTERNET
 	flatpak install --assumeyes --noninteractive de.haeckerfelix.Fragments
@@ -202,7 +202,7 @@ gnome_flatpak()
 	flatpak install --assumeyes --noninteractive com.github.flxzt.rnote
 
 	### DEV
-	flatpak install --assumeyes --noninteractive com.jeffser.Alpaca de.philippun1.turtle
+	flatpak install --assumeyes --noninteractive com.jeffser.Alpaca
 
 	### GRAPHICS
 	flatpak install --assumeyes --noninteractive io.github.celluloid_player.Celluloid io.github.nokse22.Exhibit
@@ -221,7 +221,7 @@ base_post()
 {
 
 	########### SERVICES ############
-	systemctl enable bluetooth.service paccache.service acpid.service switcheroo-control.service
+	systemctl enable bluetooth.service paccache.service switcheroo-control.service
 
 	########### INSTALL YAY ###########
 	git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
