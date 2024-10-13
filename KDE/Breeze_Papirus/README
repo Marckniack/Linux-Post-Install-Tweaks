@@ -1,0 +1,10 @@
+########## Breeze icon theme with additional papirus icons. ##########
+
+
+## Install Papirus-icon-theme.
+
+## Set "Inherits=Papirus,hicolor" in /usr/share/icons/breeze/index.theme file.
+
+## Set breeze as icon theme.
+
+## Copy the folder "breeze" in /home/<USER>/.local/share/icons/ folder.
