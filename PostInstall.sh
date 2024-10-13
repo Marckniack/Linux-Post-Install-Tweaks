@@ -247,6 +247,7 @@ kde_post()
 	########### BREEZE PAPIRUS ICON THEME ###########
 	mkdir -p $HOME/.local/share/icons
 	cd $HOME/.local/share/icons && curl -sL https://raw.githubusercontent.com/Marckniack/Linux-Post-Install-Tweaks/main/KDE/Breeze_Papirus/breeze.tar.gz | tar zx
+	sudo sed -i "/usr/share/icons/breeze/index.theme" -e "s|Inherits=hicolor|Inherits=Papirus,hicolor|"
 }
 
 gnome_post()
