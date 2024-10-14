@@ -245,9 +245,7 @@ kde_post()
 	curl -fsSL https://raw.githubusercontent.com/exequtic/apdatifier/main/package/contents/tools/tools.sh | sh -s install
 
 	########### BREEZE PAPIRUS ICON THEME ###########
-	mkdir -p $HOME/.local/share/icons
-	cd $HOME/.local/share/icons && curl -sL https://raw.githubusercontent.com/Marckniack/Linux-Post-Install-Tweaks/main/KDE/Breeze_Papirus/breeze.tar.gz | tar zx
-	sudo sed -i "/usr/share/icons/breeze/index.theme" -e "s|Inherits=hicolor|Inherits=Papirus,hicolor|"
+	cd /usr/share/icons && sudo curl -sL https://raw.githubusercontent.com/Marckniack/Linux-Post-Install-Tweaks/main/KDE/PapirusBreeze.tar.gz | tar zx
 }
 
 gnome_post()
