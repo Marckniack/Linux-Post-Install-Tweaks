@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 steamapps="$HOME/.steam/steam/steamapps"
 
@@ -38,18 +38,14 @@ startup() {
 	cleanup
 	rm $steam_dir/logs/vrmonitor.txt 2>/dev/null
 	sleep 1
-	steam steam://rungameid/250820 &
+	steam steam://rungameid/250820 &>/dev/null &
 	sleep 20
 }
 
-while true; do
-	if ! pidof vrcompositor; then
-		startup
-	elif ! pidof vrserver; then
-		startup
-	elif grep 'SteamVR Fail' $steam_dir/logs/vrmonitor.txt; then
-		startup
-	fi
+echo "Press any key to exit..."
 
-	sleep 5
-done
+read -s -n 1
+
+echo "Cleanup and Exit."
+cleanup
+rm $steam_dir/logs/vrmonitor.txt 2>/dev/null
