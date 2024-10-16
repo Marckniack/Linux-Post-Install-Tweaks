@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-steamapps="$HOME.steam/steam/steamapps"
+steamapps="$HOME/.steam/steam/steamapps"
 
 # == end config ==
 steam_dir=$(dirname $steamapps)
