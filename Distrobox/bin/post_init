@@ -1,5 +1,8 @@
 #!/bin/bash
 
+echo "Find OPTIONS=(.. debug) and replace with !debug"
+sudo nano /etc/makepkg.conf
+
 ### Renaming xdg-open from container because it will run host applications (like steam) instead of internal ones
 sudo mv /usr/local/bin/xdg-open /usr/local/bin/xdg-open2 2>/dev/null
 
@@ -11,7 +14,7 @@ sudo pacman-key --init || exit 1
 echo "LANG=en_US.UTF-8" | sudo tee /etc/locale.conf
 echo "LC_ALL=en_US.UTF-8" | sudo tee /etc/locale.conf
 
-sudo pacman -q -Syu lib32-at-spi2-core --noconfirm
+sudo pacman -q -Syu lib32-at-spi2-core jq --noconfirm
 sudo pacman -q -Syu nvidia-prime --noconfirm --assume-installed nvidia-utils
 sudo pacman -q -Syu libva-mesa-driver vulkan-intel intel-media-driver lib32-libva-intel-driver libva-intel-driver --noconfirm #--assume-installed lib32-vulkan-intel
 sudo pacman -q -Syu lib32-pipewire pipewire pipewire-pulse pipewire-alsa wireplumber --noconfirm
@@ -41,8 +44,6 @@ sleep 3
 
 distrobox-host-exec pkexec setcap CAP_SYS_NICE+ep "$HOME/.steam/steam/steamapps/common/SteamVR/bin/linux64/vrcompositor-launcher"
 
-### PATCH steamvr (without it, steamvr might lag to hell)
-patch_bindings_spam 2>/dev/null
 
 ### C# Development
 #sudo pacman -q -Syu dotnet-sdk dotnet-host dotnet-runtime --noconfirm || exit 1
