@@ -1,7 +1,20 @@
 #!/bin/bash
 
 ### Renaming xdg-open from container because it will run host applications (like steam) instead of internal ones
-sudo mv /usr/local/bin/xdg-open /usr/local/bin/xdg-open2
+sudo mv /usr/local/bin/xdg-open /usr/local/bin/xdg-open2 2>/dev/null
+
+# Setting up arch
+echo "[multilib]" | sudo tee -a /etc/pacman.conf
+echo "Include = /etc/pacman.d/mirrorlist" | sudo tee -a /etc/pacman.conf
+echo "en_US.UTF-8 UTF-8" | sudo tee -a /etc/locale.gen
+sudo pacman-key --init || exit 1
+echo "LANG=en_US.UTF-8" | sudo tee /etc/locale.conf
+echo "LC_ALL=en_US.UTF-8" | sudo tee /etc/locale.conf
+
+sudo pacman -q -Syu nvidia-prime --noconfirm --assume-installed nvidia-utils
+sudo pacman -q -Syu libva-mesa-driver vulkan-intel intel-media-driver lib32-libva-intel-driver libva-intel-driver --noconfirm #--assume-installed lib32-vulkan-intel
+sudo pacman -q -Syu lib32-pipewire pipewire pipewire-pulse pipewire-alsa wireplumber --noconfirm
+sudo pacman -q -Syu steam --noconfirm --assume-installed vulkan-driver --assume-installed lib32-vulkan-driver
 
 cd
 mkdir ~/.config 2>/dev/null
