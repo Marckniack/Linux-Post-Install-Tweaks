@@ -11,6 +11,7 @@ sudo pacman-key --init || exit 1
 echo "LANG=en_US.UTF-8" | sudo tee /etc/locale.conf
 echo "LC_ALL=en_US.UTF-8" | sudo tee /etc/locale.conf
 
+sudo pacman -q -Syu lib32-at-spi2-core --noconfirm
 sudo pacman -q -Syu nvidia-prime --noconfirm --assume-installed nvidia-utils
 sudo pacman -q -Syu libva-mesa-driver vulkan-intel intel-media-driver lib32-libva-intel-driver libva-intel-driver --noconfirm #--assume-installed lib32-vulkan-intel
 sudo pacman -q -Syu lib32-pipewire pipewire pipewire-pulse pipewire-alsa wireplumber --noconfirm
