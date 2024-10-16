@@ -1,0 +1,2 @@
+#!/bin/bash
+distrobox-host-exec flatpak run org.blender.Blender "$@"

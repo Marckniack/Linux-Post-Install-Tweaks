@@ -1,0 +1,42 @@
+#!/bin/bash
+
+### Renaming xdg-open from container because it will run host applications (like steam) instead of internal ones
+sudo mv /usr/local/bin/xdg-open /usr/local/bin/xdg-open2
+
+cd
+mkdir ~/.config 2>/dev/null
+mkdir ~/.cache 2>/dev/null
+sudo chmod 777 ~/.config
+sudo chmod 777 ~/.cache
+sudo chown $USER:$USER ~/.config
+sudo chown $USER:$USER ~/.cache
+
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si --noconfirm
+cd
+
+sudo rm -rf yay 2>/dev/null
+
+xdg-mime default steam.desktop x-scheme-handler/steam
+steam steam://install/250820 &>/dev/null &
+while [ ! -f "$HOME/.steam/steam/steamapps/common/SteamVR/bin/vrwebhelper/linux64/vrwebhelper.sh" ]; do
+   sleep 5
+done
+sleep 3
+
+distrobox-host-exec pkexec setcap CAP_SYS_NICE+ep "$HOME/.steam/steam/steamapps/common/SteamVR/bin/linux64/vrcompositor-launcher"
+
+### PATCH steamvr (without it, steamvr might lag to hell)
+patch_bindings_spam 2>/dev/null
+
+### C# Development
+#sudo pacman -q -Syu dotnet-sdk dotnet-host dotnet-runtime --noconfirm || exit 1
+#yay -q -Sy jetbrains-toolbox alvr-bin --noconfirm || exit 1
+
+### SteamVR
+
+# Add Launch Options
+# __GLX_VENDOR_LIBRARY_NAME=nvidia __NV_PRIME_RENDER_OFFLOAD=1 __VK_LAYER_NV_optimus=NVIDIA_only QT_QPA_PLATFORM=xcb VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/nvidia_icd.json ~/.local/share/Steam/steamapps/common/SteamVR/bin/vrmonitor.sh %command%
+
+# Force to use of a specific SteamPlay compatibility tool to "Steam-Play-None"

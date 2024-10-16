@@ -1,13 +1,11 @@
-#!/bin/bash
-
 ### Create Box
-# distrobox create --pull --image quay.io/toolbx/arch-toolbox:latest --name arch --home /home/marco/.local/share/containers/boxes/arch/ --nvidia  --pre-init-hooks "pacman -Syy reflector --noconfirm && reflector --country 'Canada,United States,France,Germany,Australia' --latest 5 --sort rate --save /etc/pacman.d/mirrorlist"
+# distrobox create --pull --image archlinux:latest --name arch --home /home/marco/.local/share/containers/boxes/arch/ --nvidia  --pre-init-hooks "pacman -Syy reflector --noconfirm && reflector --country 'Canada,United States,France,Germany,Australia' --latest 5 --sort rate --save /etc/pacman.d/mirrorlist"
 
 ### TO READ USB (For ADB)
 ### Add flags on creation: --volume /dev/bus/usb/:/dev/bus/usb
 
 # Renaming xdg-open from container because it will run host applications (like steam) instead of internal ones
-# sudo mv /usr/local/bin/xdg-open /usr/local/bin/xdg-open2
+sudo mv /usr/local/bin/xdg-open /usr/local/bin/xdg-open2
 
 # Setting up arch
 echo "[multilib]" | sudo tee -a /etc/pacman.conf
@@ -25,12 +23,14 @@ sudo pacman -q -Sy libva-mesa-driver vulkan-intel lib32-vulkan-intel intel-media
 sudo pacman -q -Sy lib32-pipewire pipewire pipewire-pulse pipewire-alsa wireplumber --noconfirm || exit 1
 sudo pacman -q -Sy steam --noconfirm --assume-installed vulkan-driver --assume-installed lib32-vulkan-driver || exit 1
 
+
 cd || exit 1
+mkdir ~/.config 2>/dev/null
+mkdir ~/.cache 2>/dev/null
 sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si --noconfirm || exit 1
 cd || exit 1
 
 sudo rm -rf yay 2>/dev/null
-mkdir ~/.config 2>/dev/null
 
 xdg-mime default steam.desktop x-scheme-handler/steam
 steam steam://install/250820 &>/dev/null &
@@ -47,3 +47,11 @@ sh "$HOME//patch_bindings_spam.sh" 2>/dev/null
 # C# Development
 sudo pacman -q -Syu dotnet-sdk dotnet-host dotnet-runtime --noconfirm || exit 1
 yay -q -Sy jetbrains-toolbox alvr-bin --noconfirm || exit 1
+
+### SteamVR
+
+# Add Launch Options
+# __GLX_VENDOR_LIBRARY_NAME=nvidia __NV_PRIME_RENDER_OFFLOAD=1 __VK_LAYER_NV_optimus=NVIDIA_only QT_QPA_PLATFORM=xcb VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/nvidia_icd.json ~/.local/share/Steam/steamapps/common/SteamVR/bin/vrmonitor.sh %command%
+
+# Force to use of a specific SteamPlay compatibility tool to "Steam-Play-None"
+
