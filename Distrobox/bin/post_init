@@ -1,10 +1,7 @@
 #!/bin/bash
 
-echo "Find OPTIONS=(.. debug) and replace with !debug"
-sudo nano /etc/makepkg.conf
-
 ### Renaming xdg-open from container because it will run host applications (like steam) instead of internal ones
-sudo mv /usr/local/bin/xdg-open /usr/local/bin/xdg-open2 2>/dev/null
+sudo mv /usr/local/bin/xdg-open /usr/local/bin/xdg-open2
 
 # Setting up arch
 echo "[multilib]" | sudo tee -a /etc/pacman.conf
@@ -14,12 +11,21 @@ sudo pacman-key --init || exit 1
 echo "LANG=en_US.UTF-8" | sudo tee /etc/locale.conf
 echo "LC_ALL=en_US.UTF-8" | sudo tee /etc/locale.conf
 
-sudo pacman -q -Syu lib32-at-spi2-core jq --noconfirm
+sudo pacman -q -Syu android-tools android-udev breeze-gtk zip --noconfirm
+sudo pacman -q -Syu jq glibc lib32-glibc xdg-utils qt5-tools qt5-multimedia at-spi2-core lib32-at-spi2-core tar wget --noconfirm
+sudo pacman -q -Syu git nano base-devel noto-fonts xdg-user-dirs fuse libx264 sdl2 libva-utils xorg-server --noconfirm
 sudo pacman -q -Syu nvidia-prime --noconfirm --assume-installed nvidia-utils
-sudo pacman -q -Syu libva-mesa-driver vulkan-intel intel-media-driver lib32-libva-intel-driver libva-intel-driver --noconfirm #--assume-installed lib32-vulkan-intel
-sudo pacman -q -Syu lib32-pipewire pipewire pipewire-pulse pipewire-alsa wireplumber --noconfirm
+#sudo pacman -q -Syu libva-mesa-driver vulkan-intel lib32-vulkan-intel intel-media-driver lib32-libva-intel-driver libva-intel-driver --noconfirm
+sudo pacman -q -Syu lib32-pipewire pipewire pipewire-pulse pipewire-alsa pipewire-jack wireplumber --noconfirm
 sudo pacman -q -Syu steam --noconfirm --assume-installed vulkan-driver --assume-installed lib32-vulkan-driver
 
+#sudo pacman -q -Syu libva-mesa-driver vulkan-intel intel-media-driver lib32-libva-intel-driver libva-intel-driver --noconfirm --assume-installed lib32-vulkan-intel
+
+
+echo "Find OPTIONS=(.. debug) and replace with !debug"
+sudo nano /etc/makepkg.conf
+
+### Setup Yay
 cd
 mkdir ~/.config 2>/dev/null
 mkdir ~/.cache 2>/dev/null
