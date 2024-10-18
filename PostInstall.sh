@@ -22,7 +22,7 @@ options iwlwifi 11n_disable=8
 options iwlwifi power_save=0
 
 # Fix Wifi Disconnect on suspend, (1=Always Active,2=Balanced,3=Low-power)
-options iwlmvm power_scheme=1' | sudo tee /etc/modprobe.d/wifi.conf
+#options iwlmvm power_scheme=1' | sudo tee /etc/modprobe.d/wifi.conf
 
 	################ INTEL ################
 	pacman -Syu lib32-vulkan-intel intel-media-driver vulkan-intel --noconfirm || exit 1
@@ -133,10 +133,10 @@ gnome()
 	########### GNOME ############
 	pacman -Syu webp-pixbuf-loader gst-plugin-pipewire gst-plugins-good ffmpegthumbnailer gnome-themes-extra adw-gtk-theme --noconfirm || exit 1
 	
-	#### FORCE ENABLE WAYLAND ####
+	# FORCE ENABLE WAYLAND ####
 	ln -s /dev/null /etc/udev/rules.d/61-gdm.rules
 
-	#### USE ADW-GTK3 DARK THEME ####
+	# USE ADW-GTK3 DARK THEME ####
  	gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3-dark' && gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 	
 	########### REMOVE UNUSED PACKAGES ############
@@ -171,10 +171,10 @@ kde_flatpak()
 	base_flatpak
 	
 	### MISC
-	flatpak install --assumeyes --noninteractive org.kde.skanlite org.qbittorrent.qBittorrent org.kde.okular io.github.f3d_app.f3d com.github.Murmele.Gittyup org.kde.gwenview io.github.fastrizwaan.WineZGUI
+	flatpak install --assumeyes --noninteractive org.kde.skanlite org.qbittorrent.qBittorrent org.kde.okular io.github.f3d_app.f3d com.github.Murmele.Gittyup org.kde.gwenview io.github.fastrizwaan.WineZGUI org.kde.klevernotes io.gpt4all.gpt4all
 	
 	### GAMING
-	flatpak install --assumeyes --noninteractive com.heroicgameslauncher.hgl
+	flatpak install --assumeyes --noninteractive com.heroicgameslauncher.hgl io.github.glaumar.QRookie
 
   	### SOUND & VIDEO
  	#flatpak install --assumeyes --noninteractive org.kde.kdenlive com.obsproject.Studio
