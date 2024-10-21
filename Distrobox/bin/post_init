@@ -50,13 +50,15 @@ sleep 3
 
 distrobox-host-exec pkexec setcap CAP_SYS_NICE+ep "$HOME/.steam/steam/steamapps/common/SteamVR/bin/linux64/vrcompositor-launcher"
 
+### Development IDEs
+yay -q -Syu jetbrains-toolbox --noconfirm
+
 ### Android Development
-yay -q -Syu android-studio jdk-openjdk --noconfirm
+yay -q -Syu jdk-openjdk --noconfirm
 
 
 ### C# Development
 #sudo pacman -q -Syu dotnet-sdk dotnet-host dotnet-runtime --noconfirm || exit 1
-#yay -q -Sy jetbrains-toolbox alvr-bin --noconfirm || exit 1
 
 ### SteamVR
 
