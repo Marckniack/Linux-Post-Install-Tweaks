@@ -1,6 +1,6 @@
 
 ### KATE
-flatpak-spawn --host kate --line {line} --column {col} {file}
+flatpak-spawn --host kate -n -s {project} --line {line} --column {col} {file}
 
 ### RIDER
 flatpak-spawn --host com.jetbrains.Rider {project} --line {line} {file}
