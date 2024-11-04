@@ -1,6 +1,7 @@
 
 ### KATE
-flatpak-spawn --host kate -n -s {project} --line {line} --column {col} {file}
+flatpak-spawn --host kate --start {project} --line {line} --column {col} {file}
+distrobox-host-exec kate --start {project} --line {line} --column {col} {file}
 
 ### RIDER
 flatpak-spawn --host com.jetbrains.Rider {project} --line {line} {file}
