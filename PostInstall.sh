@@ -225,7 +225,7 @@ base_post()
 {
 
 	########### SERVICES ############
-	systemctl enable bluetooth.service paccache.service switcheroo-control.service power-profiles-daemon.service paccache.timer
+	systemctl enable bluetooth.service paccache.service switcheroo-control.service power-profiles-daemon.service paccache.timer upower.service
 
 	########### INSTALL YAY ###########
 	git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
