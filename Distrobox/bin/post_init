@@ -1,8 +1,5 @@
 #!/bin/bash
 
-### Renaming xdg-open from container because it will run host applications (like steam) instead of internal ones
-sudo mv /usr/local/bin/xdg-open /usr/local/bin/xdg-open2
-
 # Setting up arch
 echo "[multilib]" | sudo tee -a /etc/pacman.conf
 echo "Include = /etc/pacman.d/mirrorlist" | sudo tee -a /etc/pacman.conf
@@ -53,10 +50,10 @@ distrobox-host-exec pkexec setcap CAP_SYS_NICE+ep "$HOME/.steam/steam/steamapps/
 
 ### Development IDEs
 # yay -q -Syu jetbrains-toolbox --noconfirm
-# yay -q -Syu android-studio --noconfirm
+yay -q -Syu android-studio --noconfirm
 
 ### Android Development
-# yay -q -Syu jdk-openjdk --noconfirm
+yay -q -Syu jdk-openjdk --noconfirm
 
 ### C# Development
 # sudo pacman -q -Syu dotnet-sdk dotnet-host dotnet-runtime --noconfirm || exit 1
