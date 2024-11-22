@@ -247,7 +247,10 @@ kde_post()
 	base_post
 
   	########### APDATIFIER ###########
-	curl -fsSL https://raw.githubusercontent.com/exequtic/apdatifier/main/package/contents/tools/tools.sh | sh -s install
+  	# Download .plasmoid from https://github.com/exequtic/apdatifier/releases
+  	# Install with kpackagetool6 -i apdatifier_X.plasmoid
+  	# Logout and systemctl --user restart plasma-plasmashell.service
+	#curl -fsSL https://raw.githubusercontent.com/exequtic/apdatifier/main/package/contents/tools/tools.sh | sh -s install
 
 	########### BREEZE PAPIRUS ICON THEME ###########
 	cd /usr/share/icons && sudo curl -sL https://raw.githubusercontent.com/Marckniack/Linux-Post-Install-Tweaks/main/KDE/PapirusBreeze.tar.gz | tar zx
