@@ -2,4 +2,4 @@ Cyberpunk 2077:
 DXVK_ASYNC=1 PROTON_ENABLE_NVAPI=1 PROTON_HIDE_NVIDIA_GPU=0 PULSE_LATENCY_MSEC=60 VKD3D_CONFIG=dxr VKD3D_FEATURE_LEVEL=12_2 DXVK_ENABLE_NVAPI=1 gamemoderun %command% -dx12 --launcher-skip --intro-skip --skipStartScreen
 
 Starfield:
-PROTON_HIDE_NVIDIA_GPU=0 PROTON_ENABLE_NVAPI=1 gamemoderun gamescope -w 1920 -h 1080 -f -- %command%
+PROTON_HIDE_NVIDIA_GPU=0 PROTON_ENABLE_NVAPI=1 gamemoderun %command%
