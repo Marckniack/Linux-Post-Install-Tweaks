@@ -4,6 +4,9 @@
 ### TO READ USB (For ADB)
 ### Add flags on creation: --volume /dev/bus/usb/:/dev/bus/usb
 
+### TO USE NVIDIA-CONTAINER-TOOLKIT
+### Add flags on creation: --additional-flags "--security-opt=label=disable --device=nvidia.com/gpu=all"
+
 # Renaming xdg-open from container because it will run host applications (like steam) instead of internal ones
 sudo mv /usr/local/bin/xdg-open /usr/local/bin/xdg-open2
 
