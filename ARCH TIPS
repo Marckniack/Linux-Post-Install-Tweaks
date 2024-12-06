@@ -92,7 +92,13 @@ zram-size=16384
 sudo sudo nano /etc/makepkg.conf
 ################################################################################
 
-########################### UNITY VULKAN ON ARCH ############################
+#################################### UNITY #####################################
+### DEPENDENCIES ###
+sudo pacman -Syu clinfo opencl-headers ocl-icd
+sudo pacman -Syu cuda --assume-installed opencl-nvidia
+
+### VULKAN ON ARCH ###
 # Add this comamnd arguments to a project to use vulkan
-# -OpenCL-PlatformAndDeviceIndices 0 0 -force-vulkan -force-glcore
-#############################################################################
+# -OpenCL-PlatformAndDeviceIndices 0 0 -force-vulkan
+# Sometime require  -force-glcore flag
+################################################################################
