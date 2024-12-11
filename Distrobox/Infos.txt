@@ -1,5 +1,5 @@
 ### Create Box
-# distrobox create --pull --image archlinux:latest --name arch --home /home/marco/.local/share/containers/boxes/arch/ --nvidia
+# distrobox create --pull --image archlinux:latest --name archlinux --home /home/marco/.local/share/containers/boxes/arch/ --nvidia
 
 ### TO READ USB (For ADB)
 ### Add flags on creation: --volume /dev/bus/usb/:/dev/bus/usb
