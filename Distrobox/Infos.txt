@@ -1,5 +1,5 @@
 ### Create Box
-# distrobox create --pull --image archlinux:latest --name arch --home /home/marco/.local/share/containers/boxes/arch/ --nvidia  --pre-init-hooks "pacman -Syy reflector --noconfirm && reflector --country 'Canada,United States,France,Germany,Australia' --latest 5 --sort rate --save /etc/pacman.d/mirrorlist"
+# distrobox create --pull --image archlinux:latest --name arch --home /home/marco/.local/share/containers/boxes/arch/ --nvidia
 
 ### TO READ USB (For ADB)
 ### Add flags on creation: --volume /dev/bus/usb/:/dev/bus/usb
@@ -11,6 +11,8 @@
 sudo mv /usr/local/bin/xdg-open /usr/local/bin/xdg-open2
 
 # Setting up arch
+sudo pacman pacman -Syy reflector --noconfirm && reflector --country 'Canada,United States,France,Germany,Australia' --latest 5 --sort rate --save /etc/pacman.d/mirrorlist
+
 echo "[multilib]" | sudo tee -a /etc/pacman.conf
 echo "Include = /etc/pacman.d/mirrorlist" | sudo tee -a /etc/pacman.conf
 echo "en_US.UTF-8 UTF-8" | sudo tee -a /etc/locale.gen
