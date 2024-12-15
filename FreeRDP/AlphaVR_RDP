@@ -1,0 +1,2 @@
+#!/bin/bash
+flatpak run --command=xfreerdp com.freerdp.FreeRDP /v:192.168.2.2:3389 /u:'Alpha VR' /p:'PASSWORD' /d:ARTHERIAALPHA /wm-class:'AlphaVR' /t:'AlphaVR' /sound:sys:alsa /cert:ignore +dynamic-resolution +auto-reconnect +home-drive +drives /network:lan -wallpaper +clipboard /video /rfx /gfx
