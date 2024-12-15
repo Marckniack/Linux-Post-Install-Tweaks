@@ -167,7 +167,7 @@ base_flatpak()
  	flatpak install --assumeyes --noninteractive org.telegram.desktop io.github.spacingbat3.webcord 
   
   	### OTHERS
- 	flatpak install --assumeyes --noninteractive org.localsend.localsend_app org.bleachbit.BleachBit
+ 	flatpak install --assumeyes --noninteractive org.localsend.localsend_app org.bleachbit.BleachBit com.freerdp.FreeRDP
 }
 
 kde_flatpak()
@@ -176,10 +176,10 @@ kde_flatpak()
 	base_flatpak
 	
 	### MISC
-	flatpak install --assumeyes --noninteractive org.kde.skanlite org.qbittorrent.qBittorrent org.kde.okular io.github.f3d_app.f3d com.github.Murmele.Gittyup org.kde.gwenview io.github.fastrizwaan.WineZGUI org.kde.klevernotes io.gpt4all.gpt4all
+	flatpak install --assumeyes --noninteractive org.kde.skanlite org.qbittorrent.qBittorrent org.kde.okular io.github.f3d_app.f3d org.gitfourchette.gitfourchette org.kde.gwenview org.winehq.Wine org.kde.klevernotes io.gpt4all.gpt4all
 	
 	### GAMING
-	flatpak install --assumeyes --noninteractive com.heroicgameslauncher.hgl io.github.glaumar.QRookie
+	flatpak install --assumeyes --noninteractive com.heroicgameslauncher.hgl
 
   	### SOUND & VIDEO
  	#flatpak install --assumeyes --noninteractive org.kde.kdenlive com.obsproject.Studio
