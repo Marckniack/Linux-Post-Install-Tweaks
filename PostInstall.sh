@@ -125,6 +125,14 @@ echo -e "GTK_USE_PORTAL=1\nXDG_CURRENT_DESKTOP=KDE" | tee -a /etc/environment
 	pacman -Rcns drkonqi htop vim discover krdp oxygen plasma-firewall plasma-thunderbolt plasma-vault plasma-welcome plasma-workspace-wallpapers --noconfirm || exit 1
 	pacman -Syu plasma-nm --noconfirm || exit 1
 
+		########### MOUNT DISK WITHOUT PASS ############
+echo -e 'polkit.addRule(function(action, subject) {
+    if (subject.isInGroup("wheel")) {
+        if (action.id.startsWith("org.freedesktop.udisks2.")) {
+            return polkit.Result.YES;
+        }
+    }
+});' | sudo tee /etc/udev/rules.d/50-udisks.rules
 
 }
 
