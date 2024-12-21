@@ -132,7 +132,7 @@ echo -e 'polkit.addRule(function(action, subject) {
             return polkit.Result.YES;
         }
     }
-});' | sudo tee /etc/udev/rules.d/50-udisks.rules
+});' | sudo tee /etc/polkit-1/rules.d/50-udisks.rules
 
 }
 
