@@ -105,7 +105,7 @@ kde()
 	
 	########### KDE ############
 	pacman -Syu kdegraphics-thumbnailers ffmpegthumbs kdialog flatpak-kcm xdg-desktop-portal-kde spectacle xdg-desktop-portal-gtk partitionmanager --noconfirm || exit 1
-	pacman -Syu kbackup dolphin-plugins --noconfirm || exit 1
+	pacman -Syu dolphin-plugins --noconfirm || exit 1
 
 
 	########### APDATIFIER  (KDE) ############
@@ -184,7 +184,7 @@ kde_flatpak()
 	base_flatpak
 	
 	### MISC
-	flatpak install --assumeyes --noninteractive org.kde.skanlite org.qbittorrent.qBittorrent org.kde.okular io.github.f3d_app.f3d org.gitfourchette.gitfourchette org.kde.gwenview org.winehq.Wine org.kde.klevernotes io.gpt4all.gpt4all
+	flatpak install --assumeyes --noninteractive org.kde.skanlite org.qbittorrent.qBittorrent org.kde.okular io.github.f3d_app.f3d org.gitfourchette.gitfourchette org.kde.gwenview org.winehq.Wine org.kde.klevernotes io.gpt4all.gpt4all com.borgbase.Vorta
 	
 	### GAMING
 	flatpak install --assumeyes --noninteractive com.heroicgameslauncher.hgl
