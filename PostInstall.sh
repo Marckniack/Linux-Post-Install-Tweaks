@@ -15,14 +15,15 @@ base_common()
 echo -e "blacklist iTCO_wdt\nblacklist iTCO_vendor_support" >> /etc/modprobe.d/nowatchdog.conf
 
 	########### INTEL WIFI RULES ############
-echo -e '# Enable antenna aggregation
-options iwlwifi 11n_disable=8
+echo -e '# Disable 11n functionality, bitmap: 1: full, 2: disable agg TX, 4: disable agg RX, 8 enable agg TX (uint)
+options iwlwifi 11n_disable=1 swcrypto=1
 
-# Disable Power Save
+# Enable WiFi power management (default: disable) (bool)
 options iwlwifi power_save=0
 
-# Fix Wifi Disconnect on suspend, (1=Always Active,2=Balanced,3=Low-power)
-#options iwlmvm power_scheme=1' | sudo tee /etc/modprobe.d/wifi.conf
+# Fix Wifi Disconnect on suspend
+# Power management scheme: 1-active, 2-balanced, 3-low power, default: 2 (int)
+options iwlmvm power_scheme=1' | sudo tee /etc/modprobe.d/wifi.conf
 
 	################ INTEL ################
 	pacman -Syu lib32-vulkan-intel intel-media-driver vulkan-intel --noconfirm || exit 1
