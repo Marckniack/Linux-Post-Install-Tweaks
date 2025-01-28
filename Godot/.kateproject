@@ -2,6 +2,7 @@
   "name": "ProjectName",
   "files": [ {
              "directory": ".",
+             "filters": ["*.gd"],
              "recursive": 1
        } ]
 }
